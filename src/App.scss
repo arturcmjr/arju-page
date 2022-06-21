@@ -4,3 +4,7 @@ body {
   background-color: #232931;
   color: #fff;
 }
+
+#pageWrapper {
+  margin-top: calc(65px + env(safe-area-inset-top));
+}

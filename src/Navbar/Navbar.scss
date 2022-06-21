@@ -1,5 +1,7 @@
 #navbar {
-  background-color: #393e46;
+  // background-color: #393e46;
+  background-color: rgba(57, 62, 70, 0.9);
+  backdrop-filter: blur(3px);
   position: fixed;
   top: 0;
   width: 100%;
@@ -13,6 +15,7 @@
 
 #navbar .logo {
   padding: 0 2em;
+  -webkit-tap-highlight-color: rgba(78, 204, 163, 0.15);
 
   span {
     color: #fff;
@@ -38,6 +41,13 @@
   }
 }
 
+#navbar a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
 #navbar .right {
   flex-grow: 1;
   display: flex;
@@ -50,27 +60,42 @@
   justify-content: flex-end;
   align-items: stretch;
 
-  a {
+  a.menu-link {
     padding: 0 1em;
-    color: #fff;
-    font-family: "Inconsolata", monospace;
-    transition: color 150ms ease-in-out;
-
-    span {
-      color: #4ecca3;
-      margin-right: .5rem;
-    }
-
-    &:hover {
-      color: #4ecca3;
-      transition: color 150ms ease-in-out;
-    }
   }
 }
 
-#navbar a {
+a.menu-link {
   color: #fff;
+  font-family: "Inconsolata", monospace;
+  transition: color 150ms ease-in-out;
   text-decoration: none;
-  display: flex;
-  align-items: center;
+
+  span {
+    color: #4ecca3;
+    margin-right: 0.5rem;
+  }
+
+  &:hover {
+    color: #4ecca3 !important;
+    transition: color 150ms ease-in-out;
+  }
+}
+
+#navbar .menu {
+  display: none;
+  max-width: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  #navbar .ls-items {
+    display: none;
+    max-width: 0;
+  }
+
+  #navbar .menu {
+    display: flex;
+    max-width: 150px;
+    margin-right: 0.75rem;
+  }
 }
