@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import { themeOptions } from "./shared/theme/muiTheme";
 import { Button } from "@mui/material";
 import Navbar from "./Navbar/Navbar";
+import Introduction from "./Introduction/Introduction";
 
 const theme = createTheme(themeOptions);
 var prevScrollpos = window.pageYOffset;
@@ -27,8 +28,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Navbar></Navbar>
+      <Introduction />
       <div id="pageWrapper">
-        <h1>Bom dia Carlos José magno</h1>
+        {/* <h1>Bom dia Carlos José magno</h1>
         <p style={{ fontFamily: "Inconsolata", color: primary }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
           laboriosam aperiam quos et laudantium consectetur impedit ullam
@@ -56,7 +58,7 @@ function App() {
         </p>
         <Button variant="text">Text</Button>
         <Button variant="contained">Contained</Button>
-        <Button variant="outlined">Outlined</Button>
+        <Button variant="outlined">Outlined</Button> */}
         <div style={{ height: "1500px" }}></div>
       </div>
     </ThemeProvider>
