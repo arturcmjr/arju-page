@@ -1,6 +1,11 @@
 import { IconButton, Menu, MenuItem } from "@mui/material";
 import React from "react";
 import "./Navbar.scss";
+import MenuIcon from '@mui/icons-material/Menu';
+
+interface NavbarProps {
+  scrollTo: (elementId: string) => void;
+}
 
 const menuItems = [
   {
@@ -21,37 +26,44 @@ const menuItems = [
   },
 ];
 
-export function Navbar(): JSX.Element {
+export function Navbar(props: NavbarProps): JSX.Element {
+  const { scrollTo } = props;
+
   return (
     <div id="navbar">
-      <a href="#home" className="logo">
+      <a className="logo" onClick={(event) => scrollTo("#introContainer")}>
         <span>ar</span>
         <span>ju</span>
       </a>
       <div className="right">
         <div className="ls-items">
           {menuItems.map((item, index) => (
-            <a href={item.link} key={index} className="menu-link">
+            <a
+              key={`nv-item-${index}`}
+              className="menu-link"
+              onClick={() => scrollTo(item.link)}
+            >
               <span>0{index + 1}:</span>
               {item.name}
             </a>
           ))}
         </div>
-        <SmallScreenMenu />
+        <SmallScreenMenu scrollTo={scrollTo} />
       </div>
     </div>
   );
 }
 
-function SmallScreenMenu(): JSX.Element {
+function SmallScreenMenu(props: NavbarProps): JSX.Element {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (): void => {
     setAnchorEl(null);
   };
+  const { scrollTo } = props;
 
   return (
     <div className="menu">
@@ -61,7 +73,7 @@ function SmallScreenMenu(): JSX.Element {
         component="span"
         onClick={handleClick}
       >
-        <span className="material-symbols-outlined">menu</span>
+        <MenuIcon />
       </IconButton>
       <Menu
         anchorEl={anchorEl}
@@ -72,8 +84,14 @@ function SmallScreenMenu(): JSX.Element {
         }}
       >
         {menuItems.map((item, index) => (
-          <MenuItem onClick={handleClose}>
-            <a href={item.link} key={index} className="menu-link">
+          <MenuItem
+            onClick={() => {
+              handleClose();
+              window.setTimeout(() => scrollTo(item.link), 100);
+            }}
+            key={`mn-item-${index}`}
+          >
+            <a className="menu-link">
               <span>0{index + 1}:</span>
               <br />
               {item.name}

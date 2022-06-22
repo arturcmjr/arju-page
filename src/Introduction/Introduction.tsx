@@ -9,7 +9,7 @@ export function Introduction(): JSX.Element {
         <div>
           <span className="hi-there">Hi there, my name is</span>
           <h1>Artur Junior</h1>
-          <h2>Full Stack Web, Mobile and Game Developer</h2>
+          <h2>Web Full Stack, Mobile and Game Developer</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
             aperiam facilis sint, ipsam consequuntur, temporibus pariatur id

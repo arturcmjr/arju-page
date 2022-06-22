@@ -1,12 +1,12 @@
 #introContainer {
   display: flex;
-  margin: 3rem 1rem 2rem 1rem;
+  margin: 0 1rem;
 
   .text-container {
     flex-grow: 1;
     display: flex;
-    padding-left: 10%;
-    min-height: 75vh;
+    padding-left: 5%;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     max-width: 40vw;
@@ -29,9 +29,9 @@
     }
 
     p {
-      opacity: 0.5;
       font-size: 1.1rem;
-      max-width: 35vw;
+      width: 35vw;
+      max-width: 600px;
     }
   }
 }
@@ -50,12 +50,11 @@ img.words {
 
 @media screen and (max-width: 600px) {
   img.words {
-    opacity: 0.02;
+    opacity: 0.015;
   }
 
   #introContainer .text-container {
     max-width: 100%;
-    min-height: 90vh;
 
     h1 {
       font-size: 3.5rem;
@@ -66,6 +65,7 @@ img.words {
     }
 
     p {
+      width: 100%;
       max-width: 100%;
     }
   }
