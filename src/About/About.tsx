@@ -1,110 +1,17 @@
 import "./About.scss";
 import myPicture from "../images/my-picture.png";
-import { Button, Chip, Grid } from "@mui/material";
+import { Button, Chip, Grid, Tooltip } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import React from "react";
-
-interface ISkill {
-  name: string;
-  star: boolean;
-}
-
-const skills: ISkill[] = [
-  {
-    name: "HTML",
-    star: true,
-  },
-  {
-    name: "CSS",
-    star: false,
-  },
-  {
-    name: "SCSS",
-    star: false,
-  },
-  {
-    name: "JavaScript",
-    star: false,
-  },
-  {
-    name: "TypeScript",
-    star: true,
-  },
-  {
-    name: "React",
-    star: false,
-  },
-  {
-    name: "Angular",
-    star: true,
-  },
-  {
-    name: "Vue",
-    star: false,
-  },
-  {
-    name: "Node",
-    star: false,
-  },
-  {
-    name: "Git",
-    star: false,
-  },
-  {
-    name: "Unity",
-    star: true,
-  },
-  {
-    name: "C#",
-    star: true,
-  },
-  {
-    name: "Java",
-    star: false,
-  },
-  {
-    name: "PHP",
-    star: false,
-  },
-  {
-    name: "SQL",
-    star: true,
-  },
-  {
-    name: ".NET",
-    star: true,
-  },
-  {
-    name: "Laravel",
-    star: false,
-  },
-  {
-    name: "Express",
-    star: false,
-  },
-  {
-    name: "Flutter",
-    star: false,
-  },
-  {
-    name: "Android Native",
-    star: false,
-  },
-  {
-    name: "Dart",
-    star: false,
-  },
-  {
-    name: "Bash/Shell",
-    star: false,
-  },
-];
+import { ISkill, skills } from "./skills";
+import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
+import LanguageIcon from "@mui/icons-material/Language";
+import SmartphoneIcon from "@mui/icons-material/Smartphone";
 
 export function About(): JSX.Element {
-  // showMore is a boolean that indicates if the skills are shown or not
   const [showMore, setShowMore] = React.useState(false);
-  const arrayLimit = showMore ? skills.length : 8;
+  const arrayLimit = showMore ? skills.length : 4;
 
   return (
     <div id="about">
@@ -125,10 +32,10 @@ export function About(): JSX.Element {
             sapiente fugiat ducimus. Quod assumenda libero illum. Commodi quam
             modi a.
           </p>
-          <p>Technologies:</p>
-          <Grid container spacing={1} columns={{ xs: 4, sm: 8, md: 4 }}>
+          <p className="technologies-container">Technologies:</p>
+          <Grid container spacing={1} columns={{ xs: 2, md: 4 }}>
             {Array.from(Array(arrayLimit)).map((_, index) => (
-              <Grid item xs={2} sm={4} md={1} key={`sk-chip-${index}`}>
+              <Grid item xs={1} key={`sk-chip-${index}`}>
                 <SkillChip skill={skills[index]} />
               </Grid>
             ))}
@@ -154,6 +61,24 @@ export function About(): JSX.Element {
 }
 
 function SkillChip(props: { skill: ISkill }): JSX.Element {
+  let icon: JSX.Element;
+  let iconTooltip: string;
+
+  switch (props.skill.type) {
+    case "web":
+      icon = <LanguageIcon fontSize="small" className="skill-icon" />;
+      iconTooltip = "Web";
+      break;
+    case "mobile":
+      icon = <SmartphoneIcon fontSize="small" className="skill-icon" />;
+      iconTooltip = "Mobile";
+      break;
+    case "game":
+      icon = <VideogameAssetIcon fontSize="small" className="skill-icon" />;
+      iconTooltip = "Game";
+      break;
+  }
+
   return (
     <div className="skill-chip">
       {props.skill.star ? (
@@ -162,6 +87,9 @@ function SkillChip(props: { skill: ISkill }): JSX.Element {
         <StarOutlineIcon fontSize="small" />
       )}
       <span>{props.skill.name}</span>
+      <Tooltip title={iconTooltip} placement="top">
+        {icon}
+      </Tooltip>
     </div>
   );
 }

@@ -35,6 +35,18 @@
       font-family: "Inconsolata", monospace;
       font-size: 0.9em;
     }
+
+    .technologies-container {
+      color: #fff;
+    }
+
+    .technologies-container::after {
+      content: "hover to see what I mainly use for";
+      margin-left: .5rem;
+      font-size: .8em;
+      opacity: 0.5;
+      font-style: italic;
+    }
   }
 
   .img-container {
@@ -90,7 +102,7 @@
   padding: 0.3rem 0.5rem;
   border-radius: 25px;
   transition: all 300ms ease-in-out;
-  opacity: .9;
+  opacity: 0.9;
 
   span {
     text-overflow: ellipsis;
@@ -107,7 +119,25 @@
     border-color: #4ecca3;
     background-color: #4ecca21c;
     transition: all 300ms ease-in-out;
+
+    .skill-icon {
+      display: block;
+      max-width: 50px;
+      transition: all 300ms ease-in-out;
+    }
   }
+
+  .skill-icon {
+    color: #fff;
+    display: hidden;
+    max-width: 0;
+    transition: all 300ms ease-in-out;
+    margin-left: auto;
+  }
+}
+
+.text-container p {
+  font-size: 1.1rem;
 }
 
 .text-container .btn-show-more {

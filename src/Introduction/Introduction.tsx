@@ -7,17 +7,17 @@ export function Introduction(): JSX.Element {
     <div id="introContainer">
       <div className="text-container">
         <div>
-          <span className="hi-there">Hi there, my name is</span>
+          <span className="hi-there">Hi, my name is</span>
           <h1>Artur Junior</h1>
-          <h2>Web Full Stack, Mobile and Game Developer</h2>
+          <h2>Web, Mobile and Game Developer</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-            aperiam facilis sint, ipsam consequuntur, temporibus pariatur id
-            non, delectus tempora itaque maxime! Natus ipsum alias mollitia
-            labore atque, voluptas iusto perspiciatis voluptate dolor tenetur
-            illo!
+            I'm a software developer who can work well on every development
+            layer. I'm currently, studying in Dublin, Ireland and looking for
+            opportunities to work locally or remotely anywhere in the world.
           </p>
-          <Button href="#contact" variant="outlined" size="large">HIRE ME</Button>
+          <Button href="#contact" variant="outlined" size="large">
+            HIRE ME
+          </Button>
         </div>
       </div>
       <img src={wordsImage} alt="words" className="words" />
