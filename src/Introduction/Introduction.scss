@@ -19,7 +19,7 @@
     h1 {
       margin: 0;
       font-size: 4rem;
-      color: #4ecca3;
+      color: var(--primary);
     }
 
     h2 {
@@ -36,6 +36,17 @@
   }
 }
 
+#introContainer .job-title {
+  opacity: 1;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+
+  &:hover {
+    color: var(--primary);
+    transition: all 150ms ease-in-out;
+  }
+}
+
 #introContainer > div {
   flex-grow: 1;
 }
@@ -46,6 +57,7 @@ img.words {
   top: 0;
   position: absolute;
   height: 100vh;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,7 +1,7 @@
 import { IconButton, Menu, MenuItem } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import "./Navbar.scss";
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from "@mui/icons-material/Menu";
 
 interface NavbarProps {
   scrollTo: (elementId: string) => void;
@@ -26,8 +26,24 @@ const menuItems = [
   },
 ];
 
+var prevScrollpos = window.pageYOffset;
+
 export function Navbar(props: NavbarProps): JSX.Element {
   const { scrollTo } = props;
+
+  const handleScroll = () => {
+    var currentScrollPos = window.pageYOffset;
+    const doc = document.getElementById("navbar");
+    if (doc) {
+      doc.style.top = prevScrollpos > currentScrollPos ? "0" : "-60px";
+      prevScrollpos = currentScrollPos;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
 
   return (
     <div id="navbar">

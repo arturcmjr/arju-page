@@ -25,9 +25,9 @@
     transition: transform 150ms ease-in-out;
   }
 
-  span:last-child {
+  /* span:last-child {
     color: #4ecca3;
-  }
+  }*/
 
   &:hover {
     span:first-child {
@@ -73,12 +73,12 @@ a.menu-link {
   text-decoration: none;
 
   span {
-    color: #4ecca3;
+    color: var(--primary);
     margin-right: 0.5rem;
   }
 
   &:hover {
-    color: #4ecca3 !important;
+    color: var(--primary) !important;
     transition: color 150ms ease-in-out;
   }
 }

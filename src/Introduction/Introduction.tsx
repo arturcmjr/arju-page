@@ -1,15 +1,29 @@
 import { Button } from "@mui/material";
+import { EJobTitle } from "../App";
 import wordsImage from "../images/words.svg";
 import "./Introduction.scss";
 
-export function Introduction(): JSX.Element {
+interface IntroductionProps {
+  jobTitle: EJobTitle;
+  changeJobTitle: (title: EJobTitle) => void;
+}
+
+export function Introduction(props: IntroductionProps): JSX.Element {
+  const { changeJobTitle, jobTitle } = props;
+
+  function renderJobTitle(jobTitle: EJobTitle): JSX.Element {
+    return <span onClick={() => changeJobTitle(jobTitle)} className="job-title">{EJobTitle[jobTitle]}</span>;
+  }
+
   return (
     <div id="introContainer">
       <div className="text-container">
         <div>
           <span className="hi-there">Hi, my name is</span>
           <h1>Artur Junior</h1>
-          <h2>Web, Mobile and Game Developer</h2>
+          <h2>
+            {renderJobTitle(EJobTitle.Web)}, {renderJobTitle(EJobTitle.Mobile)} and {renderJobTitle(EJobTitle.Game)} Developer
+          </h2>
           <p>
             I'm a software developer who can work well on every development
             layer. I'm currently, studying in Dublin, Ireland and looking for
