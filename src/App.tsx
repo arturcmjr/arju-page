@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme, ThemeOptions } from "@mui/material";
 import Navbar from "./Navbar/Navbar";
 import Introduction from "./Introduction/Introduction";
 import About from "./About/About";
-import React from "react";
+import React, { useEffect } from "react";
 
 export enum EJobTitle {
   Web,
@@ -12,12 +12,40 @@ export enum EJobTitle {
   Game,
 }
 
+function getWindowJobTitle(): EJobTitle {
+  const path = window.location.pathname.replace("/", "") || "web";
+  return getJobTitle(path.toLocaleLowerCase());
+}
+
+function getJobTitle(title: string): EJobTitle {
+  switch (title) {
+    case "web":
+      return EJobTitle.Web;
+    case "mobile":
+      return EJobTitle.Mobile;
+    case "game":
+      return EJobTitle.Game;
+    default:
+      return EJobTitle.Web;
+  }
+}
+
 function App() {
   const [primary, setPrimary] = React.useState("#4ecca3");
-  const scrollTo = (elementId: string) => {
+  const [jobTitle, setJobTitle] = React.useState(EJobTitle.Web);
+
+  useEffect(() => {
+    const title = getWindowJobTitle();
+    setJobTitle(title);
+  }, []);
+
+  useEffect(() => {
+    changeJobTitle(jobTitle);
+  }, [jobTitle]);
+
+  function scrollTo(elementId: string) : void {
     const section = document.querySelector(elementId);
     section?.scrollIntoView({ behavior: "smooth", block: "start" });
-    console.log(section);
   };
 
   const themeOptions: ThemeOptions = {
@@ -36,11 +64,11 @@ function App() {
     },
   };
 
-  function getJobTitle() : EJobTitle {
+  function getJobTitle(): EJobTitle {
     switch (primary) {
       case "#4ecca3":
         return EJobTitle.Web;
-      case "#d8abeb":
+      case "#c2a5e7":
         return EJobTitle.Mobile;
       case "#f5a623":
         return EJobTitle.Game;
@@ -55,12 +83,13 @@ function App() {
         setPrimary("#4ecca3");
         break;
       case EJobTitle.Mobile:
-        setPrimary("#d8abeb");
+        setPrimary("#c2a5e7");
         break;
       case EJobTitle.Game:
         setPrimary("#f9a825");
         break;
     }
+    window.history.pushState({}, '', EJobTitle[title].toLocaleLowerCase());
   }
 
   const theme = createTheme(themeOptions);
