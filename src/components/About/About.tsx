@@ -1,10 +1,10 @@
 import "./About.scss";
-import myPicture from "../images/my-picture.png";
+import myPicture from "../../images/my-picture.png";
 import { Button, Grid } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import React from "react";
-import IJobTheme, { ISkill } from "../common/interfaces/job-theme.interface";
+import IJobTheme, { ISkill } from "../../common/interfaces/job-theme.interface";
 
 export function About(props: { jobTheme: IJobTheme }): JSX.Element {
   const [showMore, setShowMore] = React.useState(false);

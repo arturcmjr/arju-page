@@ -1,6 +1,6 @@
+import EJobTitle from "../../common/enums/job-title.enum";
 import { Button } from "@mui/material";
-import { EJobTitle } from "../App";
-import wordsImage from "../images/words.svg";
+import wordsImage from "../../images/words.svg";
 import "./Introduction.scss";
 
 interface IntroductionProps {

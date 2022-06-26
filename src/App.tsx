@@ -1,8 +1,6 @@
 import "./App.scss";
 import { ThemeProvider, createTheme, ThemeOptions } from "@mui/material";
-import Navbar from "./Navbar/Navbar";
-import Introduction from "./Introduction/Introduction";
-import About from "./About/About";
+import About from "./components/About/About";
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import IJobTheme from "./common/interfaces/job-theme.interface";
@@ -11,12 +9,9 @@ import {
   mobileTheme,
   webTheme,
 } from "./common/data/job-themes.data";
-
-export enum EJobTitle {
-  Web,
-  Mobile,
-  Game,
-}
+import Introduction from "./components/Introduction/Introduction";
+import Navbar from "./components/Navbar/Navbar";
+import EJobTitle from "./common/enums/job-title.enum";
 
 function getWindowJobTitle(): EJobTitle {
   const path = window.location.pathname.replace("/", "") || "web";
