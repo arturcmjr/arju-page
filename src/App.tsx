@@ -12,6 +12,7 @@ import {
 import Introduction from "./components/Introduction/Introduction";
 import Navbar from "./components/Navbar/Navbar";
 import EJobTitle from "./common/enums/job-title.enum";
+import JobInstructionsOverlay from "./components/JobOverlay/JobInstructionsOverlay";
 
 function getWindowJobTitle(): EJobTitle {
   const path = window.location.pathname.replace("/", "") || "web";
@@ -95,9 +96,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <JobInstructionsOverlay />
       <Navbar scrollTo={scrollTo}></Navbar>
       <Introduction changeJobTitle={changeTheme} jobTitle={jobTitle} />
-      <About jobTheme={jobTheme}/>
+      <About jobTheme={jobTheme} />
       <div style={{ height: "1500px" }}></div>
       <div id="contact"></div>
     </ThemeProvider>

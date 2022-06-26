@@ -1,0 +1,97 @@
+import { Button } from "@mui/material";
+import { useEffect, useState } from "react";
+import "./JobInstructionsOverlay.scss";
+
+export function JobInstructionsOverlay(): JSX.Element {
+  const [visible, setVisible] = useState(false);
+  const [hideButtonDisabled, setHideButtonDisabled] = useState(true);
+
+  const localStorageSeenKey = "seenJobInstructions";
+
+  useEffect(() => {
+    window.addEventListener("resize", moveInstructionsBox);
+    return () => window.removeEventListener("resize", moveInstructionsBox);
+  }, []);
+
+  useEffect(() => {
+    const shouldShow = !localStorage.getItem(localStorageSeenKey);
+    if (shouldShow) window.setTimeout(() => showOverlay(), 50);
+  }, []);
+
+  useEffect(() => {
+    if (visible) moveInstructionsBox();
+  }, [visible]);
+
+  function moveInstructionsBox(): void {
+    if (!visible) return;
+    const jobWords = getJobWords();
+    const boxEl = document.getElementById("jobInstructionsBox");
+    const firstBox = jobWords[0]?.getClientRects()[0];
+    const lastBox = jobWords[jobWords.length - 1]?.getClientRects()[0];
+    if (!firstBox || !boxEl || !lastBox) return;
+    boxEl.style.top = `${lastBox.top + lastBox.height + 10}px`;
+    boxEl.style.left = `${firstBox.left}px`;
+    boxEl.style.right = `${firstBox.left}px`;
+    boxEl.style.display = "block";
+  }
+
+  function getJobWords(): HTMLElement[] {
+    return Array.from(
+      document.getElementsByClassName(
+        "job-title"
+      ) as HTMLCollectionOf<HTMLElement>
+    );
+  }
+
+  function setTopElements(onTop: boolean): void {
+    const jobWords = getJobWords();
+    jobWords.forEach((el) => {
+      if (onTop) {
+        el.style.zIndex = "10001";
+        el.style.position = "relative";
+        document.body.style.overflowY = "hidden";
+      } else {
+        el.style.removeProperty("z-index");
+        el.style.removeProperty("position");
+        document.body.style.removeProperty("overflow-y");
+      }
+    });
+  }
+
+  function showOverlay(): void {
+    setVisible(true);
+    window.scrollTo(0, 0);
+    setTopElements(true);
+    window.setTimeout(() => setHideButtonDisabled(false), 2000);
+  }
+
+  function hideOverlay(): void {
+    setTopElements(false);
+    setVisible(false);
+    localStorage.setItem(localStorageSeenKey, "true");
+  }
+
+  return (
+    <div id="jobInstructionsOverlay" className={visible ? "" : "hidden"}>
+      <div className="overlay"></div>
+      <div id="jobInstructionsBox">
+        <p>
+          I'm not just a web developer, I also make games and mobile apps. You
+          can click any time on one of these titles to see some changes on the
+          page.
+        </p>
+        <div className="btn-container">
+          <Button
+            variant="text"
+            onClick={hideOverlay}
+            disabled={hideButtonDisabled}
+          >
+            Got it
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default JobInstructionsOverlay;

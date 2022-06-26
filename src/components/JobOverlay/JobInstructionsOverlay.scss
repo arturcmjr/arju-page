@@ -1,0 +1,45 @@
+#jobInstructionsOverlay {
+  display: block;
+}
+
+#jobInstructionsOverlay.hidden {
+  display: none;
+}
+
+#jobInstructionsOverlay > .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  // background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: contrast(40%) brightness(25%);
+  z-index: 10000;
+  overflow: hidden;
+}
+
+#jobInstructionsBox p {
+  color: #111111;
+  margin: 0;
+}
+
+#jobInstructionsBox {
+  position: absolute;
+  z-index: 10001;
+  max-width: 550px;
+  background-color: rgb(240, 240, 240);
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+  border-radius: 3px;
+  display: none;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.6rem;
+
+  button {
+    filter: brightness(0.6);
+  }
+}

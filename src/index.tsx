@@ -6,7 +6,6 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useNavigate,
 } from "react-router-dom";
 
 const root = ReactDOM.createRoot(

@@ -51,7 +51,7 @@ export const webTheme: IJobTheme = {
 };
 
 export const gameTheme: IJobTheme = {
-  primaryColor: "#f5a623",
+  primaryColor: "#cf9638",
   skills: [
     {
       name: "HTML",
@@ -61,7 +61,7 @@ export const gameTheme: IJobTheme = {
 };
 
 export const mobileTheme: IJobTheme = {
-  primaryColor: "#c2a5e7",
+  primaryColor: "#A989FB",
   skills: [
     {
       name: "HTML",
