@@ -1,23 +1,16 @@
 import "./About.scss";
 import myPicture from "../images/my-picture.png";
-import { Button, Chip, Grid, Tab, Tabs, Tooltip } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import React from "react";
-import { ISkill, skills } from "./skills";
-import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
-import LanguageIcon from "@mui/icons-material/Language";
-import SmartphoneIcon from "@mui/icons-material/Smartphone";
+import IJobTheme, { ISkill } from "../common/interfaces/job-theme.interface";
 
-export function About(): JSX.Element {
+export function About(props: { jobTheme: IJobTheme }): JSX.Element {
   const [showMore, setShowMore] = React.useState(false);
-  const arrayLimit = showMore ? skills.length : 4;
-
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+  const { skills } = props.jobTheme;
+  const minAmount = skills.length >= 4 ? 4 : skills.length;
+  const arrayLimit = showMore ? skills.length : minAmount;
 
   return (
     <div id="about">
@@ -71,24 +64,6 @@ export function About(): JSX.Element {
 }
 
 function SkillChip(props: { skill: ISkill }): JSX.Element {
-  let icon: JSX.Element;
-  let iconTooltip: string;
-
-  switch (props.skill.type) {
-    case "web":
-      icon = <LanguageIcon fontSize="small" className="skill-icon" />;
-      iconTooltip = "Web";
-      break;
-    case "mobile":
-      icon = <SmartphoneIcon fontSize="small" className="skill-icon" />;
-      iconTooltip = "Mobile";
-      break;
-    case "game":
-      icon = <VideogameAssetIcon fontSize="small" className="skill-icon" />;
-      iconTooltip = "Game";
-      break;
-  }
-
   return (
     <div className="skill-chip">
       {props.skill.star ? (
@@ -97,9 +72,6 @@ function SkillChip(props: { skill: ISkill }): JSX.Element {
         <StarOutlineIcon fontSize="small" />
       )}
       <span>{props.skill.name}</span>
-      <Tooltip title={iconTooltip} placement="top">
-        {icon}
-      </Tooltip>
     </div>
   );
 }

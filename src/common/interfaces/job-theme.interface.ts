@@ -1,7 +1,4 @@
-import EJobTitle from "../enums/job-title.enum";
-
 export interface IJobTheme {
-  title: EJobTitle;
   primaryColor: string;
   skills: ISkill[];
 }

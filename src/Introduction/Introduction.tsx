@@ -11,8 +11,14 @@ interface IntroductionProps {
 export function Introduction(props: IntroductionProps): JSX.Element {
   const { changeJobTitle, jobTitle } = props;
 
-  function renderJobTitle(jobTitle: EJobTitle): JSX.Element {
-    return <span onClick={() => changeJobTitle(jobTitle)} className="job-title">{EJobTitle[jobTitle]}</span>;
+  function renderJobTitle(jobTitle: EJobTitle) : JSX.Element {
+    const isActive = jobTitleIsActive(jobTitle);
+    return <span onClick={() => changeJobTitle(jobTitle)} className={`job-title ${isActive? 'active' : ''}`}>{EJobTitle[jobTitle]}</span>;
+  }
+
+  function jobTitleIsActive(jobTitle: EJobTitle): boolean {
+    const currentJob = props.jobTitle;
+    return currentJob === jobTitle;
   }
 
   return (

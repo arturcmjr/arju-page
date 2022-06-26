@@ -45,6 +45,10 @@
     color: var(--primary);
     transition: all 150ms ease-in-out;
   }
+
+  &.active {
+    color: var(--primary);
+  }
 }
 
 #introContainer > div {

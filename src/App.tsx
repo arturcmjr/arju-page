@@ -1,10 +1,16 @@
 import "./App.scss";
 import { ThemeProvider, createTheme, ThemeOptions } from "@mui/material";
-// import { themeOptions } from "./shared/theme/muiTheme";
 import Navbar from "./Navbar/Navbar";
 import Introduction from "./Introduction/Introduction";
 import About from "./About/About";
 import React, { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import IJobTheme from "./common/interfaces/job-theme.interface";
+import {
+  gameTheme,
+  mobileTheme,
+  webTheme,
+} from "./common/data/job-themes.data";
 
 export enum EJobTitle {
   Web,
@@ -15,6 +21,11 @@ export enum EJobTitle {
 function getWindowJobTitle(): EJobTitle {
   const path = window.location.pathname.replace("/", "") || "web";
   return getJobTitle(path.toLocaleLowerCase());
+}
+
+function scrollTo(elementId: string): void {
+  const section = document.querySelector(elementId);
+  section?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 function getJobTitle(title: string): EJobTitle {
@@ -31,28 +42,28 @@ function getJobTitle(title: string): EJobTitle {
 }
 
 function App() {
-  const [primary, setPrimary] = React.useState("#4ecca3");
-  const [jobTitle, setJobTitle] = React.useState(EJobTitle.Web);
+  // TODO: change?
+  const windowJob = getWindowJobTitle();
+  const [jobTitle, setJobTitle] = React.useState(windowJob);
+  const [jobTheme, setJobTheme] = React.useState<IJobTheme>(webTheme);
+
+  let navigate = useNavigate();
+  React.useEffect(() => {
+    const jobTitle = getWindowJobTitle();
+    setJobTitle(jobTitle);
+  }, [navigate]);
 
   useEffect(() => {
-    const title = getWindowJobTitle();
-    setJobTitle(title);
-  }, []);
-
-  useEffect(() => {
-    changeJobTitle(jobTitle);
+    applyTheme(jobTitle);
   }, [jobTitle]);
 
-  function scrollTo(elementId: string) : void {
-    const section = document.querySelector(elementId);
-    section?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+  const { primaryColor } = jobTheme;
 
   const themeOptions: ThemeOptions = {
     palette: {
       mode: "dark",
       primary: {
-        main: primary,
+        main: primaryColor,
       },
       secondary: {
         main: "#eeeeee",
@@ -64,45 +75,36 @@ function App() {
     },
   };
 
-  function getJobTitle(): EJobTitle {
-    switch (primary) {
-      case "#4ecca3":
-        return EJobTitle.Web;
-      case "#c2a5e7":
-        return EJobTitle.Mobile;
-      case "#f5a623":
-        return EJobTitle.Game;
-      default:
-        return EJobTitle.Web;
-    }
+  function changeTheme(jobTitle: EJobTitle): void {
+    setJobTitle(jobTitle);
+    const path = EJobTitle[jobTitle].toLocaleLowerCase();
+    navigate(path);
   }
 
-  function changeJobTitle(title: EJobTitle): void {
-    switch (title) {
+  function applyTheme(jobTitle: EJobTitle): void {
+    switch (jobTitle) {
       case EJobTitle.Web:
-        setPrimary("#4ecca3");
+        setJobTheme(webTheme);
         break;
       case EJobTitle.Mobile:
-        setPrimary("#c2a5e7");
+        setJobTheme(mobileTheme);
         break;
       case EJobTitle.Game:
-        setPrimary("#f9a825");
+        setJobTheme(gameTheme);
         break;
     }
-    window.history.pushState({}, '', EJobTitle[title].toLocaleLowerCase());
   }
 
   const theme = createTheme(themeOptions);
-  document.documentElement.style.setProperty("--primary", primary);
+  document.documentElement.style.setProperty("--primary", primaryColor);
 
   return (
     <ThemeProvider theme={theme}>
       <Navbar scrollTo={scrollTo}></Navbar>
-      <Introduction changeJobTitle={changeJobTitle} jobTitle={getJobTitle()} />
-      <About />
+      <Introduction changeJobTitle={changeTheme} jobTitle={jobTitle} />
+      <About jobTheme={jobTheme}/>
       <div style={{ height: "1500px" }}></div>
       <div id="contact"></div>
-      {/* <TitleAction /> */}
     </ThemeProvider>
   );
 }
