@@ -39,14 +39,6 @@
     .technologies-container {
       color: #fff;
     }
-
-    .technologies-container::after {
-      content: "hover to see what I mainly use for";
-      margin-left: .5rem;
-      font-size: .8em;
-      opacity: 0.5;
-      font-style: italic;
-    }
   }
 
   .img-container {
@@ -80,17 +72,6 @@
       opacity: 0;
       transition: opacity 300ms ease-in-out;
     }
-
-    /* .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 5px;
-      right: -5px;
-      background-color: var(--primary);
-      border-radius: 25px;
-      opacity: 0;
-    } */
 
     &:hover {
       .overlay {

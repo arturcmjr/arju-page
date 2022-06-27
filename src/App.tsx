@@ -99,7 +99,7 @@ function App() {
       <JobInstructionsOverlay />
       <Navbar scrollTo={scrollTo}></Navbar>
       <Introduction changeJobTitle={changeTheme} jobTitle={jobTitle} />
-      <About jobTheme={jobTheme} />
+      <About jobTheme={jobTheme} jobTitle={jobTitle}/>
       <div style={{ height: "1500px" }}></div>
       <div id="contact"></div>
     </ThemeProvider>

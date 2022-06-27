@@ -5,8 +5,12 @@ import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import React from "react";
 import IJobTheme, { ISkill } from "../../common/interfaces/job-theme.interface";
+import EJobTitle from "../../common/enums/job-title.enum";
 
-export function About(props: { jobTheme: IJobTheme }): JSX.Element {
+export function About(props: {
+  jobTheme: IJobTheme;
+  jobTitle: EJobTitle;
+}): JSX.Element {
   const [showMore, setShowMore] = React.useState(false);
   const { skills } = props.jobTheme;
   const minAmount = skills.length >= 4 ? 4 : skills.length;
@@ -20,21 +24,16 @@ export function About(props: { jobTheme: IJobTheme }): JSX.Element {
             <span>01:</span> Who I am
           </h2>
           <p>
-            Hi there, my name is Artur and I enjoy creating things since I
-            remember. My first contact with code was with game maker which made
-            me fall in love with game development. Since back there, I have been
+            Hi there, my name is Artur and I enjoy creating things. My first
+            contact with code was with Game Maker back in 2012 which made me
+            fall in love with game development. Since back there, I have been
             passing through some technologies and other fields of software
             development.
           </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam quas
-            quisquam impedit aliquid quo dolorum qui earum reprehenderit hic
-            aliquam. Consequuntur molestiae, a suscipit molestias quos earum.
-            Numquam aut ipsa, hic molestias dicta eveniet quae, modi
-            voluptatibus adipisci excepturi labore! Vero laudantium dolorem
-            earum similique fugit deleniti eius harum autem.
+          <AboutJobTitle jobTitle={props.jobTitle} />
+          <p className="technologies-container">
+            Technologies that I mostly use:
           </p>
-          <p className="technologies-container">Technologies:</p>
           <Grid container spacing={1} columns={{ xs: 2, md: 4 }}>
             {Array.from(Array(arrayLimit)).map((_, index) => (
               <Grid item xs={1} key={`sk-chip-${index}`}>
@@ -61,6 +60,25 @@ export function About(props: { jobTheme: IJobTheme }): JSX.Element {
       </div>
     </div>
   );
+}
+
+function AboutJobTitle(props: { jobTitle: EJobTitle }): JSX.Element {
+  const { jobTitle } = props;
+  switch (jobTitle) {
+    case EJobTitle.Web:
+    default:
+      return (
+        <div>
+          <p>
+            Although I am a full-stack web developer who can work perfectly with
+            both back and front end, I rather work with the "muscles" of the
+            front. I spend most of my time building with UI kits, but when
+            required, I design as well. Still, I usually work with APIs,
+            queries, databases or anything that is on the server-side.
+          </p>
+        </div>
+      );
+  }
 }
 
 function SkillChip(props: { skill: ISkill }): JSX.Element {
