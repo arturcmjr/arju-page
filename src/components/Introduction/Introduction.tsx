@@ -28,7 +28,7 @@ export function Introduction(props: IntroductionProps): JSX.Element {
           <span className="hi-there">Hi, my name is</span>
           <h1>Artur Junior</h1>
           <h2>
-            {renderJobTitle(EJobTitle.Web)}, {renderJobTitle(EJobTitle.Mobile)} and {renderJobTitle(EJobTitle.Game)} Developer
+            {renderJobTitle(EJobTitle.Web)}, {renderJobTitle(EJobTitle.Game)} and {renderJobTitle(EJobTitle.Mobile)} Developer
           </h2>
           <p>
             I'm a software developer who can work well on every development

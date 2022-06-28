@@ -1,0 +1,46 @@
+#experience {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#experience > div {
+  width: 60%;
+  max-width: 1000px;
+}
+
+#experience .content {
+  display: flex;
+
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    // width: 20%;
+
+    .tab {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+      color: #a8aaad;
+      font-size: 0.8rem;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      // user-select: none;
+    }
+
+    .tab:nth-child(5) {
+      color: var(--primary);
+      font-weight: 700;
+    }
+  }
+
+  .text-container {
+    width: 80%;
+    flex-grow: 1;
+  }
+}
+
+

@@ -16,3 +16,18 @@ p {
 .w-100 {
   width: 100%;
 }
+
+.section {
+  min-height: 100vh;
+
+  .section-title {
+    font-size: 1.7rem;
+    margin: 0;
+
+    span {
+      color: var(--primary);
+      font-family: "Inconsolata", monospace;
+      font-size: 0.9em;
+    }
+  }
+}

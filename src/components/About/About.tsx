@@ -13,42 +13,35 @@ export function About(props: {
 }): JSX.Element {
   const [showMore, setShowMore] = React.useState(false);
   const { skills } = props.jobTheme;
-  const minAmount = skills.length >= 4 ? 4 : skills.length;
-  const arrayLimit = showMore ? skills.length : minAmount;
 
   return (
-    <div id="about">
+    <div id="about" className="section">
       <div>
         <div className="text-container">
-          <h2>
+          <h2 className="section-title">
             <span>01:</span> Who I am
           </h2>
           <p>
-            Hi there, my name is Artur and I enjoy creating things. My first
+            Hey there, my name is Artur and I enjoy creating things. My first
             contact with code was with Game Maker back in 2012 which made me
-            fall in love with game development. Since back there, I have been
-            passing through some technologies and other fields of software
-            development.
+            fall in love with development. Since back there, I have been passing
+            through some technologies and other fields of software development.
           </p>
           <AboutJobTitle jobTitle={props.jobTitle} />
-          <p className="technologies-container">
-            Technologies that I mostly use:
+          <p>
+            I love dogs, music and pizza. In my free time, I enjoy going to the
+            gym, playing video games and coding small projects.
           </p>
-          <Grid container spacing={1} columns={{ xs: 2, md: 4 }}>
-            {Array.from(Array(arrayLimit)).map((_, index) => (
+          <p className="technologies-container">
+            Technologies that I have been using lately:
+          </p>
+          <Grid container spacing={1} columns={{ xs: 2, md: 3 }}>
+            {skills.map((skill, index) => (
               <Grid item xs={1} key={`sk-chip-${index}`}>
-                <SkillChip skill={skills[index]} />
+                <SkillChip skill={skill} />
               </Grid>
             ))}
           </Grid>
-          <Button
-            variant="outlined"
-            color="secondary"
-            className="btn-show-more"
-            onClick={() => setShowMore(!showMore)}
-          >
-            {showMore ? "Show less" : "Show more"}
-          </Button>
         </div>
         <div>
           <div className="img-container">
@@ -69,12 +62,24 @@ function AboutJobTitle(props: { jobTitle: EJobTitle }): JSX.Element {
     default:
       return (
         <div>
-          <p>
+          <p className="job-text">
             Although I am a full-stack web developer who can work perfectly with
             both back and front end, I rather work with the "muscles" of the
             front. I spend most of my time building with UI kits, but when
             required, I design as well. Still, I usually work with APIs,
             queries, databases or anything that is on the server-side.
+          </p>
+        </div>
+      );
+    case EJobTitle.Game:
+      return (
+        <div>
+          <p className="job-text">
+            I enjoy playing video games for as far as I can remember. When I
+            discovered that I could also make them it was a game-changer in my
+            life. Since college, I have been having fun developing some. I have
+            spent some years doing it professionally but nowadays is more of a
+            hobby.
           </p>
         </div>
       );

@@ -4,24 +4,12 @@ export const webTheme: IJobTheme = {
   primaryColor: "#4ecca3",
   skills: [
     {
-      name: "HTML",
-      star: true,
-    },
-    {
-      name: "CSS",
+      name: "JavaScript",
       star: false,
     },
     {
       name: "TypeScript",
       star: true,
-    },
-    {
-      name: "JavaScript",
-      star: false,
-    },
-    {
-      name: "SCSS",
-      star: false,
     },
     {
       name: "React",
@@ -36,16 +24,8 @@ export const webTheme: IJobTheme = {
       star: false,
     },
     {
-      name: "Node",
-      star: false,
-    },
-    {
-      name: "Git",
-      star: false,
-    },
-    {
-      name: "Bash/Shell",
-      star: false,
+      name: ".NET",
+      star: true,
     },
   ],
 };
@@ -54,9 +34,17 @@ export const gameTheme: IJobTheme = {
   primaryColor: "#cf9638",
   skills: [
     {
-      name: "HTML",
+      name: "Unity",
       star: true,
     },
+    {
+      name: "C#",
+      star: true,
+    },
+    {
+      name: "Blender",
+      star: false,
+    }
   ],
 };
 
