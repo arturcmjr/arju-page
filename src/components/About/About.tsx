@@ -11,7 +11,6 @@ export function About(props: {
   jobTheme: IJobTheme;
   jobTitle: EJobTitle;
 }): JSX.Element {
-  const [showMore, setShowMore] = React.useState(false);
   const { skills } = props.jobTheme;
 
   return (

@@ -1,18 +1,19 @@
+import { Grow } from "@mui/material";
+import { Fragment, useEffect, useState } from "react";
 import "./Experience.scss";
+import experiences, { IExperience } from "./experiences";
 
 export function Experience(): JSX.Element {
-  const sample = [
-    "place 1",
-    "place 2",
-    "place 3",
-    "place 4",
-    "place 5",
-    "place 6",
-    "place 7",
-    "place 8",
-    "place 9",
-    "place 10",
-  ];
+  const [experienceIndex, setExperienceIndex] = useState(0);
+  const currentExperience = experiences[experienceIndex];
+  // const [showContent, setShowContent] = useState(true);
+
+  // useEffect(() => {
+  //   setShowContent(false);
+  //   setTimeout(() => {
+  //     setShowContent(true);
+  //   }, 500);
+  // }, [currentExperience]);
 
   return (
     <div id="experience" className="section">
@@ -22,23 +23,47 @@ export function Experience(): JSX.Element {
         </h2>
         <div className="content">
           <div className="tabs">
-            {/* 9 dummy items */}
-            {sample.map((item, index) => (
-              <div key={`smp-tab-${index}`} className="tab">{item}</div>
+            {experiences.map((item, index) => (
+              <Fragment key={`smp-tab-${index}`}>
+                <ExperienceTab
+                  experience={item}
+                  isActive={index === experienceIndex}
+                  onClick={() => setExperienceIndex(index)}
+                />
+              </Fragment>
             ))}
           </div>
-          <div className="text-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-              explicabo quisquam illo perferendis non corporis modi cupiditate
-              incidunt eius ab itaque amet neque, quam ex voluptates quo vero
-              quia odit soluta unde rem enim delectus? In labore architecto
-              possimus autem modi eligendi, ipsam nam nisi, fugiat non
-              praesentium consectetur magni!
-            </p>
-          </div>
+          <TextContainer experience={currentExperience} />
         </div>
       </div>
+    </div>
+  );
+}
+
+function TextContainer(props: { experience: IExperience }): JSX.Element {
+  const { experience } = props;
+  return (
+    <div className="text-container" key={experience.company}>
+      <div className="mobile-company">{experience.company}</div>
+      <h3>{experience.title}</h3>
+      <div className="period">{experience.dateRange}</div>
+      {experience.content}
+    </div>
+  );
+}
+
+function ExperienceTab(props: {
+  experience: IExperience;
+  isActive: boolean;
+  onClick: React.MouseEventHandler;
+}): JSX.Element {
+  const { experience, isActive, onClick } = props;
+  const tabClass = `tab ${isActive ? "active" : ""}`;
+
+  return (
+    <div className={tabClass} onClick={onClick}>
+      {experience.icon}
+      <span>{experience.company}</span>
     </div>
   );
 }
