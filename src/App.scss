@@ -18,7 +18,8 @@ p {
 }
 
 .section {
-  min-height: 100vh;
+  // min-height: 100vh;
+  padding: 100px 0;
 
   .section-title {
     font-size: 1.7rem;

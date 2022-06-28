@@ -102,7 +102,7 @@ function App() {
       <Introduction changeJobTitle={changeTheme} jobTitle={jobTitle} />
       <About jobTheme={jobTheme} jobTitle={jobTitle}/>
       <Experience />
-      <div style={{ height: "1500px" }}></div>
+      {/* <div style={{ height: "1500px" }}></div> */}
       <div id="contact"></div>
     </ThemeProvider>
   );

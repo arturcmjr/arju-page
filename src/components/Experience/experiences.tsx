@@ -47,7 +47,7 @@ export const experiences: IExperience[] = [
   },
   {
     company: "Adven.tech",
-    title: "Full stack developer",
+    title: "Full Stack Web Developer",
     dateRange: "2020 - Present",
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
     content: (
@@ -94,7 +94,7 @@ export const experiences: IExperience[] = [
   {
     company: "Arkads Games",
     title: "Game developer",
-    dateRange: "2021 - Present",
+    dateRange: "2017 - Present",
     icon: <FavoriteBorderOutlinedIcon fontSize="small" />,
     content: (
       <p>
