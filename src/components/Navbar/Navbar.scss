@@ -1,5 +1,4 @@
 #navbar {
-  // background-color: #393e46;
   background-color: rgba(57, 62, 70, 0.8);
   backdrop-filter: blur(3px);
   position: fixed;
@@ -25,10 +24,6 @@
     transition: transform 150ms ease-in-out;
   }
 
-  /* span:last-child {
-    color: #4ecca3;
-  }*/
-
   &:hover {
     span:first-child {
       transform: translateY(4px);
@@ -50,7 +45,6 @@
 }
 
 #navbar .right {
-  flex-grow: 1;
   display: flex;
   justify-content: flex-end;
   align-items: stretch;
@@ -98,5 +92,9 @@ a.menu-link {
     display: flex;
     max-width: 150px;
     margin-right: 0.75rem;
+  }
+
+  #navbar .right {
+    flex-grow: 1;
   }
 }

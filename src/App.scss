@@ -17,8 +17,8 @@ p {
   width: 100%;
 }
 
-.section {
-  // min-height: 100vh;
+// TODO: remove class
+.section, section {
   padding: 100px 0;
 
   .section-title {
