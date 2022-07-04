@@ -18,8 +18,18 @@ function getWindowJobTitle(): EJobTitle {
 }
 
 function scrollTo(elementId: string): void {
-  const section = document.querySelector(elementId);
-  section?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const screenHeight = window.innerHeight;
+  const willScrollDown = window.scrollY < screenHeight;
+  const navbarOffset = willScrollDown? 0 : -60;
+  const relativeOffset = isSmallScreen()? 0 : screenHeight * -.1;
+  const element = document.querySelector(elementId);
+  if(!element) return;
+  const y = element.getBoundingClientRect().top + window.pageYOffset + relativeOffset + navbarOffset;
+  window.scrollTo({ top: y, behavior: "smooth" });
+}
+
+function isSmallScreen(): boolean {
+  return window.innerWidth < 600;
 }
 
 function getJobTitle(title: string): EJobTitle {

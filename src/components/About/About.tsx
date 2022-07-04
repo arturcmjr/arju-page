@@ -14,8 +14,8 @@ export function About(props: {
   const skills = getSkills(jobTitle);
 
   return (
-    <div id="about" className="section">
-      <div>
+    <section className="about-wrapper">
+      <div id="about">
         <div className="text-container">
           <h2 className="section-title">
             <span>01:</span> Who I am
@@ -50,7 +50,7 @@ export function About(props: {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

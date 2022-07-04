@@ -1,10 +1,10 @@
-#about {
+.about-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#about > div {
+#about {
   width: 60%;
   max-width: 1000px;
   height: 100%;
@@ -122,18 +122,18 @@
 }
 
 @media screen and (max-width: 600px) {
-  #about {
+  .about-wrapper {
     display: block;
   }
 
-  #about > div {
+  #about {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2fr 1fr;
   }
 
-  #about > div > div:last-child {
+  #about > div:last-child {
     padding-top: 1rem;
   }
 

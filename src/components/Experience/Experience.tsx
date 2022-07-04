@@ -16,8 +16,8 @@ export function Experience(): JSX.Element {
   // }, [currentExperience]);
 
   return (
-    <div id="experience" className="section">
-      <div>
+    <section className="experience-wrapper">
+      <div id="experience" >
         <h2 className="section-title">
           <span>02:</span> Experience and Work
         </h2>
@@ -36,7 +36,7 @@ export function Experience(): JSX.Element {
           <TextContainer experience={currentExperience} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
