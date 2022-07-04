@@ -1,10 +1,12 @@
 import { Grid, IconButton, Paper } from "@mui/material";
-import IJobTheme from "../../common/interfaces/job-theme.interface";
+import EJobTitle from "../../common/enums/job-title.enum";
+import getProjects from "../../common/projects/projects.data";
 import "./Projects.scss";
 
-export function Projects(props: { jobTheme: IJobTheme }): JSX.Element {
-  const { jobTheme } = props;
-  const { projects } = jobTheme;
+export function Projects(props: { jobTitle: EJobTitle }): JSX.Element {
+  const { jobTitle } = props;
+  const projects = getProjects(jobTitle);
+  
   return (
     <section className="projects-wrapper">
       <div id="projects">
@@ -12,7 +14,7 @@ export function Projects(props: { jobTheme: IJobTheme }): JSX.Element {
           <span>03:</span> Projects
         </h2>
         <div className="grid-container">
-          <Grid container spacing={2} columns={{ xs: 1, md: 3 }} alignItems="stretch">
+          <Grid container spacing={2} columns={{ xs: 1, md: 2, xl: 3 }} alignItems="stretch">
             {projects.map((project, index) => (
               <Grid item xs={1} key={`proj-${index}`} gridRow="">
                 <Paper elevation={0} className="project-item">
@@ -48,5 +50,9 @@ export function Projects(props: { jobTheme: IJobTheme }): JSX.Element {
     </section>
   );
 }
+
+/* function ProjectBox (props: {project: IJobTheme}) : JSX.Element {
+
+} */
 
 export default Projects;

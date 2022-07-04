@@ -1,17 +1,17 @@
 import "./About.scss";
 import myPicture from "../../images/my-picture.png";
-import { Button, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
-import React from "react";
-import IJobTheme, { ISkill } from "../../common/interfaces/job-theme.interface";
 import EJobTitle from "../../common/enums/job-title.enum";
+import { getSkills } from "../../common/skills/skills.data";
+import ISkill from "../../common/skills/skills.interface";
 
 export function About(props: {
-  jobTheme: IJobTheme;
   jobTitle: EJobTitle;
 }): JSX.Element {
-  const { skills } = props.jobTheme;
+  const { jobTitle } = props;
+  const skills = getSkills(jobTitle);
 
   return (
     <div id="about" className="section">
@@ -26,7 +26,7 @@ export function About(props: {
             fall in love with development. Since back there, I have been passing
             through some technologies and other fields of software development.
           </p>
-          <AboutJobTitle jobTitle={props.jobTitle} />
+          <AboutJobTitle jobTitle={jobTitle} />
           <p>
             I love dogs, music and pizza. In my free time, I enjoy going to the
             gym, playing video games and coding small projects.

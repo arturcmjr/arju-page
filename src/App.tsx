@@ -2,19 +2,15 @@ import "./App.scss";
 import { ThemeProvider, createTheme, ThemeOptions } from "@mui/material";
 import About from "./components/About/About";
 import React, { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import IJobTheme from "./common/interfaces/job-theme.interface";
-import {
-  gameTheme,
-  mobileTheme,
-  webTheme,
-} from "./common/data/job-themes.data";
+import { useNavigate } from "react-router-dom";
+import IJobTheme from "./common/job-themes/job-theme.interface";
 import Introduction from "./components/Introduction/Introduction";
 import Navbar from "./components/Navbar/Navbar";
 import EJobTitle from "./common/enums/job-title.enum";
 import JobInstructionsOverlay from "./components/JobOverlay/JobInstructionsOverlay";
 import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
+import { getTheme } from "./common/job-themes/job-themes.data";
 
 function getWindowJobTitle(): EJobTitle {
   const path = window.location.pathname.replace("/", "") || "web";
@@ -43,7 +39,8 @@ function App() {
   // TODO: change?
   const windowJob = getWindowJobTitle();
   const [jobTitle, setJobTitle] = React.useState(windowJob);
-  const [jobTheme, setJobTheme] = React.useState<IJobTheme>(webTheme);
+  const jbTheme = getTheme(jobTitle);
+  const [jobTheme, setJobTheme] = React.useState<IJobTheme>(jbTheme);
 
   let navigate = useNavigate();
   React.useEffect(() => {
@@ -52,8 +49,8 @@ function App() {
   }, [navigate]);
 
   useEffect(() => {
-    applyTheme(jobTitle);
-  }, [jobTitle]);
+    setJobTheme(jbTheme);
+  }, [jobTitle, jbTheme]);
 
   const { primaryColor } = jobTheme;
 
@@ -73,7 +70,7 @@ function App() {
     },
   };
 
-  const faviconEl = document.getElementById("favicon") as HTMLLinkElement ;
+  const faviconEl = document.getElementById("favicon") as HTMLLinkElement;
   const jobThemeStr = EJobTitle[jobTitle].toLowerCase();
   faviconEl.href = `icons/${jobThemeStr}.png`;
 
@@ -81,20 +78,6 @@ function App() {
     setJobTitle(jobTitle);
     const path = EJobTitle[jobTitle].toLowerCase();
     navigate(path);
-  }
-
-  function applyTheme(jobTitle: EJobTitle): void {
-    switch (jobTitle) {
-      case EJobTitle.Web:
-        setJobTheme(webTheme);
-        break;
-      case EJobTitle.Mobile:
-        setJobTheme(mobileTheme);
-        break;
-      case EJobTitle.Game:
-        setJobTheme(gameTheme);
-        break;
-    }
   }
 
   const theme = createTheme(themeOptions);
@@ -105,9 +88,9 @@ function App() {
       <JobInstructionsOverlay />
       <Navbar scrollTo={scrollTo}></Navbar>
       <Introduction changeJobTitle={changeTheme} jobTitle={jobTitle} />
-      <About jobTheme={jobTheme} jobTitle={jobTitle}/>
+      <About jobTitle={jobTitle} />
       <Experience />
-      <Projects jobTheme={jobTheme}/>
+      <Projects jobTitle={jobTitle} />
       {/* <div style={{ height: "1500px" }}></div> */}
       <div id="contact"></div>
     </ThemeProvider>
