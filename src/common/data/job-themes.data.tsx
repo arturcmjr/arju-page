@@ -80,7 +80,7 @@ export const webTheme: IJobTheme = {
 };
 
 export const gameTheme: IJobTheme = {
-  primaryColor: "#cf9638",
+  primaryColor: "#e2a84b",
   skills: [
     {
       name: "Unity",

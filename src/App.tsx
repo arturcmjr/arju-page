@@ -73,9 +73,13 @@ function App() {
     },
   };
 
+  const faviconEl = document.getElementById("favicon") as HTMLLinkElement ;
+  const jobThemeStr = EJobTitle[jobTitle].toLowerCase();
+  faviconEl.href = `icons/${jobThemeStr}.png`;
+
   function changeTheme(jobTitle: EJobTitle): void {
     setJobTitle(jobTitle);
-    const path = EJobTitle[jobTitle].toLocaleLowerCase();
+    const path = EJobTitle[jobTitle].toLowerCase();
     navigate(path);
   }
 

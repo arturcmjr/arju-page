@@ -5,6 +5,10 @@ body {
   color: #fff;
 }
 
+* {
+  -webkit-tap-highlight-color: #767a8136;
+}
+
 ::selection {
   background: #474e58;
 }

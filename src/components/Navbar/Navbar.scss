@@ -14,24 +14,28 @@
 
 #navbar .logo {
   padding: 0 2em;
-  -webkit-tap-highlight-color: rgba(78, 204, 163, 0.15);
 
   span {
     color: #fff;
     font-size: 1.6em;
     font-weight: bold;
     font-family: "Inconsolata", monospace;
-    transition: transform 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
+    text-transform: uppercase;
   }
 
   &:hover {
+    span {
+      color: var(--primary);
+    }
+
     span:first-child {
-      transform: translateY(4px);
+      transform: translateY(-.6rem) translateX(.85rem);
     }
 
     span:last-child {
-      transform: translateY(-4px);
-      transition: transform 150ms ease-in-out;
+      transform: translateY(.6rem) translateX(-.85rem);
+      transition: all 150ms ease-in-out;
     }
   }
 }
