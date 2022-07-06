@@ -11,6 +11,7 @@ import JobInstructionsOverlay from "./components/JobOverlay/JobInstructionsOverl
 import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
 import { getTheme } from "./common/job-themes/job-themes.data";
+import Contact from "./components/Contact/Contact";
 
 function getWindowJobTitle(): EJobTitle {
   const path = window.location.pathname.replace("/", "") || "web";
@@ -101,8 +102,8 @@ function App() {
       <About jobTitle={jobTitle} />
       <Experience />
       <Projects jobTitle={jobTitle} />
+      <Contact />
       {/* <div style={{ height: "1500px" }}></div> */}
-      <div id="contact"></div>
     </ThemeProvider>
   );
 }
