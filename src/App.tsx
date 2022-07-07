@@ -102,7 +102,7 @@ function App() {
       <About jobTitle={jobTitle} />
       <Experience />
       <Projects jobTitle={jobTitle} />
-      <Contact />
+      <Contact jobTitle={jobTitle} />
       {/* <div style={{ height: "1500px" }}></div> */}
     </ThemeProvider>
   );

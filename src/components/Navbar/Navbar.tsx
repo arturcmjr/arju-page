@@ -47,7 +47,7 @@ export function Navbar(props: NavbarProps): JSX.Element {
 
   return (
     <div id="navbar">
-      <a className="logo" onClick={(event) => scrollTo("#introContainer")}>
+      <a className="logo" onClick={() => scrollTo("#introContainer")} href="#">
         <span>ar</span>
         <span>ju</span>
       </a>
@@ -57,6 +57,7 @@ export function Navbar(props: NavbarProps): JSX.Element {
             <a
               key={`nv-item-${index}`}
               className="menu-link"
+              href="#"
               onClick={() => scrollTo(item.link)}
             >
               <span>0{index + 1}:</span>
@@ -107,7 +108,7 @@ function SmallScreenMenu(props: NavbarProps): JSX.Element {
             }}
             key={`mn-item-${index}`}
           >
-            <a className="menu-link">
+            <a className="menu-link" href="#">
               <span>0{index + 1}:</span>
               <br />
               {item.name}

@@ -10,15 +10,11 @@
   width: 50%;
   max-width: 800px;
 
-  form {
-    margin: 1rem 0;
-  }
-
   .submit-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem 0;
+    padding-top: 1rem;
 
     .submit-btn {
       min-width: 200px;
