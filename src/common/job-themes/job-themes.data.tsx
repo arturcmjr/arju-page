@@ -23,5 +23,6 @@ const themes: [Key: EJobTitle, Value: IJobTheme][] = [
 ];
 
 export function getTheme(title: EJobTitle): IJobTheme {
-  return themes[title]?.[1] || themes[0][1];
+  const found = themes.find(([key]) => key === title);
+  return found?.[1] || themes[0][1];
 }

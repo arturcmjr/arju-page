@@ -2,6 +2,7 @@ import EJobTitle from "../enums/job-title.enum";
 import { IProject } from "./projects.interface";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LaunchIcon from "@mui/icons-material/Launch";
+import ShopIcon from "@mui/icons-material/Shop";
 
 const projects: [Key: EJobTitle, Value: IProject[]][] = [
   [
@@ -54,10 +55,35 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
       },
     ],
   ],
+  [
+    EJobTitle.Game,
+    [
+      {
+        name: "Pru!",
+        description: (
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+            impedit reiciendis sed sunt beatae porro voluptatum adipisci velit
+            assumenda officia atque, quaerat vero eveniet a tenetur sapiente
+            odio libero. Dolore ab maxime temporibus, quaerat voluptatibus
+            explicabo, quibusdam cupiditate illo omnis porro mollitia.
+          </p>
+        ),
+        technologies: ["Unity", "2D"],
+        links: [
+          {
+            icon: <ShopIcon />,
+            url: "https://play.google.com/store/apps/details?id=com.ArkadsGames.Pru",
+          },
+        ],
+      },
+    ],
+  ],
 ];
 
 export function getProjects(title: EJobTitle): IProject[] {
-  return projects[title]?.[1] || [];
+  const found = projects.find(([key]) => key === title);
+  return found?.[1] || [];
 }
 
 export default getProjects;

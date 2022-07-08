@@ -60,5 +60,6 @@ const skills: [Key: EJobTitle, Value: ISkill[]][] = [
 ];
 
 export function getSkills(title: EJobTitle): ISkill[] {
-  return skills[title]?.[1] || [];
+  const found = skills.find(([key]) => key === title);
+  return found?.[1] || [];
 }

@@ -33,6 +33,11 @@
   pointer-events: none;
 }
 
+.project-links svg {
+  transform: scale(1.5);
+  padding: .4rem;
+}
+
 .project-item:hover > .overlay {
   opacity: 1;
   backdrop-filter: blur(2px);
@@ -68,6 +73,19 @@
     span {
       margin: 0 0.5rem;
     }
+  }
+}
+
+.no-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  
+  h3 {
+    margin: 0;
   }
 }
 
