@@ -3,10 +3,6 @@ import React, { useEffect } from "react";
 import "./Navbar.scss";
 import MenuIcon from "@mui/icons-material/Menu";
 
-interface NavbarProps {
-  scrollTo: (elementId: string) => void;
-}
-
 const menuItems = [
   {
     name: "About",
@@ -28,8 +24,7 @@ const menuItems = [
 
 var prevScrollpos = window.pageYOffset;
 
-export function Navbar(props: NavbarProps): JSX.Element {
-  const { scrollTo } = props;
+export function Navbar(): JSX.Element {
 
   const handleScroll = () => {
     var currentScrollPos = window.pageYOffset;
@@ -47,7 +42,7 @@ export function Navbar(props: NavbarProps): JSX.Element {
 
   return (
     <div id="navbar">
-      <a className="logo" onClick={() => scrollTo("#introContainer")} href="#">
+      <a className="logo" href="/#">
         <span>ar</span>
         <span>ju</span>
       </a>
@@ -57,21 +52,20 @@ export function Navbar(props: NavbarProps): JSX.Element {
             <a
               key={`nv-item-${index}`}
               className="menu-link"
-              href="#"
-              onClick={() => scrollTo(item.link)}
+              href={item.link}
             >
               <span>0{index + 1}:</span>
               {item.name}
             </a>
           ))}
         </div>
-        <SmallScreenMenu scrollTo={scrollTo} />
+        <SmallScreenMenu />
       </div>
     </div>
   );
 }
 
-function SmallScreenMenu(props: NavbarProps): JSX.Element {
+function SmallScreenMenu(): JSX.Element {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -80,13 +74,11 @@ function SmallScreenMenu(props: NavbarProps): JSX.Element {
   const handleClose = (): void => {
     setAnchorEl(null);
   };
-  const { scrollTo } = props;
 
   return (
     <div className="menu">
       <IconButton
         color="secondary"
-        aria-label="upload picture"
         component="span"
         onClick={handleClick}
       >
@@ -99,16 +91,16 @@ function SmallScreenMenu(props: NavbarProps): JSX.Element {
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
+        disableScrollLock={true}
       >
         {menuItems.map((item, index) => (
           <MenuItem
             onClick={() => {
               handleClose();
-              window.setTimeout(() => scrollTo(item.link), 100);
             }}
             key={`mn-item-${index}`}
           >
-            <a className="menu-link" href="#">
+            <a className="menu-link" href={item.link}>
               <span>0{index + 1}:</span>
               <br />
               {item.name}

@@ -1,11 +1,8 @@
 import "./Contact.scss";
 import { useForm } from "react-hook-form";
 import {
-  Alert,
   Button,
   Grid,
-  Paper,
-  Snackbar,
   TextField,
   useTheme,
 } from "@mui/material";

@@ -45,7 +45,7 @@ export function About(props: {
         <div>
           <div className="img-container">
             <div className="underlay"></div>
-            <img src={myPicture} alt="My Picture" />
+            <img src={myPicture} alt="me" />
             <div className="overlay"></div>
           </div>
         </div>

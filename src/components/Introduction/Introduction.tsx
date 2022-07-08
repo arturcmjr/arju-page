@@ -9,7 +9,7 @@ interface IntroductionProps {
 }
 
 export function Introduction(props: IntroductionProps): JSX.Element {
-  const { changeJobTitle, jobTitle } = props;
+  const { changeJobTitle } = props;
 
   function renderJobTitle(jobTitle: EJobTitle) : JSX.Element {
     const isActive = jobTitleIsActive(jobTitle);

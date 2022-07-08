@@ -1,5 +1,10 @@
 @use "./style/base";
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: max(10%, 60px);
+}
+
 body {
   background-color: #232931;
   color: #fff;
@@ -15,7 +20,7 @@ body {
 
 p {
   color: #a8aaad;
-  
+
   b {
     color: #fff;
   }
@@ -31,7 +36,7 @@ section {
   .section-title {
     font-size: 1.7rem;
     margin: 0;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 
     span {
       color: var(--primary);
@@ -49,7 +54,7 @@ a.underline {
 }
 
 a.underline:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -67,8 +72,9 @@ a.underline:hover:after {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #393d46 inset !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #232931;
+  -webkit-box-shadow: 0 0 0 30px #393d46 inset !important;
 }

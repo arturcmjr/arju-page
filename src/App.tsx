@@ -18,21 +18,6 @@ function getWindowJobTitle(): EJobTitle {
   return getJobTitle(path.toLocaleLowerCase());
 }
 
-function scrollTo(elementId: string): void {
-  const screenHeight = window.innerHeight;
-  const willScrollDown = window.scrollY < screenHeight;
-  const navbarOffset = willScrollDown? 0 : -60;
-  const relativeOffset = isSmallScreen()? 0 : screenHeight * -.1;
-  const element = document.querySelector(elementId);
-  if(!element) return;
-  const y = element.getBoundingClientRect().top + window.pageYOffset + relativeOffset + navbarOffset;
-  window.scrollTo({ top: y, behavior: "smooth" });
-}
-
-function isSmallScreen(): boolean {
-  return window.innerWidth < 600;
-}
-
 function getJobTitle(title: string): EJobTitle {
   switch (title) {
     case "web":
@@ -63,6 +48,16 @@ function App() {
     setJobTheme(jbTheme);
   }, [jobTitle, jbTheme]);
 
+  useEffect(() => {
+    const hash = window.location.hash.substring(1);
+    if(!hash) return;
+    const element = document.querySelector(`#${hash}`);
+    if (!element) return;
+    setTimeout(function () {
+      element.scrollIntoView();
+    }, 20);
+  }, []);
+
   const { primaryColor } = jobTheme;
 
   const themeOptions: ThemeOptions = {
@@ -80,7 +75,7 @@ function App() {
       },
       error: {
         main: "#ed4242",
-      }
+      },
     },
   };
 
@@ -100,13 +95,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <JobInstructionsOverlay />
-      <Navbar scrollTo={scrollTo}></Navbar>
+      <Navbar />
       <Introduction changeJobTitle={changeTheme} jobTitle={jobTitle} />
       <About jobTitle={jobTitle} />
       <Experience />
       <Projects jobTitle={jobTitle} />
       <Contact jobTitle={jobTitle} />
-      {/* <div style={{ height: "1500px" }}></div> */}
     </ThemeProvider>
   );
 }

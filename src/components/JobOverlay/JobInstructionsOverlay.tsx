@@ -1,6 +1,28 @@
 import { Button } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./JobInstructionsOverlay.scss";
+
+function getJobWords(): HTMLElement[] {
+  return Array.from(
+    document.getElementsByClassName(
+      "job-title"
+    ) as HTMLCollectionOf<HTMLElement>
+  );
+}
+
+function moveInstructionsBox(): void {
+  const overlayElement = document.getElementById("jobInstructionsOverlay");
+  if (!overlayElement || overlayElement.classList.contains("hidden")) return;
+  const jobWords = getJobWords();
+  const boxEl = document.getElementById("jobInstructionsBox");
+  const firstBox = jobWords[0]?.getClientRects()[0];
+  const lastBox = jobWords[jobWords.length - 1]?.getClientRects()[0];
+  if (!firstBox || !boxEl || !lastBox) return;
+  boxEl.style.top = `${lastBox.top + lastBox.height + 10}px`;
+  boxEl.style.left = `${firstBox.left}px`;
+  boxEl.style.right = `${firstBox.left}px`;
+  boxEl.style.display = "block";
+}
 
 export function JobInstructionsOverlay(): JSX.Element {
   const [visible, setVisible] = useState(false);
@@ -13,35 +35,21 @@ export function JobInstructionsOverlay(): JSX.Element {
     return () => window.removeEventListener("resize", moveInstructionsBox);
   }, []);
 
+  const showOverlay = useCallback(() => {
+    setVisible(true);
+    window.scrollTo(0, 0);
+    setTopElements(true);
+    window.setTimeout(() => setHideButtonDisabled(false), 2000);
+  }, [setVisible, setHideButtonDisabled]);
+
   useEffect(() => {
     const shouldShow = !localStorage.getItem(localStorageSeenKey);
     if (shouldShow) window.setTimeout(() => showOverlay(), 50);
-  }, []);
+  }, [showOverlay]);
 
   useEffect(() => {
     if (visible) moveInstructionsBox();
   }, [visible]);
-
-  function moveInstructionsBox(): void {
-    if (!visible) return;
-    const jobWords = getJobWords();
-    const boxEl = document.getElementById("jobInstructionsBox");
-    const firstBox = jobWords[0]?.getClientRects()[0];
-    const lastBox = jobWords[jobWords.length - 1]?.getClientRects()[0];
-    if (!firstBox || !boxEl || !lastBox) return;
-    boxEl.style.top = `${lastBox.top + lastBox.height + 10}px`;
-    boxEl.style.left = `${firstBox.left}px`;
-    boxEl.style.right = `${firstBox.left}px`;
-    boxEl.style.display = "block";
-  }
-
-  function getJobWords(): HTMLElement[] {
-    return Array.from(
-      document.getElementsByClassName(
-        "job-title"
-      ) as HTMLCollectionOf<HTMLElement>
-    );
-  }
 
   function setTopElements(onTop: boolean): void {
     const jobWords = getJobWords();
@@ -56,13 +64,6 @@ export function JobInstructionsOverlay(): JSX.Element {
         document.body.style.removeProperty("overflow-y");
       }
     });
-  }
-
-  function showOverlay(): void {
-    setVisible(true);
-    window.scrollTo(0, 0);
-    setTopElements(true);
-    window.setTimeout(() => setHideButtonDisabled(false), 2000);
   }
 
   function hideOverlay(): void {

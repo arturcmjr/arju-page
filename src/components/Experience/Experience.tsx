@@ -1,20 +1,11 @@
-import { Grow } from "@mui/material";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import "./Experience.scss";
 import experiences, { IExperience } from "./experiences";
 
 export function Experience(): JSX.Element {
   const [experienceIndex, setExperienceIndex] = useState(0);
   const currentExperience = experiences[experienceIndex];
-  // const [showContent, setShowContent] = useState(true);
-
-  // useEffect(() => {
-  //   setShowContent(false);
-  //   setTimeout(() => {
-  //     setShowContent(true);
-  //   }, 500);
-  // }, [currentExperience]);
-
+  
   return (
     <section className="experience-wrapper">
       <div id="experience" >
