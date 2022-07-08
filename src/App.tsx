@@ -78,6 +78,9 @@ function App() {
         paper: "#393e46",
         default: "#232931",
       },
+      error: {
+        main: "#ed4242",
+      }
     },
   };
 

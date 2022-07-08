@@ -22,6 +22,19 @@
   }
 }
 
+.submit-error, .submit-success {
+  margin: 75px 0;
+  text-align: center;
+}
+
+.submit-success {
+  color: var(--primary);
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #contact {
     width: 100%;

@@ -40,7 +40,7 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
             dignissimos molestiae!
           </p>
         ),
-        technologies: ["React", "JS", "Open Trivia API"],
+        technologies: ["React", "JS", "Tailwind CSS", "Open Trivia API"],
         links: [
           {
             icon: <GitHubIcon />,

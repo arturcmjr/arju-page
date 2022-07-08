@@ -15,6 +15,10 @@ body {
 
 p {
   color: #a8aaad;
+  
+  b {
+    color: #fff;
+  }
 }
 
 .w-100 {
@@ -35,4 +39,36 @@ section {
       font-size: 0.9em;
     }
   }
+}
+
+a.underline {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+a.underline:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 1px;
+  left: 0;
+  background-color: var(--primary);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a.underline:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #393d46 inset !important;
 }
