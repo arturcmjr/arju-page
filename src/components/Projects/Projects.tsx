@@ -3,6 +3,7 @@ import EJobTitle from "../../common/enums/job-title.enum";
 import getProjects from "../../common/projects/projects.data";
 import { IProject } from "../../common/projects/projects.interface";
 import "./Projects.scss";
+import sadSmartPhone from "../../images/sad-smartphone.svg";
 
 export function Projects(props: { jobTitle: EJobTitle }): JSX.Element {
   const { jobTitle } = props;
@@ -27,14 +28,13 @@ export function Projects(props: { jobTitle: EJobTitle }): JSX.Element {
 function NoProjects(): JSX.Element {
   return (
     <div className="no-projects">
-      <h3>Nothing here for now 😢</h3>
+      <img src={sadSmartPhone} alt="sad smartphone" />
+      <h3>Nothing to show here</h3>
       <p>
-        I'm sorry that there are no projects here for now. All of them, but the
-        games were made just for this portfolio. I couldn't work on a mobile app
-        for this purpose yet.
-        <br />
-        But don't give up on me. You can check out another job title or check
-        here later if there are any updates.
+        I'm sorry that there are no projects here. I had to focus on web
+        development in the first months of this portfolio. But don't give up on
+        me. You can check out another job title or check here later if there are
+        any updates.
       </p>
     </div>
   );

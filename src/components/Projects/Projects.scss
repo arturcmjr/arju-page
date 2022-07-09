@@ -83,9 +83,21 @@
   justify-content: center;
   height: 100%;
   padding: 1rem;
+
+  img {
+    width: 100px;
+    object-fit: contain;
+    opacity: 0.5;
+    user-select: none;
+  }
   
   h3 {
-    margin: 0;
+    margin-bottom: 0;
+  }
+
+  p {
+    width: 100%;
+    text-align: center;
   }
 }
 
