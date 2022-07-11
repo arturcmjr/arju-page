@@ -16,7 +16,6 @@ export function Contact(props: { jobTitle: EJobTitle }) {
   const [emailError, setEmailError] = useState<string | null>(null);
 
   const onEmailError = (error: string) => {
-    console.log(error);
     setEmailError(error);
   };
 

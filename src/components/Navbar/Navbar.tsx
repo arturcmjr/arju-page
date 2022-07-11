@@ -1,7 +1,6 @@
-import { IconButton, Menu, MenuItem } from "@mui/material";
+import { IconButton } from "@mui/material";
 import React, { useEffect } from "react";
 import "./Navbar.scss";
-import MenuIcon from "@mui/icons-material/Menu";
 
 const menuItems = [
   {
@@ -25,7 +24,7 @@ const menuItems = [
 var prevScrollpos = window.pageYOffset;
 
 export function Navbar(): JSX.Element {
-
+  const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const handleScroll = () => {
     var currentScrollPos = window.pageYOffset;
     const doc = document.getElementById("navbar");
@@ -40,74 +39,66 @@ export function Navbar(): JSX.Element {
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
+  useEffect(() => {
+    document.body.style.overflow = sidebarOpen ? "hidden" : "auto";
+    const doc = document.getElementById("navbar");
+    if (doc) doc.style.top = "0";
+  }, [sidebarOpen]);
+
   return (
-    <div id="navbar">
-      <a className="logo" href="#intro">
-        <span>ar</span>
-        <span>ju</span>
-      </a>
-      <div className="right">
-        <div className="ls-items">
-          {menuItems.map((item, index) => (
-            <a
-              key={`nv-item-${index}`}
-              className="menu-link"
-              href={item.link}
-            >
-              <span>0{index + 1}:</span>
-              {item.name}
-            </a>
-          ))}
+    <div>
+      <div id="navbar">
+        <div className="background"></div>
+        <a className="logo" href="#intro">
+          <span>ar</span>
+          <span>ju</span>
+        </a>
+        <div className="right">
+          <div className="ls-items">
+            {menuItems.map((item, index) => (
+              <a
+                key={`nv-item-${index}`}
+                className="menu-link"
+                href={item.link}
+              >
+                <span>0{index + 1}:</span>
+                {item.name}
+              </a>
+            ))}
+          </div>
         </div>
-        <SmallScreenMenu />
+        <aside id="sidebar" className={sidebarOpen ? "" : "hidden"}>
+          <div className="hamburger-container">
+            <IconButton
+              color="secondary"
+              component="span"
+              className="hamburger"
+              onClick={() => {
+                setSidebarOpen(!sidebarOpen);
+              }}
+            >
+              <div className={`icon ${sidebarOpen ? "close" : ""}`}>
+                <div></div>
+              </div>
+            </IconButton>
+          </div>
+          <div className="sidebar-content">
+            {menuItems.map((item, index) => (
+              <div
+                onClick={() => {
+                  setSidebarOpen(false);
+                }}
+                className="sidebar-link"
+                key={`mn-item-${index}`}
+              >
+                <a href={item.link}>
+                  {item.name}
+                </a>
+              </div>
+            ))}
+          </div>
+        </aside>
       </div>
-    </div>
-  );
-}
-
-function SmallScreenMenu(): JSX.Element {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = (): void => {
-    setAnchorEl(null);
-  };
-
-  return (
-    <div className="menu">
-      <IconButton
-        color="secondary"
-        component="span"
-        onClick={handleClick}
-      >
-        <MenuIcon />
-      </IconButton>
-      <Menu
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
-        disableScrollLock={true}
-      >
-        {menuItems.map((item, index) => (
-          <MenuItem
-            onClick={() => {
-              handleClose();
-            }}
-            key={`mn-item-${index}`}
-          >
-            <a className="menu-link" href={item.link}>
-              <span>0{index + 1}:</span>
-              <br />
-              {item.name}
-            </a>
-          </MenuItem>
-        ))}
-      </Menu>
     </div>
   );
 }
