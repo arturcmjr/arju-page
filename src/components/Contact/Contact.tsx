@@ -12,12 +12,8 @@ import axios from "axios";
 import EJobTitle from "../../common/enums/job-title.enum";
 
 export function Contact(props: { jobTitle: EJobTitle }) {
-  const [emailSent, setEmailSent] = useState(false);
+  const [emailSentFrom, setEmailSentFrom] = useState<string | null>(null);
   const [emailError, setEmailError] = useState<string | null>(null);
-
-  const onEmailSent = () => {
-    setEmailSent(true);
-  };
 
   const onEmailError = (error: string) => {
     console.log(error);
@@ -25,17 +21,17 @@ export function Contact(props: { jobTitle: EJobTitle }) {
   };
 
   const renderContent = () => {
-    if(!emailSent && !emailError) {
+    if(!emailSentFrom && !emailError) {
       return (
         <ContactForm
           jobTitle={EJobTitle[props.jobTitle].toLowerCase()}
-          onEmailSent={onEmailSent}
+          onEmailSent={(email) => setEmailSentFrom(email)}
           onEmailError={onEmailError}
         />
       );
-    } else if(emailSent) {
+    } else if(emailSentFrom) {
       return (
-        <SubmitSuccess onSendAnother={() => setEmailSent(false)} />
+        <SubmitSuccess onSendAnother={() => setEmailSentFrom(null)} email={emailSentFrom}/>
       );
     } else if(emailError) {
       return (
@@ -65,14 +61,14 @@ export function Contact(props: { jobTitle: EJobTitle }) {
   );
 }
 
-function SubmitSuccess(props: {onSendAnother: () => void}): JSX.Element {
-  const { onSendAnother } = props;
+function SubmitSuccess(props: {onSendAnother: () => void, email: string}): JSX.Element {
+  const { onSendAnother, email } = props;
   return (
     <div className="submit-success">
       <h3>Email successfully sent!</h3>
       <p>
         Thanks for the message. I'll do my best to answer you on{" "}
-        <b>your@email.org</b> as soon as possible.
+        <b>{email}</b> as soon as possible.
       </p>
       <Button variant="outlined" type="submit" color="secondary" onClick={onSendAnother}>
         Send another message
@@ -101,7 +97,7 @@ function SubmitError(): JSX.Element {
 
 function ContactForm(props: {
   jobTitle: string;
-  onEmailSent: () => void;
+  onEmailSent: (email: string) => void;
   onEmailError: (error: string) => void;
 }): JSX.Element {
   const {
@@ -113,8 +109,8 @@ function ContactForm(props: {
   const emailRegex =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i; /* eslint-disable-line */
 
-  const onSubmitted = () => {
-    props.onEmailSent();
+  const onSubmitted = (email: string) => {
+    props.onEmailSent(email);
     setIsSubmitting(false);
   };
   const onSubmitError = (err: any) => {
@@ -124,7 +120,7 @@ function ContactForm(props: {
   const onSubmit = (data: any) => {
     setIsSubmitting(true);
     sendEmail(data.email, data.name, data.message, props.jobTitle)
-      .then(onSubmitted)
+      .then(() => onSubmitted(data.email))
       .catch(onSubmitError);
   };
   return (
