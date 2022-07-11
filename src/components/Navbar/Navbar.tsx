@@ -54,20 +54,20 @@ export function Navbar(): JSX.Element {
           <span>ju</span>
         </a>
         <div className="right">
-          <div className="ls-items">
+          <div className="nav-links">
             {menuItems.map((item, index) => (
               <a
                 key={`nv-item-${index}`}
-                className="menu-link"
+                className="nav-link"
                 href={item.link}
               >
-                <span>0{index + 1}:</span>
                 {item.name}
               </a>
             ))}
           </div>
         </div>
         <aside id="sidebar" className={sidebarOpen ? "" : "hidden"}>
+          <div className="backdrop"></div>
           <div className="hamburger-container">
             <IconButton
               color="secondary"
