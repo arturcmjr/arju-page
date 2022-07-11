@@ -12,6 +12,7 @@ import Experience from "./components/Experience/Experience";
 import Projects from "./components/Projects/Projects";
 import { getTheme } from "./common/job-themes/job-themes.data";
 import Contact from "./components/Contact/Contact";
+import SocialMedia from "./components/SocialMedia/SocialMedia";
 
 function getWindowJobTitle(): EJobTitle {
   const path = window.location.pathname.replace("/", "") || "web";
@@ -101,6 +102,7 @@ function App() {
       <Experience />
       <Projects jobTitle={jobTitle} />
       <Contact jobTitle={jobTitle} />
+      <SocialMedia />
     </ThemeProvider>
   );
 }

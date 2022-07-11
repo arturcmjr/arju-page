@@ -1,0 +1,50 @@
+.social-media {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: grid;
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+}
+
+.social-media-item {
+  display: flex;
+  align-items: center;
+  color: var(--second-text-color);
+  text-decoration: none;
+
+  svg {
+    transition: all 150ms ease-in-out;
+  }
+}
+
+.social-media-item:hover {
+  cursor: pointer;
+
+  svg {
+    color: var(--primary);
+    transform: translateY(-2px);
+    transition: all 150ms ease-in-out;
+  }
+}
+
+.made-by {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: 'Inconsolata', monospace;
+  color: var(--second-text-color);
+}
+
+@media screen and (max-width: 600px) {
+  .social-media {
+    position: inherit;
+    grid-template-columns: repeat(3, auto);
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+
+  .made-by {
+    margin-bottom: 1rem;
+  }
+}

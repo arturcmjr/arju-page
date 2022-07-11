@@ -42,7 +42,7 @@ export function Navbar(): JSX.Element {
 
   return (
     <div id="navbar">
-      <a className="logo" href="/#">
+      <a className="logo" href="#intro">
         <span>ar</span>
         <span>ju</span>
       </a>

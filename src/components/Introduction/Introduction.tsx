@@ -22,7 +22,7 @@ export function Introduction(props: IntroductionProps): JSX.Element {
   }
 
   return (
-    <div id="introContainer">
+    <div id="intro">
       <div className="text-container">
         <div>
           <span className="hi-there">Hi, my name is</span>

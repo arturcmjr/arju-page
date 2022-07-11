@@ -1,5 +1,10 @@
 @use "./style/base";
 
+:root {
+  --second-text-color: #a8aaad;
+  --disabled-text-color: #7d7e81;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: max(10%, 60px);
@@ -19,7 +24,7 @@ body {
 }
 
 p {
-  color: #a8aaad;
+  color: var(--second-text-color);
 
   b {
     color: #fff;
