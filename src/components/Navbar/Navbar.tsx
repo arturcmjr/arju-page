@@ -1,4 +1,4 @@
-import { IconButton } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import React, { useEffect } from "react";
 import "./Navbar.scss";
 
@@ -53,18 +53,17 @@ export function Navbar(): JSX.Element {
           <span>ar</span>
           <span>ju</span>
         </a>
-        <div className="right">
-          <div className="nav-links">
-            {menuItems.map((item, index) => (
-              <a
-                key={`nv-item-${index}`}
-                className="nav-link"
-                href={item.link}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
+        <div className="nav-links">
+          {menuItems.map((item, index) => (
+            <a key={`nv-item-${index}`} className="nav-link" href={item.link}>
+              {item.name}
+            </a>
+          ))}
+        </div>
+        <div className="resume-container">
+          <Button variant="outlined" href="/web/resume.pdf" target="_blank">
+            resume
+          </Button>
         </div>
         <aside id="sidebar" className={sidebarOpen ? "" : "hidden"}>
           <div className="backdrop"></div>
@@ -91,11 +90,14 @@ export function Navbar(): JSX.Element {
                 className="sidebar-link"
                 key={`mn-item-${index}`}
               >
-                <a href={item.link}>
-                  {item.name}
-                </a>
+                <a href={item.link}>{item.name}</a>
               </div>
             ))}
+            <div className="resume-container">
+              <Button variant="outlined" href="/web/resume.pdf" target="_blank">
+                resume
+              </Button>
+            </div>
           </div>
         </aside>
       </div>
