@@ -1,9 +1,9 @@
 // import WorkIcon from "@mui/icons-material/Work";
 // import SchoolIcon from "@mui/icons-material/School";
 // import FavoriteIcon from "@mui/icons-material/Favorite";
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
-import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 export interface IExperience {
   company: string;
@@ -16,18 +16,21 @@ export interface IExperience {
 export const experiences: IExperience[] = [
   {
     company: "Round Stars",
-    title: "Game developer",
+    title: "Game Developer",
     dateRange: "2017 - 2018",
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
     content: (
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
-        cumque officiis dicta eveniet aperiam distinctio minus iure totam,
-        dolore labore, expedita magnam quia cum soluta quidem voluptatibus
-        voluptas at dolor exercitationem a aut perferendis aspernatur
-        dignissimos? Laborum, laudantium perspiciatis similique, dolores aut, in
-        eligendi at distinctio fuga dolorem consequatur sapiente.
-      </p>
+      <>
+        <p>
+          Worked on developing single-player and multiplayer board games. Coding
+          core mechanism, search algorithms and bots AIs. I've also designed
+          interface for those games.
+        </p>
+        <p>
+          Working with Unity and C#. There was also my first contact with a REST
+          API which I helped develop in PHP.
+        </p>
+      </>
     ),
   },
   {
@@ -36,35 +39,43 @@ export const experiences: IExperience[] = [
     dateRange: "2018 - 2020",
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
     content: (
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio soluta
-        officia at delectus ducimus deserunt distinctio totam, dignissimos neque
-        ipsa dolores illo placeat aut quibusdam nulla, commodi vel? Possimus
-        aperiam excepturi consectetur enim beatae? Voluptates ab aut voluptatum
-        quod minima?
-      </p>
+      <>
+        <p>
+          Created art for fundraising campaigns for crises, design reports, and
+          presentation slides with Photoshop, Illustrator and other design
+          software.
+        </p>
+        <p>
+          There, I had the opportunity to develop a system to help to control
+          the hot meals given to Venezuelan refugees. It was made with Laravel +
+          Vue.
+        </p>
+      </>
     ),
   },
   {
-    company: "Adven.tech",
+    company: "Adven.Tech",
     title: "Full Stack Web Developer",
-    dateRange: "2020 - Present",
+    dateRange: "2020 - 2022",
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
     content: (
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo eius
-        accusantium, officiis corporis voluptates voluptatem ab distinctio vitae
-        nesciunt id molestias deserunt suscipit excepturi dolore impedit
-        dolorem. Deleniti ullam qui quibusdam modi eveniet, perspiciatis
-        incidunt a quam delectus fuga minima! Facilis cum a id, ullam voluptates
-        minima molestiae dolore necessitatibus ducimus? Voluptatum laudantium
-        qui architecto harum nesciunt quas autem non.
-      </p>
+      <>
+        <p>
+          Worked developing web apps as a stock management, event, e-commerce
+          and other systems on client demand. I also helped to migrate legacy
+          systems to modern technologies.
+        </p>
+        <p>
+          Written clean and scalable code for the back and front end. Worked
+          with popular technologies such as Angular, React, .NET, C#, Azure and
+          others.
+        </p>
+      </>
     ),
   },
   {
     company: "IESB",
-    title: "Graduation on game development",
+    title: "Graduation on Game Development",
     dateRange: "2016 - 2018",
     icon: <SchoolOutlinedIcon fontSize="small" />,
     content: (

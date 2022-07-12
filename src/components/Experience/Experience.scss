@@ -44,6 +44,12 @@ $tab-transition: 0.3s ease-in-out;
       margin: 0;
     }
 
+    p::before {
+      content: "⋄";
+      margin-right: .5rem;
+      color: var(--primary);
+    }
+
     .mobile-company {
       display: none;
       color: var(--primary);

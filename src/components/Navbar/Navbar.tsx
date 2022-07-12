@@ -1,5 +1,6 @@
 import { Button, IconButton } from "@mui/material";
 import React, { useEffect } from "react";
+import EJobTitle from "../../common/enums/job-title.enum";
 import "./Navbar.scss";
 
 const menuItems = [
@@ -23,7 +24,8 @@ const menuItems = [
 
 var prevScrollpos = window.pageYOffset;
 
-export function Navbar(): JSX.Element {
+export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
+  const { jobTitle } = props;
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const handleScroll = () => {
     var currentScrollPos = window.pageYOffset;
@@ -61,7 +63,11 @@ export function Navbar(): JSX.Element {
           ))}
         </div>
         <div className="resume-container">
-          <Button variant="outlined" href="/web/resume.pdf" target="_blank">
+          <Button
+            variant="outlined"
+            href={`/${EJobTitle[jobTitle].toLowerCase()}/resume.pdf`}
+            target="_blank"
+          >
             resume
           </Button>
         </div>
@@ -94,7 +100,11 @@ export function Navbar(): JSX.Element {
               </div>
             ))}
             <div className="resume-container">
-              <Button variant="outlined" href="/web/resume.pdf" target="_blank">
+              <Button
+                variant="outlined"
+                href={`/${EJobTitle[jobTitle].toLowerCase()}/resume.pdf`}
+                target="_blank"
+              >
                 resume
               </Button>
             </div>

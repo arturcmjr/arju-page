@@ -96,7 +96,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <JobInstructionsOverlay />
-      <Navbar />
+      <Navbar jobTitle={jobTitle} />
       <Introduction changeJobTitle={changeTheme} jobTitle={jobTitle} />
       <About jobTitle={jobTitle} />
       <Experience />
