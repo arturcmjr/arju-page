@@ -52,8 +52,8 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
       <div id="navbar">
         <div className="background"></div>
         <a className="logo" href="#intro">
-          <span>ar</span>
-          <span>ju</span>
+          <span>Artur</span>
+          <span>Junior</span>
         </a>
         <div className="nav-links">
           {menuItems.map((item, index) => (
