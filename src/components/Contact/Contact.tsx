@@ -195,7 +195,7 @@ function sendEmail(
   jobTitle: string
 ) {
   return axios.post(
-    `${process.env.REACT_APP_AZURE_FUNCTIONS_URL}ContactMeEmail?`,
+    `${process.env.REACT_APP_FUNCTIONS_URL}/sendEmail`,
     {
       email,
       name,
