@@ -2,12 +2,14 @@ import * as functions from "firebase-functions";
 import axios, { AxiosRequestConfig } from "axios";
 import cors = require("cors");
 
-const corsHandler = cors({
-  origin: ["https://arju.dev/web", "http://localhost:3000"],
-});
+var corsOption: cors.CorsOptions = {
+  origin: "https://arju.dev",
+  methods: "GET,POST",
+  allowedHeaders: ["Content-Type", "Accept"],
+};
 
 export const sendEmail = functions.https.onRequest((request, response) => {
-  functions.logger.info("email-request", request.body);
+  const corsHandler = cors(corsOption);
   corsHandler(request, response, async () => {
     for (let fieldName of ["name", "email", "message", "jobTitle"]) {
       if (!request.body[fieldName]) {
@@ -56,10 +58,12 @@ export const sendEmail = functions.https.onRequest((request, response) => {
       .then((res) => {
         functions.logger.info("email-sent", res.data);
         response.send(res.data);
+        return;
       })
       .catch((error) => {
         functions.logger.error("sendinblue-error", error);
         response.status(500).send(error);
+        return;
       });
   });
 });
