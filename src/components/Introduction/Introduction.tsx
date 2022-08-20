@@ -1,7 +1,7 @@
 import EJobTitle from "../../common/enums/job-title.enum";
 import { Button } from "@mui/material";
 import wordsImage from "../../images/words.svg";
-import "./Introduction.scss";
+import styles from "./Introduction.module.scss";
 
 interface IntroductionProps {
   jobTitle: EJobTitle;
@@ -16,7 +16,7 @@ export function Introduction(props: IntroductionProps): JSX.Element {
     return (
       <span
         onClick={() => changeJobTitle(jobTitle)}
-        className={`job-title ${isActive ? "active" : ""}`}
+        className={`${styles.jobTitle} ${isActive ? styles.active : ""}`}
       >
         {EJobTitle[jobTitle]}
       </span>
@@ -29,10 +29,10 @@ export function Introduction(props: IntroductionProps): JSX.Element {
   }
 
   return (
-    <div id="intro">
-      <div className="text-container">
+    <div id="intro" className={styles.container}>
+      <div className={styles.introTextContainer}>
         <div>
-          <span className="hi-there">Hi, my name is</span>
+          <span className={styles.greeting}>Hi, my name is</span>
           <h1>Artur Junior</h1>
           <h2>
             {renderJobTitle(EJobTitle.Web)} and {renderJobTitle(EJobTitle.Game)}{" "}
@@ -48,7 +48,7 @@ export function Introduction(props: IntroductionProps): JSX.Element {
           </Button>
         </div>
       </div>
-      <img src={wordsImage} alt="words" className="words" />
+      <img src={wordsImage} alt="words" className={styles.wordsImage} />
     </div>
   );
 }
