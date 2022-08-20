@@ -1,6 +1,5 @@
 export enum EJobTitle {
   Web,
-  Mobile,
   Game,
 }
 

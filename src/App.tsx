@@ -23,8 +23,6 @@ function getJobTitle(title: string): EJobTitle {
   switch (title) {
     case "web":
       return EJobTitle.Web;
-    case "mobile":
-      return EJobTitle.Mobile;
     case "game":
       return EJobTitle.Game;
     default:

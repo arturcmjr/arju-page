@@ -11,9 +11,16 @@ interface IntroductionProps {
 export function Introduction(props: IntroductionProps): JSX.Element {
   const { changeJobTitle } = props;
 
-  function renderJobTitle(jobTitle: EJobTitle) : JSX.Element {
+  function renderJobTitle(jobTitle: EJobTitle): JSX.Element {
     const isActive = jobTitleIsActive(jobTitle);
-    return <span onClick={() => changeJobTitle(jobTitle)} className={`job-title ${isActive? 'active' : ''}`}>{EJobTitle[jobTitle]}</span>;
+    return (
+      <span
+        onClick={() => changeJobTitle(jobTitle)}
+        className={`job-title ${isActive ? "active" : ""}`}
+      >
+        {EJobTitle[jobTitle]}
+      </span>
+    );
   }
 
   function jobTitleIsActive(jobTitle: EJobTitle): boolean {
@@ -28,7 +35,8 @@ export function Introduction(props: IntroductionProps): JSX.Element {
           <span className="hi-there">Hi, my name is</span>
           <h1>Artur Junior</h1>
           <h2>
-            {renderJobTitle(EJobTitle.Web)}, {renderJobTitle(EJobTitle.Game)} and {renderJobTitle(EJobTitle.Mobile)} Developer
+            {renderJobTitle(EJobTitle.Web)} and {renderJobTitle(EJobTitle.Game)}{" "}
+            Developer
           </h2>
           <p>
             I'm a software developer who can work well on every development

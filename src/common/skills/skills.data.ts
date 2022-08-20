@@ -32,15 +32,6 @@ const skills: [Key: EJobTitle, Value: ISkill[]][] = [
     ],
   ],
   [
-    EJobTitle.Mobile,
-    [
-      {
-        name: "HTML",
-        star: true,
-      },
-    ],
-  ],
-  [
     EJobTitle.Game,
     [
       {

@@ -9,12 +9,6 @@ const themes: [Key: EJobTitle, Value: IJobTheme][] = [
     },
   ],
   [
-    EJobTitle.Mobile,
-    {
-      primaryColor: "#9fd15f",
-    },
-  ],
-  [
     EJobTitle.Game,
     {
       primaryColor: "#e2a84b",

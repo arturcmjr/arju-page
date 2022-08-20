@@ -77,9 +77,9 @@ export function JobInstructionsOverlay(): JSX.Element {
       <div className="overlay"></div>
       <div id="jobInstructionsBox">
         <p>
-          I'm not just a web developer, I also make games and mobile apps. You
-          can click any time on one of these titles to see some changes on the
-          page.
+          Hi there, Even though I have been focusing on web development lately,
+          I'm also a skilled game developer. You can click any time on "Web" or
+          "Game" to see some changes on the page content.
         </p>
         <div className="btn-container">
           <Button
