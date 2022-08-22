@@ -1,7 +1,7 @@
 import { Button, IconButton } from "@mui/material";
 import React, { useEffect } from "react";
 import EJobTitle from "../../common/enums/job-title.enum";
-import "./Navbar.scss";
+import styles from "./Navbar.module.scss";
 
 const menuItems = [
   {
@@ -47,22 +47,25 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
     if (doc) doc.style.top = "0";
   }, [sidebarOpen]);
 
+  const sidebarClass = `${styles.sidebar} ${(sidebarOpen ? "" : styles.hidden)}`;
+  const hamburgerIconClass = `${styles.icon} ${(sidebarOpen ? styles.close : "")}`;
+
   return (
     <div>
-      <div id="navbar">
-        <div className="background"></div>
-        <a className="logo" href="#intro">
+      <div id="navbar" className={styles.navbar}>
+        <div className={styles.background}></div>
+        <a className={styles.logo} href="#intro">
           <span>Artur</span>
           <span>Junior</span>
         </a>
-        <div className="nav-links">
+        <div className={styles.linksContainer}>
           {menuItems.map((item, index) => (
-            <a key={`nv-item-${index}`} className="nav-link" href={item.link}>
+            <a key={`nv-item-${index}`} className={styles.navLink} href={item.link}>
               {item.name}
             </a>
           ))}
         </div>
-        <div className="resume-container">
+        <div className={styles.resumeContainer}>
           <Button
             variant="outlined"
             href={`/${EJobTitle[jobTitle].toLowerCase()}/resume.pdf`}
@@ -71,35 +74,35 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
             resume
           </Button>
         </div>
-        <aside id="sidebar" className={sidebarOpen ? "" : "hidden"}>
-          <div className="backdrop"></div>
-          <div className="hamburger-container">
+        <aside id="sidebar" className={sidebarClass}>
+          <div className={styles.backdrop}></div>
+          <div className={styles.hamburgerContainer}>
             <IconButton
               color="secondary"
               component="span"
-              className="hamburger"
+              // className={styles.hamburger}
               onClick={() => {
                 setSidebarOpen(!sidebarOpen);
               }}
             >
-              <div className={`icon ${sidebarOpen ? "close" : ""}`}>
+              <div className={hamburgerIconClass}>
                 <div></div>
               </div>
             </IconButton>
           </div>
-          <div className="sidebar-content">
+          <div className={styles.sidebarContent}>
             {menuItems.map((item, index) => (
               <div
                 onClick={() => {
                   setSidebarOpen(false);
                 }}
-                className="sidebar-link"
+                className={styles.sideLink}
                 key={`mn-item-${index}`}
               >
                 <a href={item.link}>{item.name}</a>
               </div>
             ))}
-            <div className="resume-container">
+            <div className={styles.resumeContainer}>
               <Button
                 variant="outlined"
                 href={`/${EJobTitle[jobTitle].toLowerCase()}/resume.pdf`}

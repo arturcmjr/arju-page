@@ -1,4 +1,4 @@
-#navbar {
+.navbar {
   position: fixed;
   top: 0;
   width: 100%;
@@ -8,9 +8,46 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .resumeContainer {
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+
+    a {
+      color: var(--primary);
+    }
+  }
+
+  .linksContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(57, 62, 70, 0.8);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+  }
 }
 
-#navbar .logo {
+.logo {
   padding: 0 2em;
   width: 4rem;
 
@@ -20,7 +57,7 @@
     font-weight: bold;
     font-family: "Inconsolata", monospace;
     text-transform: uppercase;
-    max-width: .99em;
+    max-width: 0.99em;
     overflow-x: hidden;
     position: absolute;
     transition: all 200ms ease-in-out;
@@ -37,42 +74,16 @@
     }
 
     span:first-child {
-      transform: translateY(-0.5rem) scale(.85);
+      transform: translateY(-0.5rem) scale(0.85);
     }
 
     span:last-child {
-      transform: translateY(0.5rem) translateX(-.25em) scale(.85);
+      transform: translateY(0.5rem) translateX(-0.25em) scale(0.85);
     }
   }
 }
 
-#navbar a {
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-#navbar > .resume-container {
-  margin-left: auto;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0 1rem;
-
-  a {
-    color: var(--primary);
-  }
-}
-
-#navbar .nav-links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: stretch;
-}
-
-.sidebar-link {
+.sideLink {
   display: block !important;
   text-align: center;
   margin-bottom: 1.7rem;
@@ -85,7 +96,7 @@
   }
 }
 
-.nav-link {
+.navLink {
   font-family: "Inconsolata", monospace;
   display: block;
   margin-right: 1rem;
@@ -98,7 +109,7 @@
 }
 
 @for $i from 1 through 4 {
-  .sidebar-link:nth-child(#{$i}) {
+  .sideLink:nth-child(#{$i}) {
     a::before {
       content: "0" + $i + ":\A";
       color: var(--primary);
@@ -107,14 +118,14 @@
     }
   }
 
-  .nav-link:nth-child(#{$i})::before {
+  .navLink:nth-child(#{$i})::before {
     content: "0" + $i + ":";
     color: var(--primary);
     margin-right: 0.3rem;
   }
 }
 
-#sidebar {
+.sidebar {
   position: fixed;
   left: 0;
   width: 100%;
@@ -128,20 +139,31 @@
   transition: all 0.3s;
   pointer-events: none;
   visibility: hidden;
+
+  > .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
 }
 
-#sidebar > .backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
+.sidebar.hidden {
+  .sidebarContent {
+    max-width: 0;
+  }
+
+  .backdrop {
+    background-color: transparent;
+    visibility: hidden;
+  }
 }
 
-.sidebar-content {
+.sidebarContent {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,38 +177,15 @@
   transition: all 0.3s ease-in-out;
   pointer-events: all;
   position: relative;
-}
 
-.sidebar-content > .resume-container {
-  position: absolute;
-  width: calc(100% - 2rem);
-  bottom: calc(60px + 1rem);
-}
-
-#sidebar.hidden {
-  .sidebar-content {
-    max-width: 0;
-  }
-
-  .backdrop {
-    backdrop-filter: blur(0px);
-    background-color: transparent;
-    visibility: hidden;
+  .resumeContainer {
+    position: absolute;
+    bottom: calc(60px + 1rem);
+    height: fit-content;
   }
 }
 
-#navbar > .background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(57, 62, 70, 0.8);
-  backdrop-filter: blur(3px);
-  z-index: -1;
-}
-
-.hamburger-container {
+.hamburgerContainer {
   position: absolute;
   right: 1rem;
   top: 9px;
@@ -220,19 +219,19 @@
 }
 
 @media only screen and (max-width: 600px) {
-  #navbar > .nav-links,
-  #navbar > .resume-container {
+  .navbar .navLink,
+  .navbar > .resumeContainer {
     display: none;
     max-width: 0;
   }
 
-  #navbar .menu {
+  .hamburgerContainer {
     display: flex;
     max-width: 150px;
     margin-right: 0.75rem;
   }
 
-  #sidebar {
+  .sidebar {
     visibility: visible;
   }
 }
