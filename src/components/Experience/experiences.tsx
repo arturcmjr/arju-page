@@ -22,13 +22,12 @@ export const experiences: IExperience[] = [
     content: (
       <>
         <p>
-          Worked on developing single-player and multiplayer board games. Coding
-          core mechanism, search algorithms and bots AIs. I've also designed
-          interface for those games.
+          Worked on developing single-player and multiplayer board games. Coding core mechanism,
+          search algorithms and bots AIs. I've also designed interface for those games.
         </p>
         <p>
-          Working with Unity and C#. There was also my first contact with a REST
-          API which I helped develop in PHP.
+          Working with Unity and C#. There was also my first contact with a REST API which I helped
+          develop in PHP.
         </p>
       </>
     ),
@@ -41,14 +40,12 @@ export const experiences: IExperience[] = [
     content: (
       <>
         <p>
-          Created art for fundraising campaigns for crises, design reports, and
-          presentation slides with Photoshop, Illustrator and other design
-          software.
+          Created art for fundraising campaigns for crises, design reports, and presentation slides
+          with Photoshop, Illustrator and other design software.
         </p>
         <p>
-          There, I had the opportunity to develop a system to help to control
-          the hot meals given to Venezuelan refugees. It was made with Laravel +
-          Vue.
+          There, I had the opportunity to develop a system to help to control the hot meals given to
+          Venezuelan refugees.
         </p>
       </>
     ),
@@ -61,14 +58,12 @@ export const experiences: IExperience[] = [
     content: (
       <>
         <p>
-          Worked developing web apps as a stock management, event, e-commerce
-          and other systems on client demand. I also helped to migrate legacy
-          systems to modern technologies.
+          Worked developing web apps as a stock management, event, e-commerce and other systems on
+          client demand. I also helped to migrate legacy systems to modern technologies.
         </p>
         <p>
-          Written clean and scalable code for the back and front end. Worked
-          with popular technologies such as Angular, React, .NET, C#, Azure and
-          others.
+          Written clean and scalable code for the back and front end. Worked with popular
+          technologies such as Angular, React, .NET, C#, SQL and others.
         </p>
       </>
     ),
@@ -79,43 +74,50 @@ export const experiences: IExperience[] = [
     dateRange: "2016 - 2018",
     icon: <SchoolOutlinedIcon fontSize="small" />,
     content: (
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit qui
-        earum pariatur aperiam quod dolor! Aliquam recusandae repellendus
-        architecto. Pariatur ipsa voluptatem quos dolores maxime nobis cum
-        doloremque. Pariatur quasi sequi qui praesentium aut dignissimos?
-      </p>
+      <>
+        <p>
+          There I learned the concepts of object-oriented programming. I had contact with every
+          layer of game development, including audio, 2D and 3D art, programming, level design and
+          others. I won a prize for the best game made in the course of the second semester of 2017.
+        </p>
+        <p>
+          Even thought the graduation had a heavily focus ou game development, i saw web and app
+          development basics there.
+        </p>
+      </>
     ),
   },
   {
     company: "Descomplica",
-    title:
-      "post graduation on system analysis and development / mobile development",
+    title: "post graduation on system analysis and development / mobile development",
     dateRange: "2021 - 2022",
     icon: <SchoolOutlinedIcon fontSize="small" />,
     content: (
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae esse eos
-        pariatur repellendus? Rerum cum dolor nulla minima labore minus officia,
-        sed autem vitae quibusdam iure fugit illo non doloremque asperiores vero
-        ad quas esse reprehenderit impedit deserunt tenetur quisquam.
-      </p>
+      <>
+        <p>
+          System development and analysis focus on the theoretical part of developing a system. I
+          saw data structure, project management, DevOps and other development related topics in
+          this course.
+        </p>
+        <p>
+          On mobile development, as the name suggests, we had mobile related classes, like the most
+          recent frameworks that have been used for hybrid development as well the basics of IOS and
+          Android native apps.
+        </p>
+      </>
     ),
   },
   {
     company: "Arkads Games",
-    title: "Game developer",
+    title: "Game Developer",
     dateRange: "2017 - Present",
     icon: <FavoriteBorderOutlinedIcon fontSize="small" />,
     content: (
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure omnis
-        delectus magni libero iusto non doloremque ullam, ipsa mollitia
-        perspiciatis deserunt nulla, corrupti ex quae molestiae vitae
-        laboriosam. Quasi quibusdam aspernatur blanditiis architecto voluptatum
-        amet tempora nulla iure nam reprehenderit tenetur non, maxime nihil
-        facilis aliquid nemo id. Praesentium animi aspernatur odio ex. Facilis
-        officiis facere optio soluta placeat beatae.
+        Arkads Games is kind of a pseudonym that I use for my game development hobby. Even though I
+        do not develop games as a job nowadays, I still love making them for fun. Despite not having
+        time to do it, and not and not making money with them, I still wish to keep doing it as a
+        hobby.
       </p>
     ),
   },

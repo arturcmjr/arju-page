@@ -12,11 +12,10 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
         name: "Todo App",
         description: (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga,
-            culpa. Inventore accusantium repellendus incidunt esse quia autem
-            corporis dolores possimus, ratione harum voluptatem. Unde tenetur
-            eius vero consectetur sed iure consequatur tempora sint fugiat!
-            Architecto dolorem neque reiciendis numquam deserunt.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, culpa. Inventore
+            accusantium repellendus incidunt esse quia autem corporis dolores possimus, ratione
+            harum voluptatem. Unde tenetur eius vero consectetur sed iure consequatur tempora sint
+            fugiat! Architecto dolorem neque reiciendis numquam deserunt.
           </p>
         ),
         technologies: ["Angular", "TS", "Karma", "Firebase"],
@@ -27,7 +26,7 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
           },
           {
             icon: <LaunchIcon />,
-            url: "https://arju-todo.web.app",
+            url: "https://todo.arju.dev",
           },
         ],
       },
@@ -35,10 +34,9 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
         name: "Trivia Game",
         description: (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum minima
-            maxime vel harum neque! Ipsa, quam saepe illum, commodi dolore
-            temporibus odio quae provident adipisci tenetur enim, nam
-            dignissimos molestiae!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum minima maxime vel harum
+            neque! Ipsa, quam saepe illum, commodi dolore temporibus odio quae provident adipisci
+            tenetur enim, nam dignissimos molestiae!
           </p>
         ),
         technologies: ["React", "JS", "Tailwind CSS", "Open Trivia API"],
@@ -49,7 +47,28 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
           },
           {
             icon: <LaunchIcon />,
-            url: "https://arju-quiz.web.app/",
+            url: "https://quiz.arju.dev/",
+          },
+        ],
+      },
+      {
+        name: "Secret Santa",
+        description: (
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus ipsum eos provident
+            obcaecati ab amet expedita, veritatis blanditiis sunt facere, nam exercitationem. Dolore
+            deserunt ratione dolor fugit earum recusandae, quod eum!
+          </p>
+        ),
+        technologies: ["Angular", "TS", "Firebase"],
+        links: [
+          {
+            icon: <GitHubIcon />,
+            url: "https://github.com/arturcmjr/secret-santa",
+          },
+          {
+            icon: <LaunchIcon />,
+            url: "https://secreto.arju.dev/",
           },
         ],
       },
@@ -62,11 +81,10 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
         name: "Pru!",
         description: (
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            impedit reiciendis sed sunt beatae porro voluptatum adipisci velit
-            assumenda officia atque, quaerat vero eveniet a tenetur sapiente
-            odio libero. Dolore ab maxime temporibus, quaerat voluptatibus
-            explicabo, quibusdam cupiditate illo omnis porro mollitia.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo impedit reiciendis
+            sed sunt beatae porro voluptatum adipisci velit assumenda officia atque, quaerat vero
+            eveniet a tenetur sapiente odio libero. Dolore ab maxime temporibus, quaerat
+            voluptatibus explicabo, quibusdam cupiditate illo omnis porro mollitia.
           </p>
         ),
         technologies: ["Unity", "2D"],
