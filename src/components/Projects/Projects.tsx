@@ -66,6 +66,7 @@ function ProjectsGrid(props: { projects: IProject[] }): JSX.Element {
 
 function ProjectItem(props: { project: IProject }): JSX.Element {
   const { project } = props;
+  
   return (
     <Paper elevation={0} className="project-item">
       <div className="content">
