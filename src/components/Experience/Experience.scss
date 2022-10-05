@@ -46,8 +46,12 @@ $tab-transition: 0.3s ease-in-out;
 
     p::before {
       content: "⋄";
-      margin-right: .5rem;
+      margin-right: 0.5rem;
       color: var(--primary);
+    }
+
+    p > b {
+      color: #d0d2d5;
     }
 
     .mobile-company {
@@ -67,7 +71,7 @@ $tab-transition: 0.3s ease-in-out;
   .tab {
     padding: 0.5rem;
     color: #a8aaad;
-    font-size: .9rem;
+    font-size: 0.9rem;
     font-weight: 400;
     cursor: pointer;
     display: flex;

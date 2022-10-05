@@ -35,13 +35,11 @@ export function Introduction(props: IntroductionProps): JSX.Element {
           <span className={styles.greeting}>Hi, my name is</span>
           <h1>Artur Junior</h1>
           <h2>
-            {renderJobTitle(EJobTitle.Web)} and {renderJobTitle(EJobTitle.Game)}{" "}
-            Developer
+            {renderJobTitle(EJobTitle.Web)} and {renderJobTitle(EJobTitle.Game)} Developer
           </h2>
           <p>
-            I'm a software developer who can work well on every development
-            layer. I'm currently, studying in Dublin, Ireland and looking for
-            opportunities to work locally or remotely anywhere in the world.
+            I'm a software developer who can work well on every development layer. I'm currently
+            studying in Dublin, Ireland. I'm open and looking for job offers nearby.
           </p>
           <Button href="#contact" variant="outlined" size="large">
             HIRE ME

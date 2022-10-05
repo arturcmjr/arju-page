@@ -1,11 +1,6 @@
 import "./Contact.scss";
 import { useForm } from "react-hook-form";
-import {
-  Button,
-  Grid,
-  TextField,
-  useTheme,
-} from "@mui/material";
+import { Button, Grid, TextField, useTheme } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { useState } from "react";
 import axios from "axios";
@@ -20,7 +15,7 @@ export function Contact(props: { jobTitle: EJobTitle }) {
   };
 
   const renderContent = () => {
-    if(!emailSentFrom && !emailError) {
+    if (!emailSentFrom && !emailError) {
       return (
         <ContactForm
           jobTitle={EJobTitle[props.jobTitle].toLowerCase()}
@@ -28,16 +23,12 @@ export function Contact(props: { jobTitle: EJobTitle }) {
           onEmailError={onEmailError}
         />
       );
-    } else if(emailSentFrom) {
-      return (
-        <SubmitSuccess onSendAnother={() => setEmailSentFrom(null)} email={emailSentFrom}/>
-      );
-    } else if(emailError) {
-      return (
-        <SubmitError />
-      );
+    } else if (emailSentFrom) {
+      return <SubmitSuccess onSendAnother={() => setEmailSentFrom(null)} email={emailSentFrom} />;
+    } else if (emailError) {
+      return <SubmitError />;
     }
-  }
+  };
 
   return (
     <section className="contact-wrapper">
@@ -45,14 +36,10 @@ export function Contact(props: { jobTitle: EJobTitle }) {
         <h2 className="section-title">
           <span>04:</span> Get In Touch
         </h2>
+        <p>Feel free to contact me and I'll get back to you as soon as possible.</p>
         <p>
-          Feel free to contact me and I'll get back to you as soon as possible.
-        </p>
-        <p>
-          Please, have in mind that if you have a job offer, I need flexible
-          hours until June 25. I'll be taking short classes from Monday to
-          Friday in the afternoon yet I can work in the morning, at night and if
-          necessary on weekends.
+          Please keep in mind that if you have a job offer, I need flexible hours until June 25.
+          I'll be taking short classes from Monday to Friday in the afternoon.
         </p>
         {renderContent()}
       </div>
@@ -60,14 +47,13 @@ export function Contact(props: { jobTitle: EJobTitle }) {
   );
 }
 
-function SubmitSuccess(props: {onSendAnother: () => void, email: string}): JSX.Element {
+function SubmitSuccess(props: { onSendAnother: () => void; email: string }): JSX.Element {
   const { onSendAnother, email } = props;
   return (
     <div className="submit-success">
       <h3>Email successfully sent!</h3>
       <p>
-        Thanks for the message. I'll do my best to answer you on{" "}
-        <b>{email}</b> as soon as possible.
+        Thanks for the message. I'll do my best to answer you on <b>{email}</b> as soon as possible.
       </p>
       <Button variant="outlined" type="submit" color="secondary" onClick={onSendAnother}>
         Send another message
@@ -88,7 +74,8 @@ function SubmitError(): JSX.Element {
         But don't worry you can try again later or email me on{" "}
         <a href="mailto:arturcmjr@gmail.com" className="underline">
           arturcmjr@gmail.com
-        </a>.
+        </a>
+        .
       </p>
     </div>
   );
@@ -188,21 +175,13 @@ function ContactForm(props: {
   );
 }
 
-function sendEmail(
-  email: string,
-  name: string,
-  message: string,
-  jobTitle: string
-) {
-  return axios.post(
-    `${process.env.REACT_APP_FUNCTIONS_URL}/sendEmail`,
-    {
-      email,
-      name,
-      message,
-      jobTitle,
-    }
-  );
+function sendEmail(email: string, name: string, message: string, jobTitle: string) {
+  return axios.post(`${process.env.REACT_APP_FUNCTIONS_URL}/sendEmail`, {
+    email,
+    name,
+    message,
+    jobTitle,
+  });
 }
 
 export default Contact;

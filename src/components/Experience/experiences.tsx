@@ -89,20 +89,20 @@ export const experiences: IExperience[] = [
   },
   {
     company: "Descomplica",
-    title: "post graduation on system analysis and development / mobile development",
+    title: "Post Graduation at Two Courses",
     dateRange: "2021 - 2022",
     icon: <SchoolOutlinedIcon fontSize="small" />,
     content: (
       <>
         <p>
-          System development and analysis focus on the theoretical part of developing a system. I
-          saw data structure, project management, DevOps and other development related topics in
-          this course.
+          <b>System Analysis and Development</b> focuses mostly on the theoretical part of
+          developing a system. There I studied data structure, project management, DevOps and other
+          development-related topics.
         </p>
         <p>
-          On mobile development, as the name suggests, we had mobile related classes, like the most
-          recent frameworks that have been used for hybrid development as well the basics of IOS and
-          Android native apps.
+          <b>Mobile Development.</b> As the name suggests, we had mobile related classes, like the
+          most recent frameworks that have been used for hybrid development as well the basics of
+          IOS and Android native apps.
         </p>
       </>
     ),
