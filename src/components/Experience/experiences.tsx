@@ -26,8 +26,8 @@ export const experiences: IExperience[] = [
           search algorithms and bots AIs. I've also designed interface for those games.
         </p>
         <p>
-          Working with Unity and C#. There was also my first contact with a REST API which I helped
-          develop in PHP.
+          Worked mainly with Unity and C# for game development. There I could also help with the
+          creation of an API for a small social media.
         </p>
       </>
     ),
