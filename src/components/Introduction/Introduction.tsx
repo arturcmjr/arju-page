@@ -39,7 +39,7 @@ export function Introduction(props: IntroductionProps): JSX.Element {
           </h2>
           <p>
             I'm a software developer who can work well on every development layer. I'm currently
-            studying in Dublin, Ireland. I'm open and looking for job offers nearby.
+            studying in Dublin, Ireland and open to job offers nearby.
           </p>
           <Button href="#contact" variant="outlined" size="large">
             HIRE ME
