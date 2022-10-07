@@ -1,5 +1,5 @@
 import "./About.scss";
-import myPicture from "../../images/my-picture.png";
+import myPicture from "../../images/profile.png";
 import { Grid } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
