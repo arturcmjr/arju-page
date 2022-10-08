@@ -1,6 +1,3 @@
-// import WorkIcon from "@mui/icons-material/Work";
-// import SchoolIcon from "@mui/icons-material/School";
-// import FavoriteIcon from "@mui/icons-material/Favorite";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
@@ -81,8 +78,8 @@ export const experiences: IExperience[] = [
           others. I won a prize for the best game made in the course of the second semester of 2017.
         </p>
         <p>
-          Even thought the graduation had a heavily focus ou game development, i saw web and app
-          development basics there.
+          Even though the graduation had a heavy focus on game development, I had contact with web
+          and app development basics.
         </p>
       </>
     ),
