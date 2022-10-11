@@ -77,8 +77,8 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
         name: "My Portfolio",
         description: (
           <p>
-            I made it with my heart to show off my knowledge and capabilities to possible
-            recruiters. It uses SendingBlue for contact and a single cloud function to keep it safe.
+            Its main objective is to show some of my projects and talk a little about me. It uses
+            SendingBlue for contact and a single cloud function to keep it safe.
           </p>
         ),
         technologies: ["React", "TS"],
