@@ -15,11 +15,7 @@ export function Projects(props: { jobTitle: EJobTitle }): JSX.Element {
         <h2 className="section-title">
           <span>03:</span> Projects
         </h2>
-        {projects.length > 0 ? (
-          <ProjectsGrid projects={projects} />
-        ) : (
-          <NoProjects />
-        )}
+        {projects.length > 0 ? <ProjectsGrid projects={projects} /> : <NoProjects />}
       </div>
     </section>
   );
@@ -31,10 +27,9 @@ function NoProjects(): JSX.Element {
       <img src={sadSmartPhone} alt="sad smartphone" />
       <h3>Nothing to show here</h3>
       <p>
-        I'm sorry that there are no projects here. I had to focus on web
-        development in the first months of this portfolio. But don't give up on
-        me. You can check out another job title or check here later if there are
-        any updates.
+        I'm sorry that there are no projects here. I had to focus on web development in the first
+        months of this portfolio. But don't give up on me. You can check out another job title or
+        check here later if there are any updates.
       </p>
     </div>
   );
@@ -47,12 +42,7 @@ function ProjectsGrid(props: { projects: IProject[] }): JSX.Element {
     <div>
       <p>Hover the projects to see their links.</p>
       <div className="grid-container">
-        <Grid
-          container
-          spacing={2}
-          columns={{ xs: 1, md: 2, xl: 3 }}
-          alignItems="stretch"
-        >
+        <Grid container spacing={2} columns={{ xs: 1, md: 2, xl: 3 }} alignItems="stretch">
           {projects.map((project, index) => (
             <Grid item xs={1} key={`proj-${index}`} gridRow="">
               <ProjectItem project={project} />
@@ -66,7 +56,7 @@ function ProjectsGrid(props: { projects: IProject[] }): JSX.Element {
 
 function ProjectItem(props: { project: IProject }): JSX.Element {
   const { project } = props;
-  
+
   return (
     <Paper elevation={0} className="project-item">
       <div className="content">
@@ -78,10 +68,11 @@ function ProjectItem(props: { project: IProject }): JSX.Element {
           ))}
         </div>
       </div>
-      <div className="overlay">
-        <div className="project-links">
+      <div className="links-container">
+        <div className="links">
           {project.links.map((link, index) => (
             <IconButton
+              className="link-btn"
               color="secondary"
               key={`p-link-${index}`}
               href={link.url}
