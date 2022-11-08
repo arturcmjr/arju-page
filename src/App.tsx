@@ -13,6 +13,9 @@ import Projects from "./components/Projects/Projects";
 import { getTheme } from "./common/job-themes/job-themes.data";
 import Contact from "./components/Contact/Contact";
 import SocialMedia from "./components/SocialMedia/SocialMedia";
+import { initializeApp } from "@firebase/app";
+import { getAnalytics } from "@firebase/analytics";
+import firebaseConfig from "./common/firebase/firebase.config";
 
 function getWindowJobTitle(): EJobTitle {
   const path = window.location.pathname.replace("/", "") || "web";
@@ -45,6 +48,8 @@ function App() {
 
   useEffect(() => {
     setJobTheme(jbTheme);
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
   }, [jobTitle, jbTheme]);
 
   useEffect(() => {

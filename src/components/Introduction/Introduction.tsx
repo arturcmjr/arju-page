@@ -2,6 +2,7 @@ import EJobTitle from "../../common/enums/job-title.enum";
 import { Button } from "@mui/material";
 import wordsImage from "../../images/words.svg";
 import styles from "./Introduction.module.scss";
+import { getAnalytics, logEvent } from "@firebase/analytics";
 
 interface IntroductionProps {
   jobTitle: EJobTitle;
@@ -13,9 +14,17 @@ export function Introduction(props: IntroductionProps): JSX.Element {
 
   function renderJobTitle(jobTitle: EJobTitle): JSX.Element {
     const isActive = jobTitleIsActive(jobTitle);
+    const changeTitle = (jobTitle: EJobTitle) => {
+      const analytics = getAnalytics();
+      changeJobTitle(jobTitle);
+      logEvent(analytics, "job_changed", {
+        jobTitle: EJobTitle[jobTitle],
+      });
+    };
+
     return (
       <span
-        onClick={() => changeJobTitle(jobTitle)}
+        onClick={() => changeTitle(jobTitle)}
         className={`${styles.jobTitle} ${isActive ? styles.active : ""}`}
       >
         {EJobTitle[jobTitle]}
