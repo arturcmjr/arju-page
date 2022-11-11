@@ -1,3 +1,4 @@
+import { getAnalytics, logEvent } from "@firebase/analytics";
 import { Button, IconButton } from "@mui/material";
 import React, { useEffect } from "react";
 import EJobTitle from "../../common/enums/job-title.enum";
@@ -47,8 +48,15 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
     if (doc) doc.style.top = "0";
   }, [sidebarOpen]);
 
-  const sidebarClass = `${styles.sidebar} ${(sidebarOpen ? "" : styles.hidden)}`;
-  const hamburgerIconClass = `${styles.icon} ${(sidebarOpen ? styles.close : "")}`;
+  const onResumeClick = () => {
+    const analytics = getAnalytics();
+    logEvent(analytics, "resume_clicked", {
+      job_title: EJobTitle[jobTitle],
+    });
+  };
+
+  const sidebarClass = `${styles.sidebar} ${sidebarOpen ? "" : styles.hidden}`;
+  const hamburgerIconClass = `${styles.icon} ${sidebarOpen ? styles.close : ""}`;
 
   return (
     <div>
@@ -70,6 +78,7 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
             variant="outlined"
             href={`/${EJobTitle[jobTitle].toLowerCase()}/resume.pdf`}
             target="_blank"
+            onClick={onResumeClick}
           >
             resume
           </Button>

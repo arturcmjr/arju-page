@@ -36,18 +36,6 @@
   }
 }
 
-.jobTitle {
-  cursor: pointer;
-  color: var(--disabled-text-color);
-  transition: all 150ms ease-in-out;
-
-  &:hover,
-  &.active {
-    color: var(--primary);
-    transition: all 150ms ease-in-out;
-  }
-}
-
 .wordsImage {
   right: 0;
   opacity: 0.12;

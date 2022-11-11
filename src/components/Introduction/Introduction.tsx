@@ -15,17 +15,17 @@ export function Introduction(props: IntroductionProps): JSX.Element {
   function renderJobTitle(jobTitle: EJobTitle): JSX.Element {
     const isActive = jobTitleIsActive(jobTitle);
     const changeTitle = (jobTitle: EJobTitle) => {
-      const analytics = getAnalytics();
       changeJobTitle(jobTitle);
+      const analytics = getAnalytics();
       logEvent(analytics, "job_changed", {
-        jobTitle: EJobTitle[jobTitle],
+        job_title: EJobTitle[jobTitle],
       });
     };
 
     return (
       <span
         onClick={() => changeTitle(jobTitle)}
-        className={`${styles.jobTitle} ${isActive ? styles.active : ""}`}
+        className={`job-title ${isActive ? 'active' : ""}`}
       >
         {EJobTitle[jobTitle]}
       </span>

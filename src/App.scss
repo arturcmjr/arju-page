@@ -53,6 +53,18 @@ section {
   }
 }
 
+.job-title {
+  cursor: pointer;
+  color: var(--disabled-text-color);
+  transition: all 150ms ease-in-out;
+
+  &:hover,
+  &.active {
+    color: var(--primary);
+    transition: all 150ms ease-in-out;
+  }
+}
+
 a.underline {
   display: inline-block;
   position: relative;

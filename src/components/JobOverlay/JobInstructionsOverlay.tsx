@@ -1,13 +1,10 @@
+import { getAnalytics, logEvent } from "@firebase/analytics";
 import { Button } from "@mui/material";
 import { useCallback, useEffect, useState } from "react";
 import "./JobInstructionsOverlay.scss";
 
 function getJobWords(): HTMLElement[] {
-  return Array.from(
-    document.getElementsByClassName(
-      "job-title"
-    ) as HTMLCollectionOf<HTMLElement>
-  );
+  return Array.from(document.getElementsByClassName("job-title") as HTMLCollectionOf<HTMLElement>);
 }
 
 function moveInstructionsBox(): void {
@@ -53,6 +50,7 @@ export function JobInstructionsOverlay(): JSX.Element {
 
   function setTopElements(onTop: boolean): void {
     const jobWords = getJobWords();
+    console.log(jobWords);
     jobWords.forEach((el) => {
       if (onTop) {
         el.style.zIndex = "10001";
@@ -70,6 +68,8 @@ export function JobInstructionsOverlay(): JSX.Element {
     setTopElements(false);
     setVisible(false);
     localStorage.setItem(localStorageSeenKey, "true");
+    const analytics = getAnalytics();
+    logEvent(analytics, "got_initial_instructions");
   }
 
   return (
@@ -77,16 +77,12 @@ export function JobInstructionsOverlay(): JSX.Element {
       <div className="overlay"></div>
       <div id="jobInstructionsBox">
         <p>
-          Hi there, Even though I have been focusing on web development lately,
-          I'm also a skilled game developer. You can click any time on "Web" or
-          "Game" to see some changes on the page content.
+          Hi there, Even though I have been focusing on web development lately, I'm also a skilled
+          game developer. You can click any time on "Web" or "Game" to see some changes on the page
+          content.
         </p>
         <div className="btn-container">
-          <Button
-            variant="text"
-            onClick={hideOverlay}
-            disabled={hideButtonDisabled}
-          >
+          <Button variant="text" onClick={hideOverlay} disabled={hideButtonDisabled}>
             Got it
           </Button>
         </div>
