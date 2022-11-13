@@ -25,7 +25,7 @@ export function Introduction(props: IntroductionProps): JSX.Element {
     return (
       <span
         onClick={() => changeTitle(jobTitle)}
-        className={`job-title ${isActive ? 'active' : ""}`}
+        className={`job-title ${isActive ? "active" : ""}`}
       >
         {EJobTitle[jobTitle]}
       </span>
@@ -47,8 +47,8 @@ export function Introduction(props: IntroductionProps): JSX.Element {
             {renderJobTitle(EJobTitle.Web)} and {renderJobTitle(EJobTitle.Game)} Developer
           </h2>
           <p>
-            I'm a software developer who can work well on every development layer. I'm currently
-            studying in Dublin, Ireland and am open to job offers nearby.
+            I'm a software developer who can work well on every development layer. I'm currently in
+            Dublin, Ireland and am open to job offers nearby.
           </p>
           <Button href="#contact" variant="outlined" size="large">
             HIRE ME

@@ -38,8 +38,10 @@ export function Contact(props: { jobTitle: EJobTitle }) {
         </h2>
         <p>Feel free to contact me and I'll get back to you as soon as possible.</p>
         <p>
-          Please keep in mind that if you have a job offer, I need flexible hours until June 25.
-          I'll be taking short classes from Monday to Friday in the afternoon.
+          <i>
+            If you have a job offer, please note that I'm only allowed to work 20 hours per week,
+            and I will need a visa sponsor to be able to work full-time.
+          </i>
         </p>
         {renderContent()}
       </div>
