@@ -4,6 +4,7 @@ import getProjects from "../../common/projects/projects.data";
 import { IProject } from "../../common/projects/projects.interface";
 import "./Projects.scss";
 import sadSmartPhone from "../../images/sad-smartphone.svg";
+import { getAnalytics, logEvent } from "@firebase/analytics";
 
 export function Projects(props: { jobTitle: EJobTitle }): JSX.Element {
   const { jobTitle } = props;
@@ -57,6 +58,14 @@ function ProjectsGrid(props: { projects: IProject[] }): JSX.Element {
 function ProjectItem(props: { project: IProject }): JSX.Element {
   const { project } = props;
 
+  function onLinkClick(url: string) {
+    const analytics = getAnalytics();
+    logEvent(analytics, "project_link_clicked", {
+      project: project.name,
+      link: url,
+    });
+  }
+
   return (
     <Paper elevation={0} className="project-item">
       <div className="content">
@@ -77,6 +86,7 @@ function ProjectItem(props: { project: IProject }): JSX.Element {
               key={`p-link-${index}`}
               href={link.url}
               target="_blank"
+              onClick={() => onLinkClick(link.url)}
             >
               {link.icon}
             </IconButton>
