@@ -37,12 +37,6 @@ export function Contact(props: { jobTitle: EJobTitle }) {
           <span>04:</span> Get In Touch
         </h2>
         <p>Feel free to contact me and I'll get back to you as soon as possible.</p>
-        <p>
-          <i>
-            If you have a job offer, please note that I'm only allowed to work 20 hours per week,
-            and I will need a visa sponsor to be able to work full-time.
-          </i>
-        </p>
         {renderContent()}
       </div>
     </section>
