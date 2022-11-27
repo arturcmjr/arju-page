@@ -6,8 +6,8 @@ const skills: [Key: EJobTitle, Value: ISkill[]][] = [
     EJobTitle.Web,
     [
       {
-        name: "JavaScript",
-        star: false,
+        name: "C#",
+        star: true,
       },
       {
         name: "TypeScript",
@@ -22,8 +22,8 @@ const skills: [Key: EJobTitle, Value: ISkill[]][] = [
         star: true,
       },
       {
-        name: "Vue",
-        star: false,
+        name: "SQL",
+        star: true,
       },
       {
         name: ".NET",
