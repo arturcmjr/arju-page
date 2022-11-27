@@ -19,37 +19,32 @@ export const experiences: IExperience[] = [
     content: (
       <>
         <p>
-          Worked on developing single-player and multiplayer board games. Coding core mechanism,
-          search algorithms and bots AIs. I've also designed interface for those games.
+          Worked on developing single-player and multiplayer games. Coding core mechanism, search
+          algorithms and bots AIs. Programming, making interfaces and arts for those games.{" "}
         </p>
-        <p>
-          Worked mainly with Unity and C# for game development. There I could also help with the
-          creation of an API for a small social media.
-        </p>
+        <p>Wrote clean C# code for games on Unity Engine.</p>
+        <p>Helped with a REST API for a social media for games with PHP and MySQL.</p>
       </>
     ),
   },
   {
     company: "ADRA Brasil",
-    title: "Designer",
+    title: "Web Designer",
     dateRange: "2018 - 2020",
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
     content: (
       <>
         <p>
-          Created art for fundraising campaigns for crises, design reports, and presentation slides
-          with Photoshop, Illustrator and other design software.
-        </p>
-        <p>
-          There, I had the opportunity to develop a system to help to control the hot meals given to
-          Venezuelan refugees.
+          Worked with a little bit of everything. I helped with the automation of daily tasks with
+          VBA and SQL. Made art for fundraising campaigns. Developed a system with Laravel and Vue
+          to help with the distribution of hot meals for Venezuelan refugees.
         </p>
       </>
     ),
   },
   {
     company: "Adven.Tech",
-    title: "Full Stack Web Developer",
+    title: "Full Stack Developer",
     dateRange: "2020 - 2022",
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
     content: (

@@ -7,9 +7,7 @@ import EJobTitle from "../../common/enums/job-title.enum";
 import { getSkills } from "../../common/skills/skills.data";
 import ISkill from "../../common/skills/skills.interface";
 
-export function About(props: {
-  jobTitle: EJobTitle;
-}): JSX.Element {
+export function About(props: { jobTitle: EJobTitle }): JSX.Element {
   const { jobTitle } = props;
   const skills = getSkills(jobTitle);
 
@@ -21,19 +19,16 @@ export function About(props: {
             <span>01:</span> Who I am
           </h2>
           <p>
-            Hey there, my name is Artur and I enjoy creating things. My first
-            contact with code was with Game Maker back in 2012 which made me
-            fall in love with development. Since back there, I have been passing
-            through some technologies and other fields of software development.
+            Hey there, my name is Artur. I enjoy creating things. My first contact with code was
+            with Game Maker when I was 14, which made me fall in love with development. Since then,
+            I have been passing through some technologies and other fields of software development.
           </p>
           <AboutJobTitle jobTitle={jobTitle} />
           <p>
-            I love dogs, music and pizza. In my free time, I enjoy going to the
-            gym, playing video games and coding small projects.
+            I love dogs, music and pizza. In my free time, I enjoy going to the gym, playing video
+            games and coding small projects.
           </p>
-          <p className="technologies-container">
-            Technologies that I have been using lately:
-          </p>
+          <p className="technologies-container">Technologies that I have been using lately:</p>
           <Grid container spacing={1} columns={{ xs: 2, md: 3 }}>
             {skills.map((skill, index) => (
               <Grid item xs={1} key={`sk-chip-${index}`}>
@@ -62,11 +57,11 @@ function AboutJobTitle(props: { jobTitle: EJobTitle }): JSX.Element {
       return (
         <div>
           <p className="job-text">
-            Although I am a full-stack web developer who can work perfectly with
-            both back and front end, I rather work with the "muscles" of the
-            front. I spend most of my time building with UI kits, but when
-            required, I design as well. Still, I usually work with APIs,
-            queries, databases or anything that is on the server-side.
+            Although I am a full-stack web developer who can work perfectly with both the back and
+            front end, lately, I've been working mainly with the "muscles" of the interfaces. I'm
+            used to building APPs with available UI kits. However, when required, I design as well.
+            On the server side, I care a lot about security and following good practices to prevent
+            future problems.
           </p>
         </div>
       );
@@ -74,11 +69,10 @@ function AboutJobTitle(props: { jobTitle: EJobTitle }): JSX.Element {
       return (
         <div>
           <p className="job-text">
-            I enjoy playing video games for as far as I can remember. When I
-            discovered that I could also make them it was a game-changer in my
-            life. Since college, I have been having fun developing some. I have
-            spent some years doing it professionally but nowadays is more of a
-            hobby.
+            I enjoy playing video games for as far as I can remember. When I discovered that I could
+            also make them it was a game-changer in my life. Since college, I have been having fun
+            developing some. I have spent some years doing it professionally but nowadays is more of
+            a hobby.
           </p>
         </div>
       );
@@ -88,11 +82,7 @@ function AboutJobTitle(props: { jobTitle: EJobTitle }): JSX.Element {
 function SkillChip(props: { skill: ISkill }): JSX.Element {
   return (
     <div className="skill-chip">
-      {props.skill.star ? (
-        <StarIcon fontSize="small" />
-      ) : (
-        <StarOutlineIcon fontSize="small" />
-      )}
+      {props.skill.star ? <StarIcon fontSize="small" /> : <StarOutlineIcon fontSize="small" />}
       <span>{props.skill.name}</span>
     </div>
   );
