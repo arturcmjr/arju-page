@@ -47,8 +47,9 @@ export function Introduction(props: IntroductionProps): JSX.Element {
             {renderJobTitle(EJobTitle.Web)} and {renderJobTitle(EJobTitle.Game)} Developer
           </h2>
           <p>
-            I'm a software developer who can work well on every development layer. I'm currently in
-            Dublin, Ireland and am open to job offers nearby.
+            I'm a software developer who can work well on every development layer. I live next to
+            Brasília, Brazil. I'm open to job offers on-site nearby or remotely anywhere around the
+            globe.
           </p>
           <Button href="#contact" variant="outlined" size="large">
             HIRE ME
