@@ -52,7 +52,7 @@ function App() {
 
   useEffect(() => {
     const hash = window.location.hash.substring(1);
-    if(!hash) return;
+    if (!hash) return;
     const element = document.querySelector(`#${hash}`);
     if (!element) return;
     setTimeout(function () {

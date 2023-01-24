@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import wordsImage from "../../images/words.svg";
 import styles from "./Introduction.module.scss";
 import { getAnalytics, logEvent } from "@firebase/analytics";
+import { useTranslation } from "react-i18next";
 
 interface IntroductionProps {
   jobTitle: EJobTitle;
@@ -11,10 +12,19 @@ interface IntroductionProps {
 
 export function Introduction(props: IntroductionProps): JSX.Element {
   const { changeJobTitle } = props;
+  const { t, i18n } = useTranslation();
 
   function renderJobTitle(jobTitle: EJobTitle): JSX.Element {
     const isActive = jobTitleIsActive(jobTitle);
     const changeTitle = (jobTitle: EJobTitle) => {
+      switch (jobTitle) {
+        case EJobTitle.Game:
+          i18n.changeLanguage("pt");
+          break;
+        case EJobTitle.Web:
+          i18n.changeLanguage("en");
+          break;
+      }
       changeJobTitle(jobTitle);
       const analytics = getAnalytics();
       logEvent(analytics, "job_changed", {
@@ -27,7 +37,7 @@ export function Introduction(props: IntroductionProps): JSX.Element {
         onClick={() => changeTitle(jobTitle)}
         className={`job-title ${isActive ? "active" : ""}`}
       >
-        {EJobTitle[jobTitle]}
+        {t("introduction.job." + EJobTitle[jobTitle].toLowerCase())}
       </span>
     );
   }
@@ -41,16 +51,14 @@ export function Introduction(props: IntroductionProps): JSX.Element {
     <div id="intro" className={styles.container}>
       <div className={styles.introTextContainer}>
         <div>
-          <span className={styles.greeting}>Hi, my name is</span>
+          <span className={styles.greeting}>{t("introduction.hi")}</span>
           <h1>Artur Junior</h1>
           <h2>
-            {renderJobTitle(EJobTitle.Web)} and {renderJobTitle(EJobTitle.Game)} Developer
+            {t("introduction.job.before")}
+            {renderJobTitle(EJobTitle.Web)} {t("introduction.job.and")}{" "}
+            {renderJobTitle(EJobTitle.Game)} {t("introduction.job.after")}
           </h2>
-          <p>
-            I'm a software developer who can work well on every development layer. I live next to
-            Brasília, Brazil. I'm open to job offers on-site nearby or remotely anywhere around the
-            globe.
-          </p>
+          <p>{t("introduction.short")}</p>
           <Button href="#contact" variant="outlined" size="large">
             HIRE ME
           </Button>
