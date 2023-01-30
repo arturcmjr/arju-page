@@ -1,3 +1,4 @@
+// TODO: remove from common
 import { EJobTitle } from "../enums/job-title.enum";
 import ISkill from "./skills.interface";
 
