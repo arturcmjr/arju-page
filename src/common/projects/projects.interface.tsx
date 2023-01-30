@@ -1,6 +1,5 @@
 export interface IProject {
-  name: string;
-  description: JSX.Element;
+  key: string;
   technologies: string[];
   links: IProjectLink[];
 }

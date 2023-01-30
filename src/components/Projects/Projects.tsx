@@ -2,66 +2,86 @@ import { Grid, IconButton, Paper } from "@mui/material";
 import EJobTitle from "../../common/enums/job-title.enum";
 import getProjects from "../../common/projects/projects.data";
 import { IProject } from "../../common/projects/projects.interface";
+// TODO: use modules
 import "./Projects.scss";
-import sadSmartPhone from "../../images/sad-smartphone.svg";
 import { getAnalytics, logEvent } from "@firebase/analytics";
+import { useTranslation } from "react-i18next";
+
+function isMobileDevice(): boolean {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
 export function Projects(props: { jobTitle: EJobTitle }): JSX.Element {
   const { jobTitle } = props;
   const projects = getProjects(jobTitle);
+  const { t } = useTranslation();
+  const isMobile = isMobileDevice();
 
   return (
     <section className="projects-wrapper">
       <div id="projects">
         <h2 className="section-title">
-          <span>03:</span> Projects
+          <span>03:</span> {t('projects.title')}
         </h2>
-        {projects.length > 0 ? <ProjectsGrid projects={projects} /> : <NoProjects />}
+        <div>
+          <p>{t(`projects.instructions${isMobile ? '_mobile' : ''}`)}</p>
+          <div className="grid-container">
+            <Grid container spacing={2} columns={{ xs: 1, md: 2, xl: 3 }} alignItems="stretch">
+              {projects.map((project, index) => (
+                <Grid item xs={1} key={`proj-${index}`} gridRow="">
+                  <ProjectItem project={project} />
+                </Grid>
+              ))}
+            </Grid>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-function NoProjects(): JSX.Element {
-  return (
-    <div className="no-projects">
-      <img src={sadSmartPhone} alt="sad smartphone" />
-      <h3>Nothing to show here</h3>
-      <p>
-        I'm sorry that there are no projects here. I had to focus on web development in the first
-        months of this portfolio. But don't give up on me. You can check out another job title or
-        check here later if there are any updates.
-      </p>
-    </div>
-  );
-}
+// function NoProjects(): JSX.Element {
+//   return (
+//     <div className="no-projects">
+//       <img src={sadSmartPhone} alt="sad smartphone" />
+//       <h3>Nothing to show here</h3>
+//       <p>
+//         I'm sorry that there are no projects here. I had to focus on web development in the first
+//         months of this portfolio. But don't give up on me. You can check out another job title or
+//         check here later if there are any updates.
+//       </p>
+//     </div>
+//   );
+// }
 
-function ProjectsGrid(props: { projects: IProject[] }): JSX.Element {
-  const { projects } = props;
+// function ProjectsGrid(props: { projects: IProject[] }): JSX.Element {
+//   const { projects } = props;
+//   const { t } = useTranslation();
 
-  return (
-    <div>
-      <p>Hover the projects to see their links.</p>
-      <div className="grid-container">
-        <Grid container spacing={2} columns={{ xs: 1, md: 2, xl: 3 }} alignItems="stretch">
-          {projects.map((project, index) => (
-            <Grid item xs={1} key={`proj-${index}`} gridRow="">
-              <ProjectItem project={project} />
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <p>Hover the projects to see their links.</p>
+//       <div className="grid-container">
+//         <Grid container spacing={2} columns={{ xs: 1, md: 2, xl: 3 }} alignItems="stretch">
+//           {projects.map((project, index) => (
+//             <Grid item xs={1} key={`proj-${index}`} gridRow="">
+//               <ProjectItem project={project} />
+//             </Grid>
+//           ))}
+//         </Grid>
+//       </div>
+//     </div>
+//   );
+// }
 
 function ProjectItem(props: { project: IProject }): JSX.Element {
   const { project } = props;
+  const { t } = useTranslation();
 
   function onLinkClick(url: string) {
     const analytics = getAnalytics();
     logEvent(analytics, "project_link_clicked", {
-      project: project.name,
+      project: project.key,
       link: url,
     });
   }
@@ -69,8 +89,8 @@ function ProjectItem(props: { project: IProject }): JSX.Element {
   return (
     <Paper elevation={0} className="project-item">
       <div className="content">
-        <h3 className="title">{project.name}</h3>
-        {project.description}
+        <h3 className="title">{t(`projects.projects.${project.key}.name`)}</h3>
+        <p>{t(`projects.projects.${project.key}.description`)}</p>
         <div className="technologies">
           {project.technologies.map((tech, index) => (
             <span key={`p-tech-${index}`}>{tech}</span>

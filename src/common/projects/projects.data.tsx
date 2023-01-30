@@ -12,14 +12,7 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
     EJobTitle.Web,
     [
       {
-        name: "Todo App",
-        description: (
-          <p>
-            It's a simple To-Do app. I made it mainly to show my technical knowledge of the Angular
-            framework. It has unit tests for basic functionalities, is mobile-first designed, has
-            PWA support, and uses firebase's realtime database.
-          </p>
-        ),
+        key: "todo",
         technologies: ["Angular", "TS", "Karma", "Firebase"],
         links: [
           {
@@ -33,14 +26,7 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
         ],
       },
       {
-        name: "Trivia Game",
-        description: (
-          <p>
-            This one makes use of Tailwind css and React. It is a simple quiz game powered by Open
-            Trivia Database. It allows you to choose a topic, time limit and others settings to
-            customize your experience.
-          </p>
-        ),
+        key: "trivia",
         technologies: ["React", "JS", "Tailwind CSS", "Open Trivia API"],
         links: [
           {
@@ -54,14 +40,7 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
         ],
       },
       {
-        name: "Secret Santa",
-        description: (
-          <p>
-            This one may be the simplest here. I made it to help with my family's holiday Secret
-            Santa. It allows you quick create one and send the links to the participants so they can
-            see who they got.
-          </p>
-        ),
+        key: "secret_santa",
         technologies: ["Angular", "TS", "Firebase"],
         links: [
           {
@@ -75,13 +54,7 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
         ],
       },
       {
-        name: "My Portfolio",
-        description: (
-          <p>
-            Its main objective is to show some of my projects and talk a little about me. It uses
-            SendingBlue for contact and a single cloud function to keep it safe.
-          </p>
-        ),
+        key: "portfolio",
         technologies: ["React", "TS"],
         links: [
           {
@@ -96,14 +69,7 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
     EJobTitle.Game,
     [
       {
-        name: "Pru!",
-        description: (
-          <p>
-            Pru! is an "infinity runner" of a pigeon who needs to eat food and score by hitting
-            people with its poop while avoiding obstacles. It was the first game that I made back in
-            college. It has gone through some changes since I first thought about it.
-          </p>
-        ),
+        key: "pru",
         technologies: ["Unity", "Mobile", "Vectorial"],
         links: [
           {
@@ -113,22 +79,7 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
         ],
       },
       {
-        name: "Jimmy Gunner",
-        description: (
-          <>
-            <p>
-              It is a shooter that I made while playing with voxel art back in college. It is the
-              game that gave me the best game of the semester award. I tried to remade it some years
-              later but left this idea aside because of the number of similar games available.{" "}
-              <br />
-              <br />
-              <small>
-                The game isn't at the Play Store anymore. So there is the link to the trailer
-                instead.
-              </small>
-            </p>
-          </>
-        ),
+        key: "jimmy_gunner",
         technologies: ["Unity", "Mobile", "Voxel Art"],
         links: [
           {
@@ -138,22 +89,7 @@ const projects: [Key: EJobTitle, Value: IProject[]][] = [
         ],
       },
       {
-        name: "Slime Run",
-        description: (
-          <>
-            <p>
-              The game is about a world invaded by slimes. The hero's job is to get rid of them by
-              jumping on their head while running, gliding and collecting coins to be used later on
-              outfits.
-              <br />
-              <br />
-              <small>
-                The game isn't at the Play Store anymore. So there is the link to a twitter post
-                instead.
-              </small>
-            </p>
-          </>
-        ),
+        key: "slime_run",
         technologies: ["Unity", "Mobile", "Pixel Art"],
         links: [
           {

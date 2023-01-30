@@ -53,5 +53,40 @@
         "content": "<p>Arkads Games é uma espécie de pseudônimo que uso para meu hobby de desenvolvimento de jogos. Apesar de não desenvolver jogos como um fonte de renda hoje em dia, ainda amo criá-los por diversão. Apesar de não conseguir me dedicar como gostaria, ainda desejo continuar</p>"
       }
     }
+  },
+  "projects": {
+    "title": "Projetos",
+    "instructions": "Passe o mouse no projeto para ver os links",
+    "instructions_mobile": "Toque no projeto para ver os links",
+    "projects": {
+      "todo": {
+        "name": "Lista de Tarefas",
+        "description": "É um aplicativo de lista de tarefas simples. O desenvolvi principalmente para mostrar meu conhecimento técnico em Angular. Possui testes de unidade para funcionalidades básicas, é projetado visando para dispositivos móveis, tem suporte a PWA e usa o banco de dados em tempo real do firebase."
+      },
+      "trivia": {
+        "name": "Perguntas e Respostas",
+        "description": "É um jogo de perguntas simples desenvolvido pelo Open Trivia Database. Ele permite que você escolha um tópico, limite de tempo e outras configurações para personalizar sua experiência."
+      },
+      "secret_santa": {
+        "name": "Amigo Secreto",
+        "description": "Este pode ser o mais simples aqui. Eu o desenvolvi para ajudar com o amigo secreto da minha família. Ele permite que você crie um rapidamente e envie os links para os participantes para que eles possam ver quem eles tiraram."
+      },
+      "portfolio": {
+        "name": "Portfólio",
+        "description": "Esse tem como principal objetivo mostrar alguns dos meus projetos e falar um pouco sobre mim. Ele usa o SendingBlue para envio do email e uma única função na nuvem para mantê-lo seguro."
+      },
+      "pru": {
+        "name": "Pru!",
+        "description": "Pru! é um \"infinity runner\" sobre um pombo que precisa comer comida e pontuar acertando as pessoas com seu cocô enquanto evita obstáculos. Foi o primeiro jogo que desenvolvi na faculdade. Ele passou por algumas mudanças desde que pensei nele pela primeira vez."
+      },
+      "jimmy_gunner": {
+        "name": "Jimmy Gunner",
+        "description": "É um jogo de tiro que fiz enquanto brincava com voxel art na faculdade. É o jogo que me deu o prêmio de melhor jogo do semestre. Tentei refazê-lo alguns anos depois, mas deixei essa ideia de lado por causa da quantidade de jogos semelhantes disponíveis."
+      },
+      "slime_run": {
+        "name": "Slime Run",
+        "description": "Este jogo é sobre um mundo invadido por slimes. O trabalho do herói é se livrar deles pulando neles enquanto corre, deslizando e coletando moedas para serem usadas posteriormente em trajes."
+      }
+    }
   }
 }

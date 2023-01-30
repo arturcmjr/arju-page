@@ -53,5 +53,40 @@
         "content": "<p>Arkads Games is kind of a pseudonym that I use for my game development hobby. Even though I do not develop games as a job nowadays, I still love making them for fun. Despite not having time to do it, and not and not making money with them, I still wish to keep doing it as a hobby.</p>"
       }
     }
+  },
+  "projects": {
+    "title": "Projects",
+    "instructions": "Hover the project card to see its links.",
+    "instructions_mobile": "Tap on the project card to see its links.",
+    "projects": {
+      "todo": {
+        "name": "ToDo App",
+        "description": "It's a simple To-Do app. I made it mainly to show my technical knowledge of the Angular framework. It has unit tests for basic functionalities, is mobile-first designed, has PWA support, and uses firebase's realtime database."
+      },
+      "trivia": {
+        "name": "Trivia Game",
+        "description": "It is a simple quiz game powered by Open Trivia Database. It allows you to choose a topic, time limit and others settings to customize your experience."
+      },
+      "secret_santa": {
+        "name": "Secret Santa",
+        "description": "This one might be the simplest here. I made it to help with my family's holiday Secret Santa. It allows you quick create one and send the links to the participants so they can see who they got."
+      },
+      "portfolio": {
+        "name": "Portfolio",
+        "description": "Its main objective is to show some of my projects and talk a little about me. It uses SendingBlue for contact and a single cloud function to keep it safe."
+      },
+      "pru": {
+        "name": "Pru!",
+        "description": "Pru! is an \"infinity runner\" of a pigeon who needs to eat food and score by hitting people with its poop while avoiding obstacles. It was the first game that I made back in college. It has gone through some changes since I first thought about it."
+      },
+      "jimmy_gunner": {
+        "name": "Jimmy Gunner",
+        "description": "It is a twin stick shooter that I made while playing with voxel art back in college. It is the game that gave me the best game of the semester award. I tried to remade it some years later but left this idea aside because of the number of similar games available."
+      },
+      "slime_run": {
+        "name": "Slime Run",
+        "description": "This game is about a world invaded by slimes. The hero's job is to get rid of them by jumping on their head while running, gliding and collecting coins to be used later on outfits."
+      }
+    }
   }
 }
