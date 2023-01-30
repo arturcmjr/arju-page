@@ -14,5 +14,15 @@
     "job_separator": "e",
     "short": "Sou um desenvolvedor de software que trabalha bem em todas as camadas do desenvolvimento. Moro perto de Brasília, Brasil e estou aberto a ofertas de emprego nas proximidades ou remotamente em qualquer lugar do mundo.",
     "hire_me": "trabalhe comigo"
+  },
+  "about": {
+    "title": "Quem Eu Sou",
+    "first": "Olá, meu nome é Artur. Eu gosto de criar coisas. Meu primeiro contato com código foi com o Game Maker aos 14 anos, o que me fez apaixonar por desenvolvimento. Desde então, tenho passado por várias tecnologias e outras áreas do desenvolvimento.",
+    "second": {
+      "game": "Eu gosto de jogar videogames desde que me lembro. Quando descobri que poderia desenvolver os meus próprios, foi uma virada de jogo em minha vida. Desde a faculdade, tenho me divertido desenvolvendo alguns. Passei alguns anos fazendo isso profissionalmente, mas hoje em dia é mais um hobby.",
+      "web": "Apesar de ser um desenvolvedor web full-stack que consegue trabalhar perfeitamente tanto com o back quanto com o front-end, ultimamente tenho trabalhado mais com os \"músculos\" das interfaces. Estou acostumado a criar APPs com kits de interface do usuário disponíveis. No entanto, quando necessário, eu também as faço. Do lado do servidor, preocupo-me muito com a segurança e com as boas práticas para evitar problemas futuros."
+    },
+    "third": "Eu amo cachorros, música e pizza. No meu tempo livre, gosto de ir à academia, jogar videogame e desenvolver pequenos projetos.",
+    "technologies": "Tecnologias que tenho utilizado ultimamente:"
   }
 }

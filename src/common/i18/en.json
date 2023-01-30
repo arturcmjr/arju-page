@@ -14,5 +14,15 @@
     "job_separator": "and",
     "short": "I'm a software developer who can work well on every development layer. I live next to Brasília, Brazil. I'm open to job offers on-site nearby or remotely anywhere around the globe.",
     "hire_me": "hire me"
+  },
+  "about": {
+    "title": "Who I Am",
+    "first": "Hey there, my name is Artur. I enjoy creating things. My first contact with code was with Game Maker when I was 14, which made me fall in love with development. Since then, I have been passing through some technologies and other fields of software development.",
+    "second": {
+      "game": "I enjoy playing video games for as far as I can remember. When I discovered that I could also make them it was a game-changer in my life. Since college, I have been having fun developing some. I have spent some years doing it professionally but nowadays is more of a hobby.",
+      "web": "Although I am a full-stack web developer who can work perfectly with both the back and front end, lately, I've been working mainly with the \"muscles\" of the interfaces. I'm used to building APPs with available UI kits. However, when required, I design as well. On the server side, I care a lot about security and following good practices to prevent future problems."
+    },
+    "third": "I love dogs, music and pizza. In my free time, I enjoy going to the gym, playing video games and coding small projects.",
+    "technologies": "Technologies that I have been using lately:"
   }
 }

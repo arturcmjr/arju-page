@@ -1,3 +1,4 @@
+// TODO: use module instead
 import "./About.scss";
 import myPicture from "../../images/profile.png";
 import { Grid } from "@mui/material";
@@ -6,29 +7,24 @@ import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import EJobTitle from "../../common/enums/job-title.enum";
 import { getSkills } from "../../common/skills/skills.data";
 import ISkill from "../../common/skills/skills.interface";
+import { useTranslation } from "react-i18next";
 
 export function About(props: { jobTitle: EJobTitle }): JSX.Element {
   const { jobTitle } = props;
   const skills = getSkills(jobTitle);
+  const { t } = useTranslation();
 
   return (
     <section className="about-wrapper">
       <div id="about">
         <div className="text-container">
           <h2 className="section-title">
-            <span>01:</span> Who I am
+            <span>01:</span> {t('about.title')}
           </h2>
-          <p>
-            Hey there, my name is Artur. I enjoy creating things. My first contact with code was
-            with Game Maker when I was 14, which made me fall in love with development. Since then,
-            I have been passing through some technologies and other fields of software development.
-          </p>
-          <AboutJobTitle jobTitle={jobTitle} />
-          <p>
-            I love dogs, music and pizza. In my free time, I enjoy going to the gym, playing video
-            games and coding small projects.
-          </p>
-          <p className="technologies-container">Technologies that I have been using lately:</p>
+          <p>{t('about.first')}</p>
+          <p className="job-text">{t(`about.second.${EJobTitle[jobTitle].toLowerCase()}`)}</p>
+          <p>{t('about.third')}</p>
+          <p className="technologies-container">{t('about.technologies')}</p>
           <Grid container spacing={1} columns={{ xs: 2, md: 3 }}>
             {skills.map((skill, index) => (
               <Grid item xs={1} key={`sk-chip-${index}`}>
@@ -51,6 +47,8 @@ export function About(props: { jobTitle: EJobTitle }): JSX.Element {
 
 function AboutJobTitle(props: { jobTitle: EJobTitle }): JSX.Element {
   const { jobTitle } = props;
+  const { t } = useTranslation();
+
   switch (jobTitle) {
     case EJobTitle.Web:
     default:
