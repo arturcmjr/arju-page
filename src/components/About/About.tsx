@@ -45,38 +45,6 @@ export function About(props: { jobTitle: EJobTitle }): JSX.Element {
   );
 }
 
-function AboutJobTitle(props: { jobTitle: EJobTitle }): JSX.Element {
-  const { jobTitle } = props;
-  const { t } = useTranslation();
-
-  switch (jobTitle) {
-    case EJobTitle.Web:
-    default:
-      return (
-        <div>
-          <p className="job-text">
-            Although I am a full-stack web developer who can work perfectly with both the back and
-            front end, lately, I've been working mainly with the "muscles" of the interfaces. I'm
-            used to building APPs with available UI kits. However, when required, I design as well.
-            On the server side, I care a lot about security and following good practices to prevent
-            future problems.
-          </p>
-        </div>
-      );
-    case EJobTitle.Game:
-      return (
-        <div>
-          <p className="job-text">
-            I enjoy playing video games for as far as I can remember. When I discovered that I could
-            also make them it was a game-changer in my life. Since college, I have been having fun
-            developing some. I have spent some years doing it professionally but nowadays is more of
-            a hobby.
-          </p>
-        </div>
-      );
-  }
-}
-
 function SkillChip(props: { skill: ISkill }): JSX.Element {
   return (
     <div className="skill-chip">

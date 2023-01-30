@@ -66,6 +66,7 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
 
   const sidebarClass = `${styles.sidebar} ${sidebarOpen ? "" : styles.hidden}`;
   const hamburgerIconClass = `${styles.icon} ${sidebarOpen ? styles.close : ""}`;
+  const language = i18n.language.split('-')[0] === 'pt' ? 'pt' : 'en';
 
   return (
     <div>
@@ -86,7 +87,7 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
           <div className={styles.language} onClick={changeLanguage}>{t("navbar.alternative_language")}</div>
           <Button
             variant="outlined"
-            href={`/${EJobTitle[jobTitle].toLowerCase()}/resume.pdf`}
+            href={`/${language}/resume.pdf`}
             target="_blank"
             onClick={onResumeClick}
           >
