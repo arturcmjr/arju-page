@@ -10,7 +10,7 @@
     "alternative_language": "English"
   },
   "introduction": {
-    "hi": "Oi, meu nome é",
+    "hi": "Oi, sou o",
     "job_separator": "e",
     "short": "Sou um desenvolvedor de software que trabalha bem em todas as camadas do desenvolvimento. Moro perto de Brasília, Brasil e estou aberto a ofertas de emprego nas proximidades ou remotamente em qualquer lugar do mundo.",
     "hire_me": "trabalhe comigo"
@@ -120,5 +120,8 @@
         "description": "Mas não se preocupe, você pode tentar novamente mais tarde ou me enviar um e-mail manualmente para"
       }
     }
+  },
+  "common": {
+    "made_by": "Feito com ❤️ por Artur Junior"
   }
 }

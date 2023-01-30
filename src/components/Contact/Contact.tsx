@@ -3,7 +3,7 @@ import "./Contact.scss";
 import { useForm } from "react-hook-form";
 import { Button, Grid, TextField, useTheme } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import EJobTitle from "../../common/enums/job-title.enum";
 import { useTranslation, Trans } from "react-i18next";

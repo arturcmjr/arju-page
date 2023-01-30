@@ -30,7 +30,7 @@ export function Experience(): JSX.Element {
             <div className="mobile-company">{experience.company}</div>
             <h3>{t(`experience.experiences.${experience.translationKey}.title`)}</h3>
             <div className="period">{experience.dateRange}</div>
-            <Trans>{t(`experience.experiences.${experience.translationKey}.content`)}</Trans>
+            <Trans i18nKey={`experience.experiences.${experience.translationKey}.content`}></Trans>
           </div>
         </div>
       </div>

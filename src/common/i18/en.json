@@ -10,7 +10,7 @@
     "alternative_language": "Português"
   },
   "introduction": {
-    "hi": "Hi, my name is",
+    "hi": "Hi, I'm",
     "job_separator": "and",
     "short": "I'm a software developer who can work well on every development layer. I live next to Brasília, Brazil. I'm open to job offers on-site nearby or remotely anywhere around the globe.",
     "hire_me": "hire me"
@@ -120,5 +120,8 @@
         "description": "But don't worry you can try again later or email me on"
       }
     }
+  },
+  "common": {
+    "made_by": "Made with ❤️ by Artur Junior"
   }
 }

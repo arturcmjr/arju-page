@@ -21,6 +21,11 @@
     margin: 0;
     font-size: 4rem;
     color: var(--primary);
+
+    &::after {
+      content: ',';
+      color: #fff;
+    }
   }
 
   h2 {
