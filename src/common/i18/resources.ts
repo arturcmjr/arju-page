@@ -1,6 +1,8 @@
 import { Resource } from "i18next";
+import pt from "./pt-BR.json";
+import en from "./en.json";
 
-export const translationEN = {
+/* export const translationEN = {
   introduction: {
     hi: "Hi, my name is",
     job: {
@@ -19,22 +21,22 @@ export const translationPTBR = {
   introduction: {
     hi: "Oi, meu nome é",
     job: {
-        before: "Desenvolvedor ",
-        and: " e ",
-        after: "",
-        web: "Web",
-        game: "Jogos",
-      },
+      before: "Desenvolvedor ",
+      and: " e ",
+      after: "",
+      web: "Web",
+      game: "Jogos",
+    },
     short:
       "I'm a software developer who can work well on every development layer. I live next to Brasília, Brazil. I'm open to job offers on-site nearby or remotely anywhere around the globe.",
   },
-};
+}; */
 
 export const translation: Resource = {
-  en: { translation: translationEN },
-  "en-US": { translation: translationEN },
-  pt: { translation: translationPTBR },
-  "pt-BR": { translation: translationPTBR },
+  en: { translation: en },
+  "en-US": { translation: en },
+  pt: { translation: pt },
+  "pt-BR": { translation: pt },
 };
 
 export default translation;

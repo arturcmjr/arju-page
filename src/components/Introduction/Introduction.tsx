@@ -37,7 +37,7 @@ export function Introduction(props: IntroductionProps): JSX.Element {
         onClick={() => changeTitle(jobTitle)}
         className={`job-title ${isActive ? "active" : ""}`}
       >
-        {t("introduction.job." + EJobTitle[jobTitle].toLowerCase())}
+        {EJobTitle[jobTitle]}
       </span>
     );
   }
@@ -54,13 +54,12 @@ export function Introduction(props: IntroductionProps): JSX.Element {
           <span className={styles.greeting}>{t("introduction.hi")}</span>
           <h1>Artur Junior</h1>
           <h2>
-            {t("introduction.job.before")}
-            {renderJobTitle(EJobTitle.Web)} {t("introduction.job.and")}{" "}
-            {renderJobTitle(EJobTitle.Game)} {t("introduction.job.after")}
+            {renderJobTitle(EJobTitle.Web)} {t("introduction.job_separator")}{" "}
+            {renderJobTitle(EJobTitle.Game)} Developer
           </h2>
           <p>{t("introduction.short")}</p>
           <Button href="#contact" variant="outlined" size="large">
-            HIRE ME
+            {t("introduction.hire_me")}
           </Button>
         </div>
       </div>
