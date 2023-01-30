@@ -40,40 +40,6 @@ export function Projects(props: { jobTitle: EJobTitle }): JSX.Element {
   );
 }
 
-// function NoProjects(): JSX.Element {
-//   return (
-//     <div className="no-projects">
-//       <img src={sadSmartPhone} alt="sad smartphone" />
-//       <h3>Nothing to show here</h3>
-//       <p>
-//         I'm sorry that there are no projects here. I had to focus on web development in the first
-//         months of this portfolio. But don't give up on me. You can check out another job title or
-//         check here later if there are any updates.
-//       </p>
-//     </div>
-//   );
-// }
-
-// function ProjectsGrid(props: { projects: IProject[] }): JSX.Element {
-//   const { projects } = props;
-//   const { t } = useTranslation();
-
-//   return (
-//     <div>
-//       <p>Hover the projects to see their links.</p>
-//       <div className="grid-container">
-//         <Grid container spacing={2} columns={{ xs: 1, md: 2, xl: 3 }} alignItems="stretch">
-//           {projects.map((project, index) => (
-//             <Grid item xs={1} key={`proj-${index}`} gridRow="">
-//               <ProjectItem project={project} />
-//             </Grid>
-//           ))}
-//         </Grid>
-//       </div>
-//     </div>
-//   );
-// }
-
 function ProjectItem(props: { project: IProject }): JSX.Element {
   const { project } = props;
   const { t } = useTranslation();

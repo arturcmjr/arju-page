@@ -88,5 +88,37 @@
         "description": "Este jogo é sobre um mundo invadido por slimes. O trabalho do herói é se livrar deles pulando neles enquanto corre, deslizando e coletando moedas para serem usadas posteriormente em trajes."
       }
     }
+  },
+  "contact": {
+    "title": "Entre Em Contato",
+    "description": "Sinta-se à vontade para mandar uma mensagem, retornarei o quanto antes possível.",
+    "form": {
+      "name": {
+        "label": "Nome",
+        "required": "Nome é necessário",
+        "max_length": "O nome é muito longo"
+      },
+      "email": {
+        "label": "E-mail",
+        "required": "E-mail é necessário",
+        "not_valid": "E-mail não é válido"
+      },
+      "message": {
+        "label": "Mensagem",
+        "required": "A mensagem é necessária",
+        "placeholder": "Escreva aqui sua mensagem",
+        "max_length": "Por favor, escreva uma mensagem mais curta"
+      },
+      "submit_button": "enviar",
+      "submit_success": {
+        "title": "E-mail enviado com sucesso!",
+        "description": "Obrigado pela mensagem. Farei o possível para respondê-lo em <strong>{{email}}</strong> o mais rápido possível",
+        "button": "Enviar outra mensagem"
+      },
+      "submit_error": {
+        "title": "Desculpe, parece que o e-mail não pôde ser enviado agora.",
+        "description": "Mas não se preocupe, você pode tentar novamente mais tarde ou me enviar um e-mail manualmente para"
+      }
+    }
   }
 }
