@@ -123,5 +123,9 @@
   },
   "common": {
     "made_by": "Feito com ❤️ por Artur Junior"
+  },
+  "job_instructions": {
+    "text": "Olá, Embora eu tenha focado no desenvolvimento web ultimamente, também sou um desenvolvedor de jogos habilidoso. Você pode clicar a qualquer momento em \"Web\" ou \"Game\" para ver algumas mudanças no conteúdo da página.",
+    "got_it": "Entendido"
   }
 }

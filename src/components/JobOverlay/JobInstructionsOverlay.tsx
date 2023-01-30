@@ -2,6 +2,7 @@ import { getAnalytics, logEvent } from "@firebase/analytics";
 import { Button } from "@mui/material";
 import { useCallback, useEffect, useState } from "react";
 import "./JobInstructionsOverlay.scss";
+import { useTranslation } from "react-i18next";
 
 function getJobWords(): HTMLElement[] {
   return Array.from(document.getElementsByClassName("job-title") as HTMLCollectionOf<HTMLElement>);
@@ -24,7 +25,7 @@ function moveInstructionsBox(): void {
 export function JobInstructionsOverlay(): JSX.Element {
   const [visible, setVisible] = useState(false);
   const [hideButtonDisabled, setHideButtonDisabled] = useState(true);
-
+  const { t } = useTranslation();
   const localStorageSeenKey = "seenJobInstructions";
 
   useEffect(() => {
@@ -76,13 +77,11 @@ export function JobInstructionsOverlay(): JSX.Element {
       <div className="overlay"></div>
       <div id="jobInstructionsBox">
         <p>
-          Hi there, Even though I have been focusing on web development lately, I'm also a skilled
-          game developer. You can click any time on "Web" or "Game" to see some changes on the page
-          content.
+          {t('job_instructions.text')}
         </p>
         <div className="btn-container">
           <Button variant="text" onClick={hideOverlay} disabled={hideButtonDisabled}>
-            Got it
+          {t('job_instructions.got_it')}
           </Button>
         </div>
       </div>
