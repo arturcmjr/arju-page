@@ -50,7 +50,6 @@ export function JobInstructionsOverlay(): JSX.Element {
 
   function setTopElements(onTop: boolean): void {
     const jobWords = getJobWords();
-    console.log(jobWords);
     jobWords.forEach((el) => {
       if (onTop) {
         el.style.zIndex = "10001";

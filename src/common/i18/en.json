@@ -1,4 +1,14 @@
 {
+  "navbar": {
+    "items": {
+      "about": "About",
+      "experience": "Experience",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "resume": "resume",
+    "alternative_language": "Português"
+  },
   "introduction": {
     "hi": "Hi, my name is",
     "job_separator": "and",

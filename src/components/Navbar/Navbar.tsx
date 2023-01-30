@@ -3,6 +3,7 @@ import { Button, IconButton } from "@mui/material";
 import React, { useEffect } from "react";
 import EJobTitle from "../../common/enums/job-title.enum";
 import styles from "./Navbar.module.scss";
+import { useTranslation } from "react-i18next";
 
 const menuItems = [
   {
@@ -27,7 +28,9 @@ var prevScrollpos = window.pageYOffset;
 
 export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
   const { jobTitle } = props;
+  const { t, i18n } = useTranslation();
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
+
   const handleScroll = () => {
     var currentScrollPos = window.pageYOffset;
     const doc = document.getElementById("navbar");
@@ -35,6 +38,12 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
       doc.style.top = prevScrollpos > currentScrollPos ? "0" : "-60px";
       prevScrollpos = currentScrollPos;
     }
+  };
+
+  const changeLanguage = () => {
+    const language = i18n.language.split('-')[0];
+    const newLanguage = language === 'en' ? 'pt' : 'en';
+    i18n.changeLanguage(newLanguage);
   };
 
   useEffect(() => {
@@ -69,18 +78,19 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
         <div className={styles.linksContainer}>
           {menuItems.map((item, index) => (
             <a key={`nv-item-${index}`} className={styles.navLink} href={item.link}>
-              {item.name}
+              {t(`navbar.items.${item.name.toLowerCase()}`)}
             </a>
           ))}
         </div>
-        <div className={styles.resumeContainer}>
+        <div className={styles.rightContainer}>
+          <div className={styles.language} onClick={changeLanguage}>{t("navbar.alternative_language")}</div>
           <Button
             variant="outlined"
             href={`/${EJobTitle[jobTitle].toLowerCase()}/resume.pdf`}
             target="_blank"
             onClick={onResumeClick}
           >
-            resume
+            {t("navbar.resume")}
           </Button>
         </div>
         <aside id="sidebar" className={sidebarClass}>
@@ -100,24 +110,29 @@ export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
             </IconButton>
           </div>
           <div className={styles.sidebarContent}>
-            {menuItems.map((item, index) => (
-              <div
-                onClick={() => {
-                  setSidebarOpen(false);
-                }}
-                className={styles.sideLink}
-                key={`mn-item-${index}`}
-              >
-                <a href={item.link}>{item.name}</a>
-              </div>
-            ))}
+            <div className={styles.languageContainer}>
+              <div className={styles.language} onClick={changeLanguage}>{t("navbar.alternative_language")}</div>
+            </div>
+            <div>
+              {menuItems.map((item, index) => (
+                <div
+                  onClick={() => {
+                    setSidebarOpen(false);
+                  }}
+                  className={styles.sideLink}
+                  key={`mn-item-${index}`}
+                >
+                  <a href={item.link}>{t(`navbar.items.${item.name.toLowerCase()}`)}</a>
+                </div>
+              ))}
+            </div>
             <div className={styles.resumeContainer}>
               <Button
                 variant="outlined"
                 href={`/${EJobTitle[jobTitle].toLowerCase()}/resume.pdf`}
                 target="_blank"
               >
-                resume
+                {t("navbar.resume")}
               </Button>
             </div>
           </div>

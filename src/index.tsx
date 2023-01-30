@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 
 i18next
   .use(LanguageDetector)
-  .init({ resources: translation, debug: true });
+  .init({ resources: translation, debug: true, fallbackLng: 'en' });
 
 root.render(
   <I18nextProvider i18n={i18next}>

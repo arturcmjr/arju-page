@@ -12,19 +12,11 @@ interface IntroductionProps {
 
 export function Introduction(props: IntroductionProps): JSX.Element {
   const { changeJobTitle } = props;
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   function renderJobTitle(jobTitle: EJobTitle): JSX.Element {
     const isActive = jobTitleIsActive(jobTitle);
     const changeTitle = (jobTitle: EJobTitle) => {
-      switch (jobTitle) {
-        case EJobTitle.Game:
-          i18n.changeLanguage("pt");
-          break;
-        case EJobTitle.Web:
-          i18n.changeLanguage("en");
-          break;
-      }
       changeJobTitle(jobTitle);
       const analytics = getAnalytics();
       logEvent(analytics, "job_changed", {
