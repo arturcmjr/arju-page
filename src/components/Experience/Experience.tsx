@@ -1,16 +1,18 @@
 import { Fragment, useState } from "react";
 import "./Experience.scss";
 import experiences, { IExperience } from "./experiences";
+import { Trans, useTranslation } from "react-i18next";
 
 export function Experience(): JSX.Element {
   const [experienceIndex, setExperienceIndex] = useState(0);
-  const currentExperience = experiences[experienceIndex];
-  
+  const experience = experiences[experienceIndex];
+  const { t } = useTranslation();
+
   return (
     <section className="experience-wrapper">
       <div id="experience" >
         <h2 className="section-title">
-          <span>02:</span> Experience and Work
+          <span>02:</span> {t('experience.title')}
         </h2>
         <div className="content">
           <div className="tabs">
@@ -24,22 +26,15 @@ export function Experience(): JSX.Element {
               </Fragment>
             ))}
           </div>
-          <TextContainer experience={currentExperience} />
+          <div className="text-container" key={experience.company}>
+            <div className="mobile-company">{experience.company}</div>
+            <h3>{t(`experience.experiences.${experience.translationKey}.title`)}</h3>
+            <div className="period">{experience.dateRange}</div>
+            <Trans>{t(`experience.experiences.${experience.translationKey}.content`)}</Trans>
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function TextContainer(props: { experience: IExperience }): JSX.Element {
-  const { experience } = props;
-  return (
-    <div className="text-container" key={experience.company}>
-      <div className="mobile-company">{experience.company}</div>
-      <h3>{experience.title}</h3>
-      <div className="period">{experience.dateRange}</div>
-      {experience.content}
-    </div>
   );
 }
 

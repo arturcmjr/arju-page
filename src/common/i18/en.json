@@ -24,5 +24,34 @@
     },
     "third": "I love dogs, music and pizza. In my free time, I enjoy going to the gym, playing video games and coding small projects.",
     "technologies": "Technologies that I have been using lately:"
+  },
+  "experience": {
+    "title": "Education and Work",
+    "experiences": {
+      "roundstars": {
+        "title": "Game Developer",
+        "content": "<p>Worked on developing single-player and multiplayer games. Coding core mechanism, search algorithms and bots AIs. Programming, making interfaces and arts for those games.</p><p>Wrote clean C# code for games on Unity Engine.</p><p>Helped with a REST API for a social media for games with PHP and MySQL.</p>"
+      },
+      "adra_brasil": {
+        "title": "Designer",
+        "content": "<p>Worked with a little bit of everything. I helped with the automation of daily tasks with VBA and SQL. Made art for fundraising campaigns. Developed a system with Laravel and Vue to help with the distribution of hot meals for Venezuelan refugees.</p>"
+      },
+      "adven_tech": {
+        "title": "Full Stack Developer",
+        "content": "<p>Worked developing web apps as a stock management, event, e-commerce and other systems on client demand. I also helped to migrate legacy systems to modern technologies.</p><p>Written clean and scalable code for the back and front end. Worked with popular technologies such as Angular, React, .NET, C#, SQL and others.</p>"
+      },
+      "iesb": {
+        "title": "Graduation on Game Development",
+        "content": "<p>learned the concepts of object-oriented programming. Had contact with every layer of game development, including audio, 2D and 3D art, programming, level design and others. Won a prize for the best game made in the course of the second semester of 2017.</p><p>Even though the graduation had a heavy focus on game development, I also had contact with web and app development.</p>"
+      },
+      "descomplica": {
+        "title": "Post Graduation at Two Courses",
+        "content": "<p><strong>System Analysis and Development</strong> focuses mostly on the theoretical part of developing a system. I studied data structure, project management, DevOps and other development-related topics.</p><p><strong>Mobile Development</strong> As the name suggests, we had mobile related classes, like the most recent frameworks that have been used for hybrid development as well the basics of IOS and Android native apps.</p>"
+      },
+      "arkads_games": {
+        "title": "Game Developer",
+        "content": "<p>Arkads Games is kind of a pseudonym that I use for my game development hobby. Even though I do not develop games as a job nowadays, I still love making them for fun. Despite not having time to do it, and not and not making money with them, I still wish to keep doing it as a hobby.</p>"
+      }
+    }
   }
 }

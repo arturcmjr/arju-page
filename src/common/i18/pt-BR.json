@@ -24,5 +24,34 @@
     },
     "third": "Eu amo cachorros, música e pizza. No meu tempo livre, gosto de ir à academia, jogar videogame e desenvolver pequenos projetos.",
     "technologies": "Tecnologias que tenho utilizado ultimamente:"
+  },
+  "experience": {
+    "title": "Educação e Trabalho",
+    "experiences": {
+      "roundstars": {
+        "title": "Desenvolvedor de jogos",
+        "content": "<p>Trabalhei no desenvolvimento de jogos single-player e multiplayer. Desenvolvi mecânicas centrais, algoritmos de pesquisa, IAs de bots. Programando, criando interfaces e artes para esses jogos.</p><p>Escrevi código limpo em C# para Unity Engine</p><p>Ajudei na criação de uma API REST para uma rede social com PHP e MySQL</p>"
+      },
+      "adra_brasil": {
+        "title": "Designer",
+        "content": "<p>Trabalhei com um pouco de tudo. Ajudei na automação de tarefas diárias com VBA e SQL. Criei artes para campanhas de arrecadação de fundos. Desenvolvi um sistema em Laravel e Vue para ajudar na distribuição de refeições quentes para refugiados venezuelanos.</p>"
+      },
+      "adven_tech": {
+        "title": "Desenvolvedor Full Stack",
+        "content": "<p>Trabalhei desenvolvendo aplicativos web como gerenciamento de estoque, eventos, e-commerce e outros sistemas sob demanda do cliente. Também ajudei a migrar sistemas legados para tecnologias modernas.</p><p>Desenvolvi código limpo e escalável para back-end e front-end. Trabalhei com tecnologias populares como Angular, React, .NET, C#, SQL e outras"
+      },
+      "iesb": {
+        "title": "Graduação em Desenvolvimento de Games",
+        "content": "<p>Aprendi os conceitos de programação orientada a objetos. Tive contato com todas as camadas do desenvolvimento de jogos, incluindo áudio, arte 2D e 3D, programação, level design e outros. Ganhei o prêmio de melhor jogo feito no decorrer do segundo semestre de 2017.</p><p>Apesar da graduação ter o foco em desenvolvimento de jogos, também tive contato com desenvolvimento web e de aplicativos.</p >"
+      },
+      "descomplica": {
+        "title": "Pós Graduação em Dois Cursos",
+        "content": "<p><strong>Análise e Desenvolvimento de Sistemas</strong> concentra-se principalmente na parte teórica do desenvolvimento de um sistema. Estudei estrutura de dados, gerenciamento de projetos, DevOps e outros tópicos relacionados ao desenvolvimento.</p><p><strong>Desenvolvimento Mobile</strong> Como o nome sugere, tivemos aulas relacionadas a dispositivos móveis. Vimos frameworks mais recentes usados para desenvolvimento híbrido, bem como o básico de aplicativos nativos IOS e Android.</p>"
+      },
+      "arkads_games": {
+        "title": "Desenvolvedor de jogos",
+        "content": "<p>Arkads Games é uma espécie de pseudônimo que uso para meu hobby de desenvolvimento de jogos. Apesar de não desenvolver jogos como um fonte de renda hoje em dia, ainda amo criá-los por diversão. Apesar de não conseguir me dedicar como gostaria, ainda desejo continuar</p>"
+      }
+    }
   }
 }
