@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import wordsImage from "../../images/words.svg";
 import styles from "./Introduction.module.scss";
 import { getAnalytics, logEvent } from "@firebase/analytics";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 interface IntroductionProps {
   jobTitle: EJobTitle;
@@ -49,9 +49,15 @@ export function Introduction(props: IntroductionProps): JSX.Element {
             {renderJobTitle(EJobTitle.Web)} {t("introduction.job_separator")}{" "}
             {renderJobTitle(EJobTitle.Game)} Developer
           </h2>
-          <p>{t("introduction.short")}</p>
+          <p>
+            <Trans 
+              i18nKey={`introduction.short`} 
+              values={{ company: 'Autotrac'}}
+              components={[<a target='_blank' href="https://www.autotrac.com.br/"></a>]}
+            ></Trans>
+          </p>
           <Button href="#contact" variant="outlined" size="large">
-            {t("introduction.hire_me")}
+            {t("introduction.contact_me")}
           </Button>
         </div>
       </div>

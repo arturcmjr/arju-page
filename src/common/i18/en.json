@@ -12,8 +12,9 @@
   "introduction": {
     "hi": "Hi, I'm",
     "job_separator": "and",
-    "short": "I'm a software developer who can work well on every development layer. I live next to Brasília, Brazil. I'm open to job offers on-site nearby or remotely anywhere around the globe.",
-    "hire_me": "hire me"
+    "short": "I'm a software developer who can work well on every development layer. I live next to Brasília, Brazil. I work as a full-stack developer at <0>{{company}}</0>. I'm currently not seeking job opportunities. However, my inbox it's always open to chat about any topic.",
+    "hire_me": "hire me",
+    "contact_me": "contact me"
   },
   "about": {
     "title": "Who I Am",

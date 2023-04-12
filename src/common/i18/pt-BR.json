@@ -12,8 +12,9 @@
   "introduction": {
     "hi": "Oi, sou o",
     "job_separator": "e",
-    "short": "Sou um desenvolvedor de software que trabalha bem em todas as camadas do desenvolvimento. Moro perto de Brasília, Brasil e estou aberto a ofertas de emprego nas proximidades ou remotamente em qualquer lugar do mundo.",
-    "hire_me": "trabalhe comigo"
+    "short": "Sou um desenvolvedor de software que trabalha bem em todas as camadas do desenvolvimento. Moro perto de Brasília, Brasil. Estou trabalhando como desenvolvedor full-stack na <0>{{company}}</0>. A pesar de não está procurando ofertas de emprego, estou sempre disposto a conversar sobre qualquer assunto.",
+    "hire_me": "trabalhe comigo",
+    "contact_me": "contact me"
   },
   "about": {
     "title": "Quem Eu Sou",
