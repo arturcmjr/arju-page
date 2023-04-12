@@ -53,7 +53,7 @@ export function Introduction(props: IntroductionProps): JSX.Element {
             <Trans 
               i18nKey={`introduction.short`} 
               values={{ company: 'Autotrac'}}
-              components={[<a target='_blank' href="https://www.autotrac.com.br/"></a>]}
+              components={[<a target='_blank' rel="noreferrer" href="https://www.autotrac.com.br/"></a>]} // eslint-disable-line
             ></Trans>
           </p>
           <Button href="#contact" variant="outlined" size="large">
