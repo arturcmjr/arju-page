@@ -1,6 +1,7 @@
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import i18next from "i18next";
 
 export interface IExperience {
   company: string;
@@ -14,7 +15,7 @@ export const experiences: IExperience[] = [
     company: "Round Stars",
     translationKey: "roundstars",
     dateRange: "2017 - 2018",
-    icon: <WorkOutlineOutlinedIcon fontSize="small" />
+    icon: <WorkOutlineOutlinedIcon fontSize="small" />,
   },
   {
     company: "ADRA Brasil",
@@ -26,6 +27,12 @@ export const experiences: IExperience[] = [
     company: "Adven.Tech",
     translationKey: "adven_tech",
     dateRange: "2020 - 2022",
+    icon: <WorkOutlineOutlinedIcon fontSize="small" />,
+  },
+  {
+    company: "Autotrac",
+    translationKey: "autotrac",
+    dateRange: `2022 - ${i18next.t("common.date.present")}`,
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
   },
   {

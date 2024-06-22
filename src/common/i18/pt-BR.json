@@ -14,7 +14,7 @@
     "job_separator": "e",
     "short": "Sou um desenvolvedor de software que trabalha bem em todas as camadas do desenvolvimento. Moro perto de Brasília, Brasil. Estou trabalhando como desenvolvedor full-stack na <0>{{company}}</0>. A pesar de não está procurando ofertas de emprego, estou sempre disposto a conversar sobre qualquer assunto.",
     "hire_me": "trabalhe comigo",
-    "contact_me": "contact me"
+    "contact_me": "fale comigo"
   },
   "about": {
     "title": "Quem Eu Sou",
@@ -40,6 +40,10 @@
       "adven_tech": {
         "title": "Desenvolvedor Full Stack",
         "content": "<p>Trabalhei desenvolvendo aplicativos web como gerenciamento de estoque, eventos, e-commerce e outros sistemas sob demanda do cliente. Também ajudei a migrar sistemas legados para tecnologias modernas.</p><p>Desenvolvi código limpo e escalável para back-end e front-end. Trabalhei com tecnologias populares como Angular, React, .NET, C#, SQL e outras"
+      },
+      "autotrac": {
+        "title": "Desenvolvedor Full Stack",
+        "content": "<p>Principalmente focado em desenvolvimento de interfaces de usuário utilizando Angular, incluindo a implementação de novos recursos, melhorias contínuas e refatoração de componentes existentes para assegurar um desempenho otimizado e uma experiência de usuário eficiente.</p><p>Atuando no desenvolvimento de funcionalidades de back-end em .NET conforme necessário, colaborando com a equipe para integrar e otimizar as interações entre o front-end e o back-end, garantindo a funcionalidade e a robustez do sistema.</p>"
       },
       "iesb": {
         "title": "Graduação em Desenvolvimento de Games",
@@ -120,10 +124,14 @@
         "title": "Desculpe, parece que o e-mail não pôde ser enviado agora.",
         "description": "Mas não se preocupe, você pode tentar novamente mais tarde ou me enviar um e-mail manualmente para"
       }
-    }
+    },
+    "disabled_notice": "Sinto muito, precisei desativar o formulário de contato. Se você deseja falar comigo, por favor, envie um email para"
   },
   "common": {
-    "made_by": "Feito com ❤️ por Artur Junior"
+    "made_by": "Feito com ❤️ por Artur Junior",
+    "date": {
+      "present": "presente"
+    }
   },
   "job_instructions": {
     "text": "Olá, Embora eu tenha focado no desenvolvimento web ultimamente, também sou um desenvolvedor de jogos habilidoso. Você pode clicar a qualquer momento em \"Web\" ou \"Game\" para ver algumas mudanças no conteúdo da página.",

@@ -41,6 +41,10 @@
         "title": "Full Stack Developer",
         "content": "<p>Worked developing web apps as a stock management, event, e-commerce and other systems on client demand. I also helped to migrate legacy systems to modern technologies.</p><p>Written clean and scalable code for the back and front end. Worked with popular technologies such as Angular, React, .NET, C#, SQL and others.</p>"
       },
+      "autotrac": {
+        "title": "Full Stack Developer",
+        "content": "<p>Primarily focused on developing user interfaces using Angular, including implementing new features, continuous improvements, and refactoring existing components to ensure optimized performance and an efficient user experience.</p><p>Involved in developing back-end functionalities in .NET as needed, collaborating with the team to integrate and optimize interactions between the front-end and back-end, ensuring system functionality and robustness.</p>"
+      },
       "iesb": {
         "title": "Graduation on Game Development",
         "content": "<p>learned the concepts of object-oriented programming. Had contact with every layer of game development, including audio, 2D and 3D art, programming, level design and others. Won a prize for the best game made in the course of the second semester of 2017.</p><p>Even though the graduation had a heavy focus on game development, I also had contact with web and app development.</p>"
@@ -120,10 +124,14 @@
         "title": "I'm sorry, looks like the email couldn't be sent right now.",
         "description": "But don't worry you can try again later or email me on"
       }
-    }
+    },
+    "disabled_notice": "I'm sorry, I had to disable the contact form. If you want to talk to me, please send an email to"
   },
   "common": {
-    "made_by": "Made with ❤️ by Artur Junior"
+    "made_by": "Made with ❤️ by Artur Junior",
+    "date": {
+      "present": "present"
+    }
   },
   "job_instructions": {
     "text": "Hi there, Even though I have been focusing on web development lately, I'm also a skilled game developer. You can click any time on \"Web\" or \"Game\" to see some changes on the page content.",
