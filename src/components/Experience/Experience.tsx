@@ -4,9 +4,12 @@ import experiences, { IExperience } from "./experiences";
 import { Trans, useTranslation } from "react-i18next";
 
 export function Experience() {
-  const [experienceIndex, setExperienceIndex] = useState(0);
+  const [experienceIndex, setExperienceIndex] = useState(-1);
   const experience = experiences[experienceIndex];
   const { t } = useTranslation();
+  const handleTimelineMouseLeave = () => {
+    setExperienceIndex(-1);
+  };
 
   return (
     <section className="experience-wrapper">
@@ -14,28 +17,51 @@ export function Experience() {
         <h2 className="section-title">
           <span>02:</span> {t('experience.title')}
         </h2>
-        <div className="content">
-          <div className="tabs">
-            {experiences.map((item, index) => (
-              <Fragment key={`smp-tab-${index}`}>
-                <ExperienceTab
-                  experience={item}
-                  isActive={index === experienceIndex}
-                  onClick={() => setExperienceIndex(index)}
-                />
-              </Fragment>
-            ))}
+        <div className="timeline-container" onMouseLeave={() => handleTimelineMouseLeave()}>
+          <div className="timeline">
+            <div className="timeline-item" onMouseEnter={() => setExperienceIndex(0)}>
+              <span className="title">
+                Pós Graduação
+              </span>
+              <div className="subtitle">
+                Desenvolvimento de aplicativos para dispositivos móveis
+              </div>
+            </div>
+            <div className="timeline-item" onMouseEnter={() => setExperienceIndex(1)}>
+              <span className="title">
+                Tecnólogo
+              </span>
+              <div className="subtitle">
+                Desenvolvimento de Jogos Digitais
+              </div>
+            </div>
+            <div className="timeline-item" onMouseEnter={() => setExperienceIndex(2)}>
+              <span className="title">
+                Bacharelado
+              </span>
+              <div className="subtitle">
+                Ciências da Computação
+              </div>
+            </div>
           </div>
-          <div className="text-container" key={experience.company}>
-            <div className="mobile-company">{experience.company}</div>
-            <h3>{t(`experience.experiences.${experience.translationKey}.title`)}</h3>
-            <div className="period">{experience.dateRange}</div>
-            <Trans i18nKey={`experience.experiences.${experience.translationKey}.content`}></Trans>
-          </div>
+          <Details experience={experience} />
         </div>
       </div>
-    </section>
+    </section >
   );
+}
+
+function Details(
+  props: {
+    experience?: IExperience;
+  }
+) {
+  const { experience } = props;
+  if (!experience) {
+    return null;
+  } else {
+    return <div className="details"><Trans i18nKey={`experience.experiences.${experience.translationKey}.content`}></Trans></div>;
+  }
 }
 
 function ExperienceTab(props: {
