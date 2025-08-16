@@ -9,7 +9,7 @@ import { getSkills } from "../../common/skills/skills.data";
 import ISkill from "../../common/skills/skills.interface";
 import { useTranslation } from "react-i18next";
 
-export function About(props: { jobTitle: EJobTitle }): JSX.Element {
+export function About(props: { jobTitle: EJobTitle }) {
   const { jobTitle } = props;
   const skills = getSkills(jobTitle);
   const { t } = useTranslation();
@@ -45,7 +45,7 @@ export function About(props: { jobTitle: EJobTitle }): JSX.Element {
   );
 }
 
-function SkillChip(props: { skill: ISkill }): JSX.Element {
+function SkillChip(props: { skill: ISkill }) {
   return (
     <div className="skill-chip">
       {props.skill.star ? <StarIcon fontSize="small" /> : <StarOutlineIcon fontSize="small" />}

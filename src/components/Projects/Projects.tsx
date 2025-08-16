@@ -11,7 +11,7 @@ function isMobileDevice(): boolean {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
-export function Projects(props: { jobTitle: EJobTitle }): JSX.Element {
+export function Projects(props: { jobTitle: EJobTitle }) {
   const { jobTitle } = props;
   const projects = getProjects(jobTitle);
   const { t } = useTranslation();
@@ -40,7 +40,7 @@ export function Projects(props: { jobTitle: EJobTitle }): JSX.Element {
   );
 }
 
-function ProjectItem(props: { project: IProject }): JSX.Element {
+function ProjectItem(props: { project: IProject }) {
   const { project } = props;
   const { t } = useTranslation();
 

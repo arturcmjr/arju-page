@@ -22,7 +22,7 @@ function moveInstructionsBox(): void {
   boxEl.style.display = "block";
 }
 
-export function JobInstructionsOverlay(): JSX.Element {
+export function JobInstructionsOverlay() {
   const [visible, setVisible] = useState(false);
   const [hideButtonDisabled, setHideButtonDisabled] = useState(true);
   const { t } = useTranslation();

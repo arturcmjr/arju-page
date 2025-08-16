@@ -26,7 +26,7 @@ const menuItems = [
 
 var prevScrollpos = window.pageYOffset;
 
-export function Navbar(props: { jobTitle: EJobTitle }): JSX.Element {
+export function Navbar(props: { jobTitle: EJobTitle }) {
   const { jobTitle } = props;
   const { t, i18n } = useTranslation();
   const [sidebarOpen, setSidebarOpen] = React.useState(false);

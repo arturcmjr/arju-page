@@ -2,12 +2,13 @@ import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import i18next from "i18next";
+import { ReactElement } from "react";
 
 export interface IExperience {
   company: string;
   translationKey: string;
   dateRange: string;
-  icon: JSX.Element;
+  icon: ReactElement;
 }
 
 export const experiences: IExperience[] = [

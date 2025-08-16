@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 export interface IProject {
   key: string;
   technologies: string[];
@@ -5,6 +7,6 @@ export interface IProject {
 }
 
 export interface IProjectLink { 
-  icon: JSX.Element;
+  icon: ReactElement;
   url: string;
 }

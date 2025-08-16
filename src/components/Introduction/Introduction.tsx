@@ -10,11 +10,11 @@ interface IntroductionProps {
   changeJobTitle: (title: EJobTitle) => void;
 }
 
-export function Introduction(props: IntroductionProps): JSX.Element {
+export function Introduction(props: IntroductionProps) {
   const { changeJobTitle } = props;
   const { t } = useTranslation();
 
-  function renderJobTitle(jobTitle: EJobTitle): JSX.Element {
+  function renderJobTitle(jobTitle: EJobTitle) {
     const isActive = jobTitleIsActive(jobTitle);
     const changeTitle = (jobTitle: EJobTitle) => {
       changeJobTitle(jobTitle);

@@ -4,7 +4,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import { useTranslation } from "react-i18next";
 
-export function SocialMedia(): JSX.Element {
+export function SocialMedia() {
   const { t} = useTranslation();
   return (
     <div>

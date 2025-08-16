@@ -3,7 +3,7 @@ import "./Experience.scss";
 import experiences, { IExperience } from "./experiences";
 import { Trans, useTranslation } from "react-i18next";
 
-export function Experience(): JSX.Element {
+export function Experience() {
   const [experienceIndex, setExperienceIndex] = useState(0);
   const experience = experiences[experienceIndex];
   const { t } = useTranslation();
@@ -42,7 +42,7 @@ function ExperienceTab(props: {
   experience: IExperience;
   isActive: boolean;
   onClick: React.MouseEventHandler;
-}): JSX.Element {
+}) {
   const { experience, isActive, onClick } = props;
   const tabClass = `tab ${isActive ? "active" : ""}`;
 
