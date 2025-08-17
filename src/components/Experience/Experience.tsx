@@ -19,6 +19,7 @@ export function Experience() {
         </h2>
         <div className="timeline-container" onMouseLeave={() => handleTimelineMouseLeave()}>
           <div className="timeline">
+            <h3>Educação</h3>
             <div className="timeline-item" onMouseEnter={() => setExperienceIndex(0)}>
               <span className="title">
                 Pós Graduação
