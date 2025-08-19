@@ -28,34 +28,47 @@
   },
   "experience": {
     "title": "Education and Work",
+    "at": "at",
     "experiences": {
       "roundstars": {
         "title": "Game Developer",
-        "content": "<p>Worked on developing single-player and multiplayer games. Coding core mechanism, search algorithms and bots AIs. Programming, making interfaces and arts for those games.</p><p>Wrote clean C# code for games on Unity Engine.</p><p>Helped with a REST API for a social media for games with PHP and MySQL.</p>"
+        "subtitle": "Programmer",
+        "content": "Developed single-player and multiplayer games, implementing gameplay mechanics, AI bots, and user interfaces. Contributed to design and testing of features. Also supported backend integration by helping build a REST API for a gaming social media platform, enhancing collaboration and community interaction."
       },
       "adra_brasil": {
         "title": "Designer",
-        "content": "<p>Worked with a little bit of everything. I helped with the automation of daily tasks with VBA and SQL. Made art for fundraising campaigns. Developed a system with Laravel and Vue to help with the distribution of hot meals for Venezuelan refugees.</p>"
+        "subtitle": "Automation & Design",
+        "content": "Worked on creative design and process automation for a nonprofit organization. Created art for campaigns, automated recurring tasks with VBA and SQL, and developed a Laravel and Vue application to optimize hot meal distribution to Venezuelan refugees, improving efficiency and supporting social initiatives."
       },
       "adven_tech": {
-        "title": "Full Stack Developer",
-        "content": "<p>Worked developing web apps as a stock management, event, e-commerce and other systems on client demand. I also helped to migrate legacy systems to modern technologies.</p><p>Written clean and scalable code for the back and front end. Worked with popular technologies such as Angular, React, .NET, C#, SQL and others.</p>"
+        "title": "Web Developer",
+        "subtitle": "Fullstack",
+        "content": "Developed web applications for stock management, event planning, and e-commerce platforms. Modernized legacy systems by migrating to updated technologies. Delivered robust, scalable solutions across back-end and front-end environments, ensuring maintainability and usability while supporting diverse client demands with flexibility and technical expertise."
       },
       "autotrac": {
-        "title": "Full Stack Developer",
-        "content": "<p>Primarily focused on developing user interfaces using Angular, including implementing new features, continuous improvements, and refactoring existing components to ensure optimized performance and an efficient user experience.</p><p>Involved in developing back-end functionalities in .NET as needed, collaborating with the team to integrate and optimize interactions between the front-end and back-end, ensuring system functionality and robustness.</p>"
+        "title": "Web Developer",
+        "subtitle": "Front-end Focused",
+        "content": "Focused on building Angular interfaces, improving usability, and refactoring components for better performance. Contributed to .NET back-end integration, supporting communication between systems. Worked closely with the team to deliver consistent features, optimize workflows, and enhance overall user experience within enterprise-level applications."
       },
       "iesb": {
-        "title": "Graduation on Game Development",
-        "content": "<p>learned the concepts of object-oriented programming. Had contact with every layer of game development, including audio, 2D and 3D art, programming, level design and others. Won a prize for the best game made in the course of the second semester of 2017.</p><p>Even though the graduation had a heavy focus on game development, I also had contact with web and app development.</p>"
+        "title": "Associate Degree",
+        "subtitle": "Game Development",
+        "content": "Studied object-oriented programming, 2D and 3D art, audio, and level design. Participated in game creation projects, winning an award for best game in 2017. Acquired additional skills in web and mobile development, strengthening adaptability and broadening knowledge beyond the core focus on game production."
       },
-      "descomplica": {
-        "title": "Post Graduation at Two Courses",
-        "content": "<p><strong>System Analysis and Development</strong> focuses mostly on the theoretical part of developing a system. I studied data structure, project management, DevOps and other development-related topics.</p><p><strong>Mobile Development</strong> As the name suggests, we had mobile related classes, like the most recent frameworks that have been used for hybrid development as well the basics of IOS and Android native apps.</p>"
+      "descomplica_systems": {
+        "title": "Postgraduate",
+        "subtitle": "Systems Analysis",
+        "content": "Specialization focused on theoretical and practical aspects of system development. Explored data structures, project management, and DevOps practices. Gained knowledge in planning, analyzing, and implementing systems, with emphasis on methodologies that improve efficiency, reliability, and collaboration in software engineering environments."
       },
-      "arkads_games": {
-        "title": "Game Developer",
-        "content": "<p>Arkads Games is kind of a pseudonym that I use for my game development hobby. Even though I do not develop games as a job nowadays, I still love making them for fun. Despite not having time to do it, and not and not making money with them, I still wish to keep doing it as a hobby.</p>"
+      "descomplica_mobile": {
+        "title": "Postgraduate",
+        "subtitle": "Mobile Development",
+        "content": "Focused on mobile development, covering hybrid frameworks and fundamentals of native Android and iOS programming. Studied modern tools and best practices for building efficient, cross-platform solutions. Gained experience in designing, testing, and deploying mobile applications that meet current technology trends and industry needs."
+      },
+      "descomplica_cc": {
+        "title": "Bachelor’s Degree",
+        "subtitle": "Computer Science",
+        "content": "Comprehensive study of algorithms, data structures, software engineering, operating systems, databases, and networks. Gained advanced programming and system design skills. Explored artificial intelligence, distributed systems, and security, preparing for professional roles in software engineering, research, and technology innovation across diverse computing environments."
       }
     }
   },
@@ -130,7 +143,7 @@
   "common": {
     "made_by": "Made with ❤️ by Artur Junior",
     "date": {
-      "present": "present"
+      "present": "Present"
     }
   },
   "job_instructions": {

@@ -1,7 +1,10 @@
+@use "../../styles/variables" as vars;
+
 @keyframes ZoomIn {
   0% {
     transform: scale(0.9);
   }
+
   100% {
     transform: scale(1);
   }
@@ -32,16 +35,22 @@ $tab-transition: 0.3s ease-in-out;
     h3 {
       margin: 0;
       max-width: 400px;
-      color: #d0d2d5;
       font-weight: 700;
+      color: var(--primary);
+
+      small {
+        color: vars.$secondary-text-color;
+        font-weight: 400;
+      }
     }
 
     .period {
       margin-top: 0.5rem !important;
-      font-size: 1rem;
+      font-size: .8rem;
       font-family: "Inconsolata", monospace;
-      color: var(--primary);
+      color: vars.$secondary-text-color;
       margin: 0;
+      margin-bottom: .4rem;
     }
 
     p::before {
@@ -50,7 +59,8 @@ $tab-transition: 0.3s ease-in-out;
       color: var(--primary);
     }
 
-    p > b, strong {
+    p>b,
+    strong {
       color: #d0d2d5;
     }
 
@@ -59,6 +69,21 @@ $tab-transition: 0.3s ease-in-out;
       color: var(--primary);
       margin-bottom: 0.3rem;
       font-size: 0.8em;
+    }
+
+    .key-tech {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+
+      .tech {
+        background-color: vars.$elevation-1;
+        border-radius: 5px;
+        padding: 0.25rem 0.5rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+      }
     }
   }
 }
@@ -70,9 +95,8 @@ $tab-transition: 0.3s ease-in-out;
 
   .tab {
     padding: 0.5rem;
-    color: #a8aaad;
+    color: vars.$secondary-text-color;
     font-size: 0.9rem;
-    font-weight: 400;
     cursor: pointer;
     display: flex;
     min-width: 125px;
@@ -81,8 +105,14 @@ $tab-transition: 0.3s ease-in-out;
     border-right: 2px solid rgba(255, 255, 255, 0.2);
 
     svg {
-      margin-right: 0;
-      max-width: 0;
+      margin-right: 0.5rem;
+      opacity: 0;
+      transition: all $tab-transition;
+    }
+
+    span {
+      white-space: nowrap;
+      transform: translateX(calc((20px + .5rem) * -1));
       transition: all $tab-transition;
     }
   }
@@ -90,18 +120,20 @@ $tab-transition: 0.3s ease-in-out;
   .tab.active,
   .tab:hover {
     color: #fff;
-    font-weight: 600;
     transition: all $tab-transition;
 
     svg {
-      margin-right: 0.5rem;
-      max-width: 50px;
+      opacity: 1;
       transition: all $tab-transition;
+    }
+
+    span {
+      transform: translateX(0);
     }
   }
 
   .tab.tab.active {
-    background-color: #343941;
+    background-color: vars.$elevation-1;
     border-right: 2px solid var(--primary);
     transition: all $tab-transition;
 
@@ -123,6 +155,7 @@ $tab-transition: 0.3s ease-in-out;
     svg {
       margin-right: 0 !important;
       max-width: 50px !important;
+      opacity: 1 !important;
     }
 
     span {

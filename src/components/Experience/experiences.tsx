@@ -9,51 +9,66 @@ export interface IExperience {
   translationKey: string;
   dateRange: string;
   icon: ReactElement;
+  keyTech: string[];
 }
 
 export const experiences: IExperience[] = [
   {
-    company: "Round Stars",
-    translationKey: "roundstars",
-    dateRange: "2017 - 2018",
+    company: "Autotrac",
+    translationKey: "autotrac",
+    dateRange: `2022 - {NOW}`,
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
-  },
-  {
-    company: "ADRA Brasil",
-    translationKey: "adra_brasil",
-    dateRange: "2018 - 2020",
-    icon: <WorkOutlineOutlinedIcon fontSize="small" />,
+    keyTech: ["Angular", "TypeScript", "SQL", "C#", ".NET"]
   },
   {
     company: "Adven.Tech",
     translationKey: "adven_tech",
     dateRange: "2020 - 2022",
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
+    keyTech: ["Angular", "TypeScript", "React", "C#", ".NET"]
   },
   {
-    company: "Autotrac",
-    translationKey: "autotrac",
-    dateRange: `2022 - ${i18next.t("common.date.present")}`,
+    company: "ADRA Brasil",
+    translationKey: "adra_brasil",
+    dateRange: "2018 - 2020",
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
+    keyTech: ["Illustrator", "Photoshop", "VBA", "SQL"]
+  },
+  {
+    company: "Round Stars",
+    translationKey: "roundstars",
+    dateRange: "2017 - 2018",
+    icon: <WorkOutlineOutlinedIcon fontSize="small" />,
+    keyTech: ["Unity", "C#", "PHP"]
+  },
+  {
+    company: "Descomplica",
+    translationKey: "descomplica_systems",
+    dateRange: "2021 - 2022",
+    icon: <SchoolOutlinedIcon fontSize="small" />,
+    keyTech: ["C++", "Java"]
+  },
+  {
+    company: "Descomplica",
+    translationKey: "descomplica_mobile",
+    dateRange: "2021 - 2022",
+    icon: <SchoolOutlinedIcon fontSize="small" />,
+    keyTech: ["React Native", "Flutter", "Java", "Swift"]
   },
   {
     company: "IESB",
     translationKey: "iesb",
     dateRange: "2016 - 2018",
     icon: <SchoolOutlinedIcon fontSize="small" />,
+    keyTech: ["Unity", "C#", "Blender"]
   },
   {
     company: "Descomplica",
-    translationKey: "descomplica",
-    dateRange: "2021 - 2022",
+    translationKey: "descomplica_cc",
+    dateRange: "2023 - 2025",
     icon: <SchoolOutlinedIcon fontSize="small" />,
-  },
-  {
-    company: "Arkads Games",
-    translationKey: "arkads_games",
-    dateRange: "2017 - Present",
-    icon: <FavoriteBorderOutlinedIcon fontSize="small" />,
-  },
+    keyTech: ["C++", "Python", "Java"]
+  }
 ];
 
 export default experiences;
