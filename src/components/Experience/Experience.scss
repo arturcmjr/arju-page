@@ -1,3 +1,5 @@
+@use "../../styles/mixins" as mixins;
+
 .experience-wrapper {
   display: flex;
   justify-content: center;
@@ -6,17 +8,18 @@
   #experience {
     width: 50%;
     max-width: 800px;
+    padding: 1rem;
   }
 }
 
 .timeline-container {
   display: flex;
   gap: 1rem;
+  height: 400px;
 }
 
 .timeline {
-  width: 50%;
-  flex-shrink: 0;
+  flex-grow: 1;
 }
 
 .timeline-item {
@@ -74,28 +77,53 @@
     font-size: 1.5rem;
     font-weight: bold;
   }
-  .body {
-    position: absolute;
+
+  .extra {
     background-color: #232931;
     max-height: 0;
     overflow: hidden;
     z-index: 1;
     transition: max-height 0.3s ease;
   }
+
   .title {
     // font-weight: bold;
   }
+
   .subtitle {
     display: block;
     font-size: .8rem;
     color: var(--second-text-color); // change to use css vars
   }
+
   &:hover {
     &::before {
       border-color: var(--primary);
     }
-    .body {
-      max-height: 600px;
+
+    .extra {
+      max-height: 2rem;
     }
+  }
+
+  .extra {
+    span:first-child {}
+
+    span:last-child {
+      margin-left: .4rem;
+      color: var(--second-text-color);
+      font-size: .8rem;
+    }
+  }
+}
+
+@include mixins.mobile-only {
+  #experience {
+    width: 100% !important;
+  }
+
+  .timeline-container {
+    flex-direction: column;
+    height: unset;
   }
 }
