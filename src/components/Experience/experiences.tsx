@@ -18,14 +18,14 @@ export const experiences: IExperience[] = [
     translationKey: "autotrac",
     dateRange: `2022 - {NOW}`,
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
-    keyTech: ["Angular", "TypeScript", "SQL", "C#", ".NET"]
+    keyTech: ["Angular", "TypeScript", "React", "SQL", "C#", ".NET"]
   },
   {
     company: "Adven.Tech",
     translationKey: "adven_tech",
     dateRange: "2020 - 2022",
     icon: <WorkOutlineOutlinedIcon fontSize="small" />,
-    keyTech: ["Angular", "TypeScript", "React", "C#", ".NET"]
+    keyTech: ["Angular", "TypeScript", "React", "SQL", "C#", ".NET"]
   },
   {
     company: "ADRA Brasil",
@@ -67,7 +67,7 @@ export const experiences: IExperience[] = [
     translationKey: "descomplica_cc",
     dateRange: "2023 - 2025",
     icon: <SchoolOutlinedIcon fontSize="small" />,
-    keyTech: ["C++", "Python", "Java"]
+    keyTech: ["C++", "Java", "HTML", "CSS", "JavaScript"]
   }
 ];
 

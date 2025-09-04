@@ -28,7 +28,7 @@ export function Experience() {
           </div>
           <div className="text-container" key={experience.company}>
             <div className="mobile-company">{experience.company}</div>
-            <h3>{t(`experience.experiences.${experience.translationKey}.subtitle`)}<small> {t('experience.at')} {experience.company}</small></h3>
+            <h3>{t(`experience.experiences.${experience.translationKey}.subtitle`)}<small> {t('experience.at')} <span className="company">{experience.company}</span></small></h3>
             <div className="period">{experience.dateRange.replace('{NOW}', t('common.date.present'))}</div>
             <Trans i18nKey={`experience.experiences.${experience.translationKey}.content`}></Trans>
             <div className="key-tech">
@@ -54,7 +54,7 @@ function ExperienceTab(props: {
   return (
     <div className={tabClass} onClick={onClick}>
       {experience.icon}
-      <span><Trans i18nKey={`experience.experiences.${experience.translationKey}.title`}/></span>
+      <span><Trans i18nKey={`experience.experiences.${experience.translationKey}.title`} /></span>
     </div>
   );
 }

@@ -30,32 +30,44 @@
     "title": "Educação e Trabalho",
     "experiences": {
       "roundstars": {
-        "title": "Desenvolvedor de jogos",
-        "content": "<p>Trabalhei no desenvolvimento de jogos single-player e multiplayer. Desenvolvi mecânicas centrais, algoritmos de pesquisa, IAs de bots. Programando, criando interfaces e artes para esses jogos.</p><p>Escrevi código limpo em C# para Unity Engine</p><p>Ajudei na criação de uma API REST para uma rede social com PHP e MySQL</p>"
+        "title": "Desenvolvedor de Jogos",
+        "subtitle": "Programador",
+        "content": "Desenvolvi jogos single-player e multiplayer, implementei mecânicas de gameplay, bots de IA e interfaces de usuário. Participei do design e dos testes de funcionalidades. Também apoiei a integração de backend, ajudando a construir uma API REST para uma plataforma de mídia social de jogos, fortalecendo a colaboração e a interação da comunidade."
       },
       "adra_brasil": {
         "title": "Designer",
-        "content": "<p>Trabalhei com um pouco de tudo. Ajudei na automação de tarefas diárias com VBA e SQL. Criei artes para campanhas de arrecadação de fundos. Desenvolvi um sistema em Laravel e Vue para ajudar na distribuição de refeições quentes para refugiados venezuelanos.</p>"
+        "subtitle": "Designer",
+        "content": "Atuei com design criativo e automação de processos em uma organização sem fins lucrativos. Criei artes para campanhas, automatizei tarefas recorrentes com VBA e SQL e desenvolvi uma aplicação em Laravel e Vue para otimizar a distribuição de refeições quentes a refugiados venezuelanos, aumentando a eficiência e apoiando iniciativas sociais."
       },
       "adven_tech": {
-        "title": "Desenvolvedor Full Stack",
-        "content": "<p>Trabalhei desenvolvendo aplicativos web como gerenciamento de estoque, eventos, e-commerce e outros sistemas sob demanda do cliente. Também ajudei a migrar sistemas legados para tecnologias modernas.</p><p>Desenvolvi código limpo e escalável para back-end e front-end. Trabalhei com tecnologias populares como Angular, React, .NET, C#, SQL e outras"
+        "title": "Desenvolvedor Web",
+        "subtitle": "Fullstack",
+        "content": "Desenvolvi aplicações web para gestão de estoque, planejamento de eventos e plataformas de e-commerce. Modernizei sistemas legados migrando para tecnologias atualizadas. Entreguei soluções robustas e escaláveis em ambientes de back-end e front-end, garantindo manutenção, usabilidade e atendendo a diversas demandas de clientes com flexibilidade e expertise técnica."
       },
       "autotrac": {
-        "title": "Desenvolvedor Full Stack",
-        "content": "<p>Principalmente focado em desenvolvimento de interfaces de usuário utilizando Angular, incluindo a implementação de novos recursos, melhorias contínuas e refatoração de componentes existentes para assegurar um desempenho otimizado e uma experiência de usuário eficiente.</p><p>Atuando no desenvolvimento de funcionalidades de back-end em .NET conforme necessário, colaborando com a equipe para integrar e otimizar as interações entre o front-end e o back-end, garantindo a funcionalidade e a robustez do sistema.</p>"
+        "title": "Desenvolvedor Web",
+        "subtitle": "Fullstack",
+        "content": "Atuei na construção de interfaces em Angular, melhorei a usabilidade e refatorei componentes para melhor desempenho. Contribuí para a integração do back-end em .NET, facilitando a comunicação entre sistemas. Trabalhei em equipe para entregar funcionalidades consistentes, otimizar fluxos de trabalho e aprimorar a experiência do usuário em aplicações corporativas de grande porte."
       },
       "iesb": {
-        "title": "Graduação em Desenvolvimento de Games",
-        "content": "<p>Aprendi os conceitos de programação orientada a objetos. Tive contato com todas as camadas do desenvolvimento de jogos, incluindo áudio, arte 2D e 3D, programação, level design e outros. Ganhei o prêmio de melhor jogo feito no decorrer do segundo semestre de 2017.</p><p>Apesar da graduação ter o foco em desenvolvimento de jogos, também tive contato com desenvolvimento web e de aplicativos.</p >"
+        "title": "Tecnólogo",
+        "subtitle": "Desenvolvimento de Jogos",
+        "content": "Estudei programação orientada a objetos, arte 2D e 3D, áudio e design de fases. Participei de projetos de criação de jogos, conquistando o prêmio de melhor jogo em 2017. Também adquiri conhecimentos em desenvolvimento web e mobile, fortalecendo minha adaptabilidade e ampliando meu repertório além do foco principal em produção de jogos."
       },
-      "descomplica": {
-        "title": "Pós Graduação em Dois Cursos",
-        "content": "<p><strong>Análise e Desenvolvimento de Sistemas</strong> concentra-se principalmente na parte teórica do desenvolvimento de um sistema. Estudei estrutura de dados, gerenciamento de projetos, DevOps e outros tópicos relacionados ao desenvolvimento.</p><p><strong>Desenvolvimento Mobile</strong> Como o nome sugere, tivemos aulas relacionadas a dispositivos móveis. Vimos frameworks mais recentes usados para desenvolvimento híbrido, bem como o básico de aplicativos nativos IOS e Android.</p>"
+      "descomplica_systems": {
+        "title": "Pós-graduação",
+        "subtitle": "Análise de Sistemas",
+        "content": "Realizei uma especialização voltada para os aspectos teóricos e práticos do desenvolvimento de sistemas. Estudei estruturas de dados, gestão de projetos e práticas de DevOps. Desenvolvi competências em planejamento, análise e implementação de sistemas, com ênfase em metodologias que aumentam eficiência, confiabilidade e colaboração em engenharia de software."
       },
-      "arkads_games": {
-        "title": "Desenvolvedor de jogos",
-        "content": "<p>Arkads Games é uma espécie de pseudônimo que uso para meu hobby de desenvolvimento de jogos. Apesar de não desenvolver jogos como um fonte de renda hoje em dia, ainda amo criá-los por diversão. Apesar de não conseguir me dedicar como gostaria, ainda desejo continuar</p>"
+      "descomplica_mobile": {
+        "title": "Pós-graduação",
+        "subtitle": "Desenvolvimento Mobile",
+        "content": "Foquei no desenvolvimento mobile, estudando frameworks híbridos e fundamentos da programação nativa Android e iOS. Aprendi a utilizar ferramentas modernas e boas práticas para criar soluções eficientes e multiplataforma. Obtive experiência em projetar, testar e implantar aplicações móveis alinhadas às tendências atuais da tecnologia e às necessidades do mercado."
+      },
+      "descomplica_cc": {
+        "title": "Bacharelado",
+        "subtitle": "Ciência da Computação",
+        "content": "Realizei um estudo abrangente de algoritmos, estruturas de dados, engenharia de software, sistemas operacionais, bancos de dados e redes. Desenvolvi habilidades avançadas em programação e design de sistemas. Também explorei inteligência artificial, sistemas distribuídos e segurança, preparando-me para atuar em engenharia de software, pesquisa e inovação tecnológica em diferentes ambientes computacionais."
       }
     }
   },

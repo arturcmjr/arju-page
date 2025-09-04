@@ -42,6 +42,10 @@ $tab-transition: 0.3s ease-in-out;
         color: vars.$secondary-text-color;
         font-weight: 400;
       }
+
+      .company {
+        color: vars.$primary-text-color;
+      }
     }
 
     .period {
